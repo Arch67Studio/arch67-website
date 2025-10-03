@@ -3,414 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio • ARCH67</title>
+    <title>Studio | Arch67</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Studio Page Specific Styles */
-        .studio-hero {
-            height: 80vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            margin-top: 80px;
-            background: var(--gray-light);
-        }
-
-        .studio-content {
-            padding: var(--spacing-xxl) 0;
-        }
-
-        .studio-about {
-            max-width: 1000px;
-            margin: 0 auto var(--spacing-xxl);
-            padding: 0 var(--spacing-md);
-        }
-
-        .studio-about h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: var(--spacing-lg);
-            text-align: center;
-        }
-
-        .studio-about p {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            text-align: center;
-            color: var(--gray-dark);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .studio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-lg);
-            padding: var(--spacing-xl) var(--spacing-md);
-        }
-
-        .studio-item {
-            text-align: center;
-        }
-
-        .studio-icon {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .studio-item h3 {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .studio-item p {
-            color: var(--gray-medium);
-            line-height: 1.6;
-        }
-
-        .team-section {
-            padding: var(--spacing-xxl) 0;
-            background: var(--gray-light);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--spacing-lg);
-            padding: 0 var(--spacing-md);
-        }
-
-        .team-member {
-            text-align: center;
-        }
-
-        .team-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto var(--spacing-md);
-            background: var(--white);
-        }
-
-        .team-member h3 {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .team-role {
-            color: var(--gold);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .team-bio {
-            color: var(--gray-medium);
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        .awards-section {
-            padding: var(--spacing-xxl) 0;
-        }
-
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: var(--spacing-lg);
-            padding: 0 var(--spacing-md);
-        }
-
-        .award-item {
-            padding: var(--spacing-lg);
-            border-left: 2px solid var(--gold);
-        }
-
-        .award-year {
-            font-size: 0.9rem;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .award-title {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .award-project {
-            color: var(--gray-medium);
-            font-size: 1rem;
-        }
-
-        @media (max-width: 1024px) {
-            .studio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .studio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .awards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="content-wrapper">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-container">
-                <a href="index.html" class="logo">ARCH67</a>
-                
-                <nav class="nav-primary">
-                    <a href="projects.html">Projects</a>
-                    <a href="studio.html" class="active">Studio</a>
-                    <a href="news.html">News</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-
-                <nav class="nav-secondary">
-                    <a href="#" id="search-btn">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <button class="mobile-menu-btn" id="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-            <button class="mobile-menu-close" id="mobile-menu-close">
-                <i class="fas fa-times"></i>
-            </button>
-            <nav class="mobile-nav">
-                <a href="projects.html">Projects</a>
-                <a href="studio.html" class="active">Studio</a>
-                <a href="news.html">News</a>
-                <a href="contact.html">Contact</a>
-                <a href="#" id="mobile-search-btn">
-                    <i class="fas fa-search"></i> Search
-                </a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">ARCH<span>67</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="studio.html">Studio</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
+    </header>
 
-        <!-- Search Overlay -->
-        <div class="search-overlay" id="search-overlay">
-            <button class="search-close" id="search-close">
-                <i class="fas fa-times"></i>
-            </button>
-            <form class="search-form">
-                <input type="text" class="search-input" placeholder="Search projects..." id="search-input">
-            </form>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Studio</h1>
+            <p>Learn about our philosophy, team, and approach to architecture</p>
         </div>
+    </section>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Studio Hero -->
-            <section class="studio-hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Our Studio</h1>
-                        <p class="hero-subtitle">A collaborative practice dedicated to creating architecture that enriches human experience and responds to its context.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Studio About -->
-            <section class="studio-content">
-                <div class="studio-about">
-                    <h2>Architecture as Dialogue</h2>
-                    <p>ARCH67 was founded on the principle that architecture should engage in a meaningful dialogue with its context, climate, and culture. We believe in creating spaces that are not only beautiful but also responsible, sustainable, and deeply connected to their place.</p>
-                    <p>Our approach combines rigorous research, innovative thinking, and meticulous craftsmanship to deliver projects that stand the test of time while pushing the boundaries of architectural possibility.</p>
-                </div>
-
-                <!-- Studio Values -->
-                <div class="container">
-                    <div class="studio-grid">
-                        <div class="studio-item">
-                            <div class="studio-icon">
-                                <i class="fas fa-leaf"></i>
-                            </div>
-                            <h3>Sustainability</h3>
-                            <p>We integrate environmental responsibility into every project, creating buildings that are energy-efficient, resource-conscious, and climate-responsive.</p>
-                        </div>
-                        <div class="studio-item">
-                            <div class="studio-icon">
-                                <i class="fas fa-lightbulb"></i>
-                            </div>
-                            <h3>Innovation</h3>
-                            <p>We embrace new technologies and methodologies while maintaining respect for traditional craftsmanship and architectural principles.</p>
-                        </div>
-                        <div class="studio-item">
-                            <div class="studio-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h3>Collaboration</h3>
-                            <p>We work closely with clients, consultants, and communities to create architecture that reflects shared values and aspirations.</p>
-                        </div>
-                        <div class="studio-item">
-                            <div class="studio-icon">
-                                <i class="fas fa-drafting-compass"></i>
-                            </div>
-                            <h3>Craftsmanship</h3>
-                            <p>We believe in the power of detail and the importance of materiality in creating architecture that ages gracefully and tells a story.</p>
-                        </div>
-                        <div class="studio-item">
-                            <div class="studio-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <h3>Context</h3>
-                            <p>Our designs respond to their physical, cultural, and historical context, creating buildings that belong to their place and time.</p>
-                        </div>
-                        <div class="studio-item">
-                            <div class="studio-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <h3>Human Experience</h3>
-                            <p>We design spaces that enhance human wellbeing, foster community, and create meaningful experiences for their occupants.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Team Section -->
-            <section class="team-section">
-                <div class="container">
-                    <div class="projects-hero">
-                        <h2>Leadership</h2>
-                        <p>Our team brings together diverse expertise and shared passion for creating exceptional architecture.</p>
-                    </div>
+    <!-- Studio Content -->
+    <section class="section">
+        <div class="container">
+            <div class="studio-about">
+                <div class="studio-text-content">
+                    <h2>Architectural Innovation Since 2008</h2>
+                    <p>Arch67 is an international architecture practice founded on the belief that architecture can have a profound positive impact on society. Our work is a response to the unique opportunities of each project, from the scale of a chair to a city.</p>
+                    <p>We collaborate with clients and stakeholders to create buildings and places that are sustainable, functional and beautiful. Our approach is research-based and design-led, with a focus on innovation and excellence.</p>
                     
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <div class="team-image" style="background: #e0e0e0;"></div>
-                            <h3>Dr. Sarah Chen</h3>
-                            <div class="team-role">Founding Partner</div>
-                            <p class="team-bio">With over 20 years of experience in sustainable design, Sarah leads our research and innovation initiatives.</p>
+                    <div class="studio-stats">
+                        <div class="stat">
+                            <h3>15+</h3>
+                            <p>Years of Excellence</p>
                         </div>
-                        <div class="team-member">
-                            <div class="team-image" style="background: #e0e0e0;"></div>
-                            <h3>James Al-Mansoori</h3>
-                            <div class="team-role">Design Principal</div>
-                            <p class="team-bio">James brings a deep understanding of Middle Eastern architecture and contemporary design approaches.</p>
+                        <div class="stat">
+                            <h3>200+</h3>
+                            <p>Projects Completed</p>
                         </div>
-                        <div class="team-member">
-                            <div class="team-image" style="background: #e0e0e0;"></div>
-                            <h3>Dr. Elena Rodriguez</h3>
-                            <div class="team-role">Technical Director</div>
-                            <p class="team-bio">Elena oversees our technical delivery and ensures the highest standards of construction quality.</p>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>International Awards</p>
                         </div>
-                        <div class="team-member">
-                            <div class="team-image" style="background: #e0e0e0;"></div>
-                            <h3>Marcus Thorne</h3>
-                            <div class="team-role">Urban Design Lead</div>
-                            <p class="team-bio">Marcus specializes in master planning and the integration of architecture with urban contexts.</p>
+                        <div class="stat">
+                            <h3>25+</h3>
+                            <p>Team Members</p>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <!-- Awards Section -->
-            <section class="awards-section">
-                <div class="container">
-                    <div class="projects-hero">
-                        <h2>Awards & Recognition</h2>
-                        <p>Our work has been recognized for its design excellence, innovation, and contribution to the built environment.</p>
-                    </div>
-                    
-                    <div class="awards-grid">
-                        <div class="award-item">
-                            <div class="award-year">2024</div>
-                            <h3 class="award-title">RIBA International Award</h3>
-                            <div class="award-project">ICD Brookfield Place</div>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-year">2024</div>
-                            <h3 class="award-title">World Architecture Festival</h3>
-                            <div class="award-project">Completed Building - Office</div>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-year">2023</div>
-                            <h3 class="award-title">MIPIM Award</h3>
-                            <div class="award-project">Best Office & Business Development</div>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-year">2023</div>
-                            <h3 class="award-title">LEED Platinum Certification</h3>
-                            <div class="award-project">ICD Brookfield Place</div>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-year">2022</div>
-                            <h3 class="award-title">Middle East Architect Award</h3>
-                            <div class="award-project">Commercial Project of the Year</div>
-                        </div>
-                        <div class="award-item">
-                            <div class="award-year">2022</div>
-                            <h3 class="award-title">Cityscape Emerging Architect</h3>
-                            <div class="award-project">ARCH67 Studio</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-info">
-                        <h3>ARCH67</h3>
-                        <p>An architecture and planning practice creating exceptional places that stand the test of time. We believe in architecture that is both visionary and responsible.</p>
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Contact</h4>
-                        <a href="mailto:info@arch67.com">info@arch67.com</a>
-                        <a href="tel:+97144556677">+971 4 455 6677</a>
-                        <p>Dubai Design District<br>Dubai, UAE</p>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Explore</h4>
-                        <a href="projects.html">Projects</a>
-                        <a href="studio.html">Studio</a>
-                        <a href="news.html">News</a>
-                        <a href="contact.html">Careers</a>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2025 ARCH67. All rights reserved.</p>
+                <div class="studio-image-content">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Arch67 Studio">
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
 
-    <!-- JavaScript -->
+    <!-- Philosophy Section -->
+    <section class="section studio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Philosophy</h2>
+                <p>Guiding principles that shape our architectural approach</p>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>We prioritize environmental responsibility in every project, creating buildings that are energy-efficient and environmentally conscious.</p>
+                </div>
+                <div class="philosophy-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We embrace new technologies and methodologies to push the boundaries of architectural design and construction.</p>
+                </div>
+                <div class="philosophy-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaboration</h3>
+                    <p>We work closely with clients, communities, and stakeholders to create spaces that truly serve their purpose.</p>
+                </div>
+                <div class="philosophy-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Excellence</h3>
+                    <p>We are committed to the highest standards of design quality, craftsmanship, and project delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ARCH<span>67</span></div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Arch67 Architecture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
