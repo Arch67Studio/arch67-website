@@ -160,6 +160,11 @@ function loadLatestNews() {
 
     const latestNews = news.filter(item => item.featured);
     
+    if (latestNews.length === 0) {
+        latestNewsContainer.innerHTML = '<p>No news available at the moment.</p>';
+        return;
+    }
+    
     latestNewsContainer.innerHTML = latestNews.map(item => `
         <div class="news-card">
             <div class="news-image">
@@ -180,6 +185,11 @@ function loadAllNews() {
     const allNewsContainer = document.getElementById('all-news');
     if (!allNewsContainer) return;
     
+    if (news.length === 0) {
+        allNewsContainer.innerHTML = '<p>No news available at the moment.</p>';
+        return;
+    }
+    
     allNewsContainer.innerHTML = news.map(item => `
         <div class="news-card">
             <div class="news-image">
@@ -194,3 +204,57 @@ function loadAllNews() {
         </div>
     `).join('');
 }
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing functions...');
+    
+    // Check which page we're on and load appropriate content
+    const path = window.location.pathname;
+    const page = path.split('/').pop();
+    
+    console.log('Current page:', page);
+    
+    switch(page) {
+        case 'index.html':
+        case '':
+            console.log('Loading homepage content...');
+            loadFeaturedProjects();
+            loadLatestNews();
+            break;
+        case 'projects.html':
+            console.log('Loading projects page...');
+            loadAllProjects();
+            initProjectFilter();
+            break;
+        case 'project-detail.html':
+            console.log('Loading project detail...');
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            loadProjectDetail(projectId);
+            break;
+        case 'news.html':
+            console.log('Loading news page...');
+            loadAllNews();
+            break;
+    }
+});
+
+// Also try to load content when window loads as backup
+window.addEventListener('load', function() {
+    console.log('Window fully loaded, checking for unloaded content...');
+    
+    // If on homepage and news container exists but is empty
+    const latestNewsContainer = document.getElementById('latest-news');
+    if (latestNewsContainer && latestNewsContainer.children.length === 0) {
+        console.log('News container empty, loading news...');
+        loadLatestNews();
+    }
+    
+    // If on news page and news container exists but is empty
+    const allNewsContainer = document.getElementById('all-news');
+    if (allNewsContainer && allNewsContainer.children.length === 0) {
+        console.log('All news container empty, loading all news...');
+        loadAllNews();
+    }
+});
