@@ -110,3 +110,12 @@
 .visible {
     display: block !important;
 }
+css
+/* Temporary fix - add this to your CSS */
+#search-overlay {
+    display: none !important;
+}
+
+#search-overlay.active {
+    display: flex !important;
+}
