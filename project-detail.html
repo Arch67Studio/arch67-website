@@ -239,3 +239,125 @@
     </script>
 </body>
 </html>
+// Mobile Menu and Search Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Elements
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const searchBtn = document.getElementById('search-btn');
+    const mobileSearchBtn = document.getElementById('mobile-search-btn');
+    const searchOverlay = document.getElementById('search-overlay');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+
+    // Mobile Menu Toggle
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+    }
+
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    }
+
+    // Search Functionality
+    function openSearch() {
+        searchOverlay.classList.add('active');
+        searchInput.focus();
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeSearch() {
+        searchOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        searchInput.value = '';
+    }
+
+    // Search Event Listeners
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openSearch();
+        });
+    }
+
+    if (mobileSearchBtn) {
+        mobileSearchBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openSearch();
+            mobileMenu.classList.remove('active');
+        });
+    }
+
+    if (searchClose) {
+        searchClose.addEventListener('click', closeSearch);
+    }
+
+    // Close search on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeSearch();
+            mobileMenu.classList.remove('active');
+        }
+    });
+
+    // Close mobile menu when clicking on links
+    const mobileLinks = document.querySelectorAll('.mobile-nav a');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Search functionality (basic)
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    performSearch(searchTerm);
+                }
+            }
+        });
+    }
+
+    function performSearch(term) {
+        console.log('Searching for:', term);
+        // Basic search - you can enhance this later
+        const projects = document.querySelectorAll('.project-card');
+        let found = false;
+
+        projects.forEach(project => {
+            const title = project.querySelector('.project-title').textContent.toLowerCase();
+            const location = project.querySelector('.project-location').textContent.toLowerCase();
+            
+            if (title.includes(term.toLowerCase()) || location.includes(term.toLowerCase())) {
+                project.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                project.style.boxShadow = '0 0 0 3px var(--accent-color)';
+                setTimeout(() => {
+                    project.style.boxShadow = '';
+                }, 3000);
+                found = true;
+            }
+        });
+
+        if (!found) {
+            alert('No projects found matching: ' + term);
+        }
+
+        closeSearch();
+    }
+
+    // Test menu functionality
+    console.log('✅ Mobile menu system initialized');
+    console.log('✅ Search functionality ready');
+    console.log('✅ Responsive navigation active');
+});
