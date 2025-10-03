@@ -1,363 +1,121 @@
-<!-- In index.html - Add this before your main script -->
-<script src="projects-data.js"></script>
-<script>
-    // Your existing JavaScript code here
-    function loadProject(projectId) {
-        sessionStorage.setItem('currentProject', JSON.stringify(projects[projectId]));
-        window.location.href = 'project-detail.html';
-    }
-</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Details | ARCH67</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Copy all the CSS from the previous ICD Brookfield implementation */
-        /* Add this additional CSS for back navigation */
-        .back-button {
-            position: fixed;
-            top: 2rem;
-            left: 2rem;
-            background: rgba(255,255,255,0.9);
-            border: none;
-            padding: 1rem;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 1001;
-            transition: background 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: white;
-        }
-    </style>
 </head>
 <body>
-    <!-- Back Button -->
-    <button class="back-button" onclick="goBack()">
-        <i class="fas fa-arrow-left"></i>
-    </button>
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <a href="index.html" class="logo">ARCH67</a>
+                
+                <nav class="nav-primary">
+                    <a href="projects.html">Projects</a>
+                    <a href="studio.html">Studio</a>
+                    <a href="news.html">News</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
 
-    <!-- Header -->
-   <!-- Header -->
-<header>
-    <div class="nav-container">
-        <div class="logo">ARCH67</div>
-        
-        <!-- Desktop Navigation -->
-        <nav class="nav-primary">
-            <a href="index.html">Projects</a>
-            <a href="#studio">Studio</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-        </nav>
+                <nav class="nav-secondary">
+                    <a href="#" id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </header>
 
-        <!-- Desktop Right Navigation -->
-        <nav class="nav-secondary">
-            <a href="#" id="search-btn">
-                <i class="fas fa-search"></i>
-            </a>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <button class="mobile-menu-close" id="mobile-menu-close">
+                <i class="fas fa-times"></i>
             </button>
-        </nav>
+            <nav class="mobile-nav">
+                <a href="projects.html">Projects</a>
+                <a href="studio.html">Studio</a>
+                <a href="news.html">News</a>
+                <a href="contact.html">Contact</a>
+                <a href="#" id="mobile-search-btn">
+                    <i class="fas fa-search"></i> Search
+                </a>
+            </nav>
+        </div>
+
+        <!-- Search Overlay -->
+        <div class="search-overlay" id="search-overlay">
+            <button class="search-close" id="search-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="Search projects..." id="search-input">
+            </form>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Project Hero -->
+            <section class="project-detail-hero" id="project-hero">
+                <!-- Content loaded by JavaScript -->
+            </section>
+
+            <!-- Project Info -->
+            <section class="container" id="project-info">
+                <!-- Content loaded by JavaScript -->
+            </section>
+
+            <!-- Project Gallery -->
+            <section class="project-gallery" id="project-gallery">
+                <!-- Content loaded by JavaScript -->
+            </section>
+
+            <!-- Project Description -->
+            <section class="container" id="project-description">
+                <!-- Content loaded by JavaScript -->
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="mailto:info@arch67.com">info@arch67.com</a>
+                    <a href="tel:+97144556677">+971 4 455 6677</a>
+                    <p>Dubai Design District<br>Dubai, UAE</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow</h3>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <a href="projects.html">All Projects</a>
+                    <a href="studio.html">Our Studio</a>
+                    <a href="news.html">Latest News</a>
+                    <a href="contact.html">Get in Touch</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ARCH67. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
-</header>
 
-<!-- Mobile Menu Overlay -->
-<div class="mobile-menu" id="mobile-menu">
-    <button class="mobile-menu-close" id="mobile-menu-close">
-        <i class="fas fa-times"></i>
-    </button>
-    <nav class="mobile-nav">
-        <a href="index.html">Projects</a>
-        <a href="#studio">Studio</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#" id="mobile-search-btn">
-            <i class="fas fa-search"></i> Search
-        </a>
-    </nav>
-</div>
-
-<!-- Search Overlay -->
-<div class="search-overlay" id="search-overlay">
-    <button class="search-close" id="search-close">
-        <i class="fas fa-times"></i>
-    </button>
-    <form class="search-form">
-        <input type="text" class="search-input" placeholder="Search projects..." id="search-input">
-    </form>
-</div>
-
-    <!-- Dynamic Content will be inserted here by JavaScript -->
-    <div id="project-content">
-        <!-- Content will be loaded dynamically -->
-    </div>
-
-    <script>
-        // Load project data and render page
-        document.addEventListener('DOMContentLoaded', function() {
-            const projectData = JSON.parse(sessionStorage.getItem('currentProject'));
-            
-            if (!projectData) {
-                // Redirect to main page if no project data
-                window.location.href = 'index.html';
-                return;
-            }
-
-            renderProjectPage(projectData);
-        });
-
-        function renderProjectPage(project) {
-            const contentContainer = document.getElementById('project-content');
-            
-            contentContainer.innerHTML = `
-                <!-- Hero Section -->
-                <section class="hero">
-                    <img src="${project.images[0]}" alt="${project.title}" class="hero-image">
-                    <div class="hero-content fade-in">
-                        <h1 class="hero-title">${project.title}</h1>
-                        <p class="hero-subtitle">${project.location}</p>
-                    </div>
-                </section>
-
-                <!-- Project Information -->
-                <section class="project-info">
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <h3>Location</h3>
-                            <p>${project.location}</p>
-                        </div>
-                        <div class="info-item">
-                            <h3>Client</h3>
-                            <p>${project.client}</p>
-                        </div>
-                        <div class="info-item">
-                            <h3>Size</h3>
-                            <p>${project.size}</p>
-                        </div>
-                        <div class="info-item">
-                            <h3>Status</h3>
-                            <p>${project.status}</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Gallery -->
-                <section class="gallery">
-                    ${project.images.map((image, index) => `
-                        <div class="gallery-item">
-                            <img src="${image}" alt="${project.title} - View ${index + 1}" class="gallery-image">
-                            <div class="image-caption">${project.features[index] || 'Architectural detail'}</div>
-                        </div>
-                    `).join('')}
-                </section>
-
-                <!-- Project Details -->
-                <section class="project-details">
-                    <div class="detail-section">
-                        <h2>Architectural Vision</h2>
-                        <p>${project.description}</p>
-                        <p>The design represents our commitment to innovative sustainable architecture while creating iconic landmarks that define city skylines.</p>
-                    </div>
-
-                    <div class="detail-section">
-                        <h2>Key Features</h2>
-                        <ul>
-                            ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-                        </ul>
-                        
-                        <div class="stats">
-                            <div class="stat-item">
-                                <span class="stat-number">${project.stats.floors}</span>
-                                <span class="stat-label">Floors</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">${project.stats.area}</span>
-                                <span class="stat-label">Square Feet</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">${project.stats.certification}</span>
-                                <span class="stat-label">Certified</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">${project.stats.year}</span>
-                                <span class="stat-label">${project.status.includes('Completed') ? 'Completed' : 'Target'}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="detail-section">
-                        <h2>Sustainability</h2>
-                        <p>This project incorporates advanced environmental strategies including high-performance facades, water recycling systems, and energy-efficient building management, targeting ${project.stats.certification} certification.</p>
-                    </div>
-                </section>
-
-                <!-- Footer -->
-                <footer>
-                    <div class="footer-content">
-                        <div class="footer-section">
-                            <h3>Contact</h3>
-                            <a href="mailto:info@arch67.com">info@arch67.com</a>
-                            <a href="tel:+97144556677">+971 4 455 6677</a>
-                            <p>Dubai Design District<br>Dubai, UAE</p>
-                        </div>
-                        <div class="footer-section">
-                            <h3>Follow</h3>
-                            <div class="social-links">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                        <div class="footer-section">
-                            <h3>Explore</h3>
-                            <a href="index.html">All Projects</a>
-                            <a href="#careers">Careers</a>
-                            <a href="#press">Press</a>
-                            <a href="#newsletter">Newsletter</a>
-                        </div>
-                    </div>
-                </footer>
-            `;
-
-            // Update page title
-            document.title = `${project.title} | ARCH67`;
-        }
-
-        function goBack() {
-            window.history.back();
-        }
-
-        // Add the same JavaScript functionality from previous implementation
-        // (smooth scrolling, animations, etc.)
-    </script>
+    <!-- JavaScript -->
+    <script src="assets/js/projects-data.js"></script>
+    <script src="assets/js/images-data.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
-// Mobile Menu and Search Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Elements
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const searchBtn = document.getElementById('search-btn');
-    const mobileSearchBtn = document.getElementById('mobile-search-btn');
-    const searchOverlay = document.getElementById('search-overlay');
-    const searchClose = document.getElementById('search-close');
-    const searchInput = document.getElementById('search-input');
-
-    // Mobile Menu Toggle
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-        });
-    }
-
-    if (mobileMenuClose) {
-        mobileMenuClose.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        });
-    }
-
-    // Search Functionality
-    function openSearch() {
-        searchOverlay.classList.add('active');
-        searchInput.focus();
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeSearch() {
-        searchOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-        searchInput.value = '';
-    }
-
-    // Search Event Listeners
-    if (searchBtn) {
-        searchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            openSearch();
-        });
-    }
-
-    if (mobileSearchBtn) {
-        mobileSearchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            openSearch();
-            mobileMenu.classList.remove('active');
-        });
-    }
-
-    if (searchClose) {
-        searchClose.addEventListener('click', closeSearch);
-    }
-
-    // Close search on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeSearch();
-            mobileMenu.classList.remove('active');
-        }
-    });
-
-    // Close mobile menu when clicking on links
-    const mobileLinks = document.querySelectorAll('.mobile-nav a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-
-    // Search functionality (basic)
-    if (searchInput) {
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                const searchTerm = this.value.trim();
-                if (searchTerm) {
-                    performSearch(searchTerm);
-                }
-            }
-        });
-    }
-
-    function performSearch(term) {
-        console.log('Searching for:', term);
-        // Basic search - you can enhance this later
-        const projects = document.querySelectorAll('.project-card');
-        let found = false;
-
-        projects.forEach(project => {
-            const title = project.querySelector('.project-title').textContent.toLowerCase();
-            const location = project.querySelector('.project-location').textContent.toLowerCase();
-            
-            if (title.includes(term.toLowerCase()) || location.includes(term.toLowerCase())) {
-                project.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                project.style.boxShadow = '0 0 0 3px var(--accent-color)';
-                setTimeout(() => {
-                    project.style.boxShadow = '';
-                }, 3000);
-                found = true;
-            }
-        });
-
-        if (!found) {
-            alert('No projects found matching: ' + term);
-        }
-
-        closeSearch();
-    }
-
-    // Test menu functionality
-    console.log('✅ Mobile menu system initialized');
-    console.log('✅ Search functionality ready');
-    console.log('✅ Responsive navigation active');
-});
