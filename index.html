@@ -3,152 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ARCH67 • Architecture & Planning</title>
-    <meta name="description" content="ARCH67 is an architecture and planning practice creating exceptional places that stand the test of time.">
+    <title>Arch67 | Architecture Studio</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="content-wrapper">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-container">
-                <a href="index.html" class="logo">ARCH67</a>
-                
-                <nav class="nav-primary">
-                    <a href="projects.html">Projects</a>
-                    <a href="studio.html">Studio</a>
-                    <a href="news.html">News</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-
-                <nav class="nav-secondary">
-                    <a href="#" id="search-btn">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <button class="mobile-menu-btn" id="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobile-menu">
-            <button class="mobile-menu-close" id="mobile-menu-close">
-                <i class="fas fa-times"></i>
-            </button>
-            <nav class="mobile-nav">
-                <a href="projects.html">Projects</a>
-                <a href="studio.html">Studio</a>
-                <a href="news.html">News</a>
-                <a href="contact.html">Contact</a>
-                <a href="#" id="mobile-search-btn">
-                    <i class="fas fa-search"></i> Search
-                </a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">ARCH<span>67</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="studio.html">Studio</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
+    </header>
 
-        <!-- Search Overlay -->
-        <div class="search-overlay" id="search-overlay">
-            <button class="search-close" id="search-close">
-                <i class="fas fa-times"></i>
-            </button>
-            <form class="search-form">
-                <input type="text" class="search-input" placeholder="Search projects..." id="search-input">
-            </form>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Architectural Excellence Through Innovative Design</h1>
+                <p>Creating sustainable, functional and beautiful spaces that inspire and endure.</p>
+            </div>
         </div>
+    </section>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Hero Section -->
-            <section class="hero">
-                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                     alt="ARCH67 Architecture" class="hero-image">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <h1 class="hero-title">ARCH67</h1>
-                    <p class="hero-subtitle">Creating architecture that responds to its context, climate, and culture while pushing the boundaries of design innovation.</p>
-                    <a href="projects.html" class="view-project">Explore Our Work</a>
-                </div>
-            </section>
+    <!-- Projects Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+                <p>Explore our portfolio of innovative architectural designs</p>
+            </div>
+            <div class="projects-grid" id="featured-projects">
+                <!-- Projects will be loaded from JavaScript -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="projects.html" class="btn btn-outline">View All Projects</a>
+            </div>
+        </div>
+    </section>
 
-            <!-- Featured Projects Preview -->
-            <section class="projects-section">
-                <div class="container">
-                    <div class="projects-hero">
-                        <h2>Selected Projects</h2>
-                        <p>Exploring the boundaries of architectural design and urban planning</p>
-                    </div>
-                    
-                    <div class="projects-grid">
-                        <!-- ICD Brookfield Place -->
-                        <div class="project-item">
-                            <a href="project-detail.html" class="project-link" data-project-id="icd-brookfield">
-                                <div class="project-image-container">
-                                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                         alt="ICD Brookfield Place" class="project-image">
-                                </div>
-                                <div class="project-info">
-                                    <h3 class="project-title">ICD Brookfield Place</h3>
-                                    <p class="project-location">Dubai International Financial Centre, UAE</p>
-                                    <div class="project-meta">
-                                        <div class="meta-item">
-                                            <span class="meta-label">Size</span>
-                                            <span>93,000 sq m</span>
-                                        </div>
-                                        <div class="meta-item">
-                                            <span class="meta-label">Status</span>
-                                            <span>Completed 2023</span>
-                                        </div>
-                                    </div>
-                                    <p class="project-description">A landmark commercial development redefining the Dubai International Financial Centre skyline with innovative architectural expression.</p>
-                                    <span class="view-project">View Project <i class="fas fa-arrow-right"></i></span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+    <!-- Studio Section -->
+    <section class="section studio">
+        <div class="container">
+            <div class="studio-content">
+                <div class="studio-text">
+                    <h2>Our Studio</h2>
+                    <p>Arch67 is an international architecture practice founded on the belief that architecture can have a profound positive impact on society. Our work is a response to the unique opportunities of each project, from the scale of a chair to a city.</p>
+                    <p>We collaborate with clients and stakeholders to create buildings and places that are sustainable, functional and beautiful. Our approach is research-based and design-led, with a focus on innovation and excellence.</p>
+                    <a href="studio.html" class="btn">Learn More</a>
                 </div>
-            </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-info">
-                        <h3>ARCH67</h3>
-                        <p>An architecture and planning practice creating exceptional places that stand the test of time. We believe in architecture that is both visionary and responsible.</p>
-                        <div class="footer-social">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Contact</h4>
-                        <a href="mailto:info@arch67.com">info@arch67.com</a>
-                        <a href="tel:+97144556677">+971 4 455 6677</a>
-                        <p>Dubai Design District<br>Dubai, UAE</p>
-                    </div>
-                    <div class="footer-section">
-                        <h4>Explore</h4>
-                        <a href="projects.html">Projects</a>
-                        <a href="studio.html">Studio</a>
-                        <a href="news.html">News</a>
-                        <a href="contact.html">Careers</a>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2025 ARCH67. All rights reserved.</p>
+                <div class="studio-image">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Arch67 Studio">
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
 
-    <!-- JavaScript -->
+    <!-- News Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest News</h2>
+                <p>Stay updated with our latest projects and achievements</p>
+            </div>
+            <div class="news-grid" id="latest-news">
+                <!-- News will be loaded from JavaScript -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="news.html" class="btn btn-outline">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ARCH<span>67</span></div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Arch67 Architecture. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="assets/js/projects-data.js"></script>
-    <script src="assets/js/images-data.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // Load featured projects on homepage
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFeaturedProjects();
+            loadLatestNews();
+        });
+    </script>
 </body>
 </html>
