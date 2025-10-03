@@ -1,209 +1,253 @@
-// Main JavaScript for ARCH67 Website
-document.addEventListener('DOMContentLoaded', function() {
-    initializeWebsite();
-});
-
-function initializeWebsite() {
-    setupMobileMenu();
-    setupSearch();
-    setupProjectNavigation();
-    console.log('ARCH67 Website initialized');
-}
-
-// Mobile Menu Functionality
-function setupMobileMenu() {
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+// Foster + Partners Style JavaScript
+class FosterStyleWebsite {
+    constructor() {
+        this.init();
     }
 
-    if (mobileMenuClose && mobileMenu) {
-        mobileMenuClose.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+    init() {
+        this.setupMobileMenu();
+        this.setupSearch();
+        this.setupSmoothScrolling();
+        this.setupHeaderScroll();
+        this.setupProjectHover();
+        this.setupImageLoading();
+        this.setupAnimations();
+        
+        console.log('ARCH67 Foster Style Website initialized');
     }
 
-    // Close mobile menu when clicking on links
-    const mobileLinks = document.querySelectorAll('.mobile-nav a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            if (mobileMenu) {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
+    setupMobileMenu() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
 
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
         }
-    });
-}
 
-// Search Functionality - FIXED
-function setupSearch() {
-    const searchBtn = document.getElementById('search-btn');
-    const mobileSearchBtn = document.getElementById('mobile-search-btn');
-    const searchOverlay = document.getElementById('search-overlay');
-    const searchClose = document.getElementById('search-close');
-    const searchInput = document.getElementById('search-input');
-
-    // Ensure search overlay is hidden on page load
-    if (searchOverlay) {
-        searchOverlay.classList.remove('active');
-    }
-
-    // Desktop search button
-    if (searchBtn && searchOverlay) {
-        searchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            searchOverlay.classList.add('active');
-            if (searchInput) {
-                searchInput.focus();
-            }
-            document.body.style.overflow = 'hidden';
-        });
-    }
-
-    // Mobile search button
-    if (mobileSearchBtn && searchOverlay) {
-        mobileSearchBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Close mobile menu first
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu) {
+        if (mobileMenuClose && mobileMenu) {
+            mobileMenuClose.addEventListener('click', () => {
                 mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        const mobileLinks = document.querySelectorAll('.mobile-nav a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
             }
-            // Open search
-            searchOverlay.classList.add('active');
-            if (searchInput) {
-                searchInput.focus();
-            }
-            document.body.style.overflow = 'hidden';
         });
     }
 
-    // Close search
-    if (searchClose && searchOverlay) {
-        searchClose.addEventListener('click', function() {
+    setupSearch() {
+        const searchBtn = document.getElementById('search-btn');
+        const mobileSearchBtn = document.getElementById('mobile-search-btn');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+
+        // Ensure search overlay is hidden on load
+        if (searchOverlay) searchOverlay.classList.remove('active');
+
+        if (searchBtn && searchOverlay) {
+            searchBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                searchOverlay.classList.add('active');
+                if (searchInput) searchInput.focus();
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (mobileSearchBtn && searchOverlay) {
+            mobileSearchBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) mobileMenu.classList.remove('active');
+                searchOverlay.classList.add('active');
+                if (searchInput) searchInput.focus();
+                document.body.style.overflow = 'hidden';
+            });
+        }
+
+        if (searchClose && searchOverlay) {
+            searchClose.addEventListener('click', () => {
+                searchOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                if (searchInput) searchInput.value = '';
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (searchOverlay && searchOverlay.classList.contains('active')) {
+                    searchOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                    if (searchInput) searchInput.value = '';
+                }
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+
+        if (searchOverlay) {
+            searchOverlay.addEventListener('click', (e) => {
+                if (e.target === searchOverlay) {
+                    searchOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                    if (searchInput) searchInput.value = '';
+                }
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    this.performSearch(searchInput.value.trim());
+                }
+            });
+        }
+    }
+
+    performSearch(term) {
+        if (!term) return;
+
+        const projectItems = document.querySelectorAll('.project-item');
+        let found = false;
+
+        projectItems.forEach(item => {
+            const title = item.querySelector('.project-title')?.textContent.toLowerCase() || '';
+            const location = item.querySelector('.project-location')?.textContent.toLowerCase() || '';
+            
+            if (title.includes(term.toLowerCase()) || location.includes(term.toLowerCase())) {
+                item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                item.style.backgroundColor = 'var(--gray-light)';
+                setTimeout(() => {
+                    item.style.backgroundColor = '';
+                }, 3000);
+                found = true;
+            }
+        });
+
+        const searchOverlay = document.getElementById('search-overlay');
+        if (searchOverlay) {
             searchOverlay.classList.remove('active');
             document.body.style.overflow = '';
-            if (searchInput) searchInput.value = '';
-        });
-    }
-
-    // Close search on escape key and when clicking outside
-    if (searchOverlay) {
-        // Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
-                searchOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-                if (searchInput) searchInput.value = '';
-            }
-        });
-
-        // Click outside
-        searchOverlay.addEventListener('click', function(e) {
-            if (e.target === searchOverlay) {
-                searchOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-                if (searchInput) searchInput.value = '';
-            }
-        });
-    }
-
-    // Handle search input
-    if (searchInput) {
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                performSearch(searchInput.value.trim());
-            }
-        });
-    }
-}
-
-function performSearch(term) {
-    if (!term) return;
-
-    const projectCards = document.querySelectorAll('.project-card');
-    let found = false;
-
-    projectCards.forEach(card => {
-        const title = card.querySelector('.project-title')?.textContent.toLowerCase() || '';
-        const location = card.querySelector('.project-location')?.textContent.toLowerCase() || '';
-        
-        if (title.includes(term.toLowerCase()) || location.includes(term.toLowerCase())) {
-            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            card.style.outline = '2px solid var(--accent-gold)';
-            setTimeout(() => {
-                card.style.outline = 'none';
-            }, 3000);
-            found = true;
         }
-    });
 
-    // Close search overlay
-    const searchOverlay = document.getElementById('search-overlay');
-    if (searchOverlay) {
-        searchOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+        if (!found) {
+            console.log('No projects found matching:', term);
+        }
     }
 
-    if (!found) {
-        console.log('No projects found matching:', term);
-    }
-}
-
-// Project Navigation
-function setupProjectNavigation() {
-    const projectCards = document.querySelectorAll('.project-card[data-project-id]');
-    
-    projectCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const projectId = this.dataset.projectId;
-            loadProject(projectId);
+    setupSmoothScrolling() {
+        const links = document.querySelectorAll('a[href^="#"]');
+        
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href === '#') return;
+                
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
-    });
+    }
 
-    const viewProjectBtns = document.querySelectorAll('.view-project[data-project-id]');
-    
-    viewProjectBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const projectId = this.dataset.projectId;
-            if (projectId) {
-                loadProject(projectId);
+    setupHeaderScroll() {
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
         });
-    });
-}
-
-function loadProject(projectId) {
-    const projectData = projects[projectId];
-    if (!projectData) {
-        console.error('Project not found:', projectId);
-        return;
     }
 
-    sessionStorage.setItem('currentProject', JSON.stringify(projectData));
-    window.location.href = 'project-detail.html';
+    setupProjectHover() {
+        const projectItems = document.querySelectorAll('.project-item');
+        
+        projectItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.backgroundColor = 'var(--gray-light)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                item.style.backgroundColor = '';
+            });
+        });
+    }
+
+    setupImageLoading() {
+        const images = document.querySelectorAll('img');
+        
+        images.forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            img.addEventListener('error', function() {
+                console.warn('Image failed to load:', this.src);
+            });
+        });
+    }
+
+    setupAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        const animateElements = document.querySelectorAll('.project-item, .content-section, .gallery-item');
+        animateElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    }
 }
 
-// Handle project detail page
+// Initialize website
+document.addEventListener('DOMContentLoaded', () => {
+    new FosterStyleWebsite();
+});
+
+// Project detail page handling
 if (window.location.pathname.includes('project-detail.html')) {
     document.addEventListener('DOMContentLoaded', loadProjectDetail);
 }
@@ -228,9 +272,10 @@ function renderProjectDetail(project) {
     if (heroSection && projectImageData) {
         heroSection.innerHTML = `
             <img src="${projectImageData.hero.url}" alt="${projectImageData.hero.alt}" class="hero-image">
-            <div class="hero-content">
-                <h1 class="hero-title">${project.title}</h1>
-                <p class="hero-subtitle">${project.location}</p>
+            <div class="hero-overlay"></div>
+            <div class="project-hero-content">
+                <h1 class="project-detail-title">${project.title}</h1>
+                <p class="project-detail-location">${project.location}</p>
             </div>
         `;
     }
@@ -271,25 +316,21 @@ function renderProjectDetail(project) {
         `).join('');
     }
 
-    // Render description
-    const descriptionSection = document.getElementById('project-description');
-    if (descriptionSection) {
-        descriptionSection.innerHTML = `
-            <div class="project-description">
-                <div class="description-section">
+    // Render content
+    const contentSection = document.getElementById('project-content');
+    if (contentSection) {
+        contentSection.innerHTML = `
+            <div class="project-content">
+                <div class="content-section">
                     <h2>Architectural Vision</h2>
                     ${project.longDescription.map(paragraph => `
                         <p>${paragraph}</p>
                     `).join('')}
                 </div>
 
-                <div class="description-section">
-                    <h2>Key Features</h2>
-                    <ul>
-                        ${project.features.map(feature => `
-                            <li>${feature}</li>
-                        `).join('')}
-                    </ul>
+                <div class="content-section">
+                    <h2>Design Approach</h2>
+                    <p>${project.designApproach || 'Innovative design solutions that respond to context, climate, and user needs while pushing the boundaries of architectural expression.'}</p>
                     
                     <div class="project-stats">
                         <div class="stat-item">
@@ -298,24 +339,40 @@ function renderProjectDetail(project) {
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">${project.stats.area}</span>
-                            <span class="stat-label">Square Feet</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">${project.stats.certification}</span>
-                            <span class="stat-label">Certified</span>
+                            <span class="stat-label">Square Meters</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">${project.stats.year}</span>
-                            <span class="stat-label">${project.status.includes('Completed') ? 'Completed' : 'Target'}</span>
+                            <span class="stat-label">Year</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">${project.stats.certification}</span>
+                            <span class="stat-label">Certification</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="description-section">
-                    <h2>Services</h2>
-                    <p>${project.services.join(', ')}</p>
+                <div class="content-section">
+                    <h2>Technical Innovation</h2>
+                    <p>${project.technicalInnovation || 'State-of-the-art building systems and sustainable technologies integrated seamlessly into the architectural design.'}</p>
                 </div>
             </div>
         `;
     }
 }
+
+// Project navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const projectLinks = document.querySelectorAll('.project-link');
+    
+    projectLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const projectId = this.dataset.projectId;
+            if (projectId && projects[projectId]) {
+                sessionStorage.setItem('currentProject', JSON.stringify(projects[projectId]));
+                window.location.href = 'project-detail.html';
+            }
+        });
+    });
+});
