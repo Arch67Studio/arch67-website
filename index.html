@@ -1,3 +1,12 @@
+<!-- In index.html - Add this before your main script -->
+<script src="projects-data.js"></script>
+<script>
+    // Your existing JavaScript code here
+    function loadProject(projectId) {
+        sessionStorage.setItem('currentProject', JSON.stringify(projects[projectId]));
+        window.location.href = 'project-detail.html';
+    }
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
