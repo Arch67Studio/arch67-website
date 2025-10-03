@@ -1,116 +1,172 @@
-// Foster + Partners Style Projects Data
-const projects = {
-    'Expo 2020 - Chile Pavilion': {
-        id: 'Expo 2020 - Chile Pavilion',
-        title: 'Expo 2020 - Chile Pavilion',
-        location: 'Expo 2020, Dubai, UAE',
-        client: 'Expo 2020',
-        size: '93,000 sq m',
-        status: 'Completed 2023',
-        year: 2023,
-        description: 'A landmark commercial development redefining the Dubai International Financial Centre skyline with innovative architectural expression and sustainable design principles.',
-        longDescription: [
-            'ICD Brookfield Place establishes a new paradigm for commercial architecture in the Middle East, creating a distinctive landmark within the Dubai International Financial Centre. The design responds to its urban context while establishing a strong architectural identity through its elegant form and sophisticated material palette.',
-            'The tower features a highly efficient structural diagrid system that provides both architectural expression and structural performance. The facade incorporates high-performance glazing with integrated shading devices, optimizing energy performance while maximizing daylight and views.',
-            'At the heart of the development is a spectacular 50-meter-high atrium that serves as a social hub, featuring curated art installations, flexible event spaces, and premium retail offerings. This space creates a vibrant internal street that connects the various components of the development while providing a unique arrival experience.'
-        ],
-        designApproach: 'The architectural concept explores the relationship between solid and void, creating a dynamic composition that changes throughout the day. The carefully calibrated massing responds to solar orientation and prevailing winds, while the material palette of glass, steel, and stone creates a timeless aesthetic.',
-        technicalInnovation: 'Advanced building management systems, high-performance facade technology, and integrated renewable energy systems contribute to the project\'s LEED Platinum certification. The design incorporates state-of-the-art seismic engineering and climate-responsive strategies.',
-        features: [
-            'LEED Platinum Certified',
-            '53-story commercial tower',
-            '93,000 sq m of office space',
-            '50-meter-high central atrium',
-            'Premium retail and dining',
-            'Advanced building management system'
-        ],
-        stats: {
-            floors: 53,
-            area: '93,000',
-            certification: 'LEED Platinum',
-            year: 2023
+// Projects data
+const projects = [
+    {
+        id: 1,
+        title: "ICD Brookfield Place",
+        location: "Dubai, UAE",
+        type: "commercial",
+        featured: true,
+        description: "A landmark commercial tower in the heart of Dubai's financial district, featuring innovative sustainable design and state-of-the-art amenities. The building incorporates advanced energy-efficient systems and offers panoramic views of the city skyline.",
+        details: {
+            "Client": "ICD & Brookfield Properties",
+            "Area": "85,000 sqm",
+            "Year": "2022",
+            "Status": "Completed",
+            "Awards": "International Architecture Award 2023"
         },
-        services: [
-            'Architecture',
-            'Interior Design',
-            'Sustainability Consulting',
-            'Structural Engineering'
+        images: [
+            "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80"
         ]
     },
-
-    'marina-financial': {
-        id: 'marina-financial',
-        title: 'Marina Financial Center',
-        location: 'Dubai Marina, UAE',
-        client: 'Marina Development Corporation',
-        size: '79,000 sq m',
-        status: 'Under Construction',
-        year: 2025,
-        description: 'A visionary financial hub redefining the Dubai Marina skyline with innovative sustainable design and cutting-edge technology integration.',
-        longDescription: [
-            'The Marina Financial Center rises as a sculptural form along the Dubai Marina waterfront, creating a dynamic dialogue between the built environment and the natural landscape. The design incorporates multiple setbacks that provide terraced gardens and outdoor spaces with panoramic views of the marina and Arabian Gulf.',
-            'The building\'s facade features a responsive brise-soleil system that adjusts to solar orientation, reducing heat gain while creating a constantly changing architectural expression. Advanced building integrated photovoltaic systems are incorporated into the roof and upper levels, contributing to the project\'s energy independence.',
-            'A dedicated financial trading floor occupies the middle levels, featuring state-of-the-art technology infrastructure and flexible floor plates that can accommodate various financial institution requirements. The ground level features a public plaza that extends the marina walkway, creating a seamless connection to the waterfront.'
-        ],
-        designApproach: 'The design concept draws inspiration from the dynamic movement of water and sail forms, creating a building that appears to be in motion. The curved glass facade reflects the changing colors of the sky and water, while the strategic massing maximizes views and minimizes solar heat gain.',
-        technicalInnovation: 'Integrated smart building systems, AI-powered energy management, and advanced structural damping systems ensure optimal performance. The project targets LEED Platinum and WELL Platinum certifications.',
-        features: [
-            'LEED Platinum Target',
-            '48-story mixed-use tower',
-            'Dedicated financial trading floors',
-            'Sky gardens and terraces',
-            'Helipad and premium amenities',
-            'AI-powered building management'
-        ],
-        stats: {
-            floors: 48,
-            area: '79,000',
-            certification: 'LEED Platinum Target',
-            year: 2025
+    {
+        id: 2,
+        title: "Marina Financial Center",
+        location: "Singapore",
+        type: "commercial",
+        featured: true,
+        description: "An iconic financial center located in Singapore's Marina Bay district, designed to create a harmonious balance between corporate functionality and public accessibility. The building features a unique double-skin facade for optimal energy performance.",
+        details: {
+            "Client": "Marina Bay Development",
+            "Area": "120,000 sqm",
+            "Year": "2021",
+            "Status": "Completed",
+            "Sustainability": "LEED Platinum Certified"
         },
-        services: [
-            'Architecture',
-            'Structural Engineering',
-            'MEP Engineering',
-            'Technology Integration'
+        images: [
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
         ]
     },
-
-    'noor-residences': {
-        id: 'noor-residences',
-        title: 'Noor Residences',
-        location: 'Downtown Dubai, UAE',
-        client: 'Noor Development Group',
-        size: '60,000 sq m',
-        status: 'Completed 2024',
-        year: 2024,
-        description: 'Luxury residential towers offering unparalleled views of Burj Khalifa and Dubai Fountain, featuring bespoke interiors and exclusive amenities.',
-        longDescription: [
-            'Noor Residences comprises two elegant towers that frame views of the Burj Khalifa and Dubai Fountain, creating a privileged residential address in the world\'s most dynamic urban center. The design carefully considers solar orientation and prevailing winds to optimize natural ventilation and daylighting.',
-            'Each residence features floor-to-ceiling glass with integrated automated shading systems, providing both spectacular views and environmental control. The towers are connected by a sky bridge containing shared amenities including an infinity pool, fitness center, and residents lounge with direct Burj Khalifa views.',
-            'The ground level features a curated landscape of native plants and water features that create a microclimate, reducing ambient temperatures while providing a serene arrival experience. The project achieved WELL Certification for its focus on occupant health and wellbeing, incorporating advanced air filtration systems and biophilic design principles.'
-        ],
-        designApproach: 'The architectural concept explores the idea of "framed views," with each apartment carefully oriented to capture specific vistas of the surrounding cityscape. The material palette of travertine, bronze, and glass creates a warm, luxurious aesthetic that ages gracefully over time.',
-        technicalInnovation: 'Advanced smart home systems, integrated wellness technologies, and state-of-the-art security systems provide residents with unparalleled comfort and safety. The building achieves WELL Platinum certification through its focus on occupant health.',
-        features: [
-            'WELL Platinum Certified',
-            '42-story twin towers',
-            '360-degree city views',
-            'Private infinity pools',
-            'Smart home integration',
-            'Exclusive residents club'
-        ],
-        stats: {
-            floors: 42,
-            area: '60,000',
-            certification: 'WELL Platinum',
-            year: 2024
+    {
+        id: 3,
+        title: "Noor Residences",
+        location: "Doha, Qatar",
+        type: "residential",
+        featured: true,
+        description: "Luxury residential towers that redefine urban living in Doha. The design incorporates traditional Qatari architectural elements with contemporary aesthetics, creating private oases in the sky with breathtaking views of the Arabian Gulf.",
+        details: {
+            "Client": "Qatar Development Authority",
+            "Area": "65,000 sqm",
+            "Year": "2023",
+            "Status": "Completed",
+            "Units": "150 Luxury Apartments"
         },
-        services: [
-            'Architecture',
-            'Interior Design',
-            'Landscape Architecture',
-            'Wellness Consulting'
+        images: [
+            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+        ]
+    },
+    {
+        id: 4,
+        title: "The Art Pavilion",
+        location: "London, UK",
+        type: "cultural",
+        featured: false,
+        description: "A contemporary art pavilion in London's cultural district, designed as a flexible space for exhibitions and performances. The building features movable walls and adaptable lighting systems to accommodate various art forms.",
+        details: {
+            "Client": "London Arts Council",
+            "Area": "8,500 sqm",
+            "Year": "2022",
+            "Status": "Completed",
+            "Capacity": "500 visitors"
+        },
+        images: [
+            "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+            "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        ]
+    },
+    {
+        id: 5,
+        title: "Sky Garden Towers",
+        location: "New York, USA",
+        type: "residential",
+        featured: false,
+        description: "Twin residential towers in Manhattan featuring innovative vertical gardens and sustainable design principles. Each apartment includes private outdoor space with integrated planting systems.",
+        details: {
+            "Client": "Manhattan Living",
+            "Area": "95,000 sqm",
+            "Year": "2023",
+            "Status": "Under Construction",
+            "Completion": "2024"
+        },
+        images: [
+            "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80",
+            "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        ]
+    },
+    {
+        id: 6,
+        title: "Innovation Campus",
+        location: "Berlin, Germany",
+        type: "commercial",
+        featured: false,
+        description: "A technology campus designed to foster collaboration and innovation. The campus includes research facilities, collaborative workspaces, and recreational areas in a park-like setting.",
+        details: {
+            "Client": "Berlin Tech Hub",
+            "Area": "150,000 sqm",
+            "Year": "2021",
+            "Status": "Completed",
+            "Sustainability": "Net Zero Energy"
+        },
+        images: [
+            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
         ]
     }
-};
+];
+
+// News data
+const news = [
+    {
+        id: 1,
+        title: "Arch67 Wins International Architecture Award",
+        date: "June 15, 2023",
+        excerpt: "Our ICD Brookfield Place project has been recognized with the prestigious International Architecture Award for excellence in commercial design.",
+        image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80",
+        featured: true
+    },
+    {
+        id: 2,
+        title: "New Sustainable Design Initiative",
+        date: "May 28, 2023",
+        excerpt: "We're proud to announce our commitment to carbon-neutral design across all projects by 2025 as part of our sustainability initiative.",
+        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        featured: true
+    },
+    {
+        id: 3,
+        title: "Arch67 Exhibition Opens in London",
+        date: "April 12, 2023",
+        excerpt: "Our retrospective exhibition showcasing 15 years of architectural innovation opens at the Design Museum London next month.",
+        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+        featured: true
+    },
+    {
+        id: 4,
+        title: "Noor Residences Receives Design Excellence Award",
+        date: "March 22, 2023",
+        excerpt: "Our residential project in Doha has been honored with the Middle East Design Excellence Award for innovative residential architecture.",
+        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
+        featured: false
+    },
+    {
+        id: 5,
+        title: "Arch67 Expands to Asian Market",
+        date: "February 15, 2023",
+        excerpt: "We're excited to announce the opening of our new studio in Singapore to better serve our growing client base in Asia.",
+        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        featured: false
+    },
+    {
+        id: 6,
+        title: "Sustainable Materials Research Partnership",
+        date: "January 8, 2023",
+        excerpt: "We've partnered with leading universities to research and develop new sustainable building materials for future projects.",
+        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        featured: false
+    }
+];
