@@ -17,16 +17,56 @@
             color: #000;
         }
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            padding: 1.5rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
+       <!-- Header -->
+<header>
+    <div class="nav-container">
+        <div class="logo">ARCH67</div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav-primary">
+            <a href="index.html">Projects</a>
+            <a href="#studio">Studio</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- Desktop Right Navigation -->
+        <nav class="nav-secondary">
+            <a href="#" id="search-btn">
+                <i class="fas fa-search"></i>
+            </a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-menu-close">
+        <i class="fas fa-times"></i>
+    </button>
+    <nav class="mobile-nav">
+        <a href="index.html">Projects</a>
+        <a href="#studio">Studio</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#" id="mobile-search-btn">
+            <i class="fas fa-search"></i> Search
+        </a>
+    </nav>
+</div>
+
+<!-- Search Overlay -->
+<div class="search-overlay" id="search-overlay">
+    <button class="search-close" id="search-close">
+        <i class="fas fa-times"></i>
+    </button>
+    <form class="search-form">
+        <input type="text" class="search-input" placeholder="Search projects..." id="search-input">
+    </form>
+</div>
         }
 
         .logo {
