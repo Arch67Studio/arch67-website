@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Arch67</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .projects-hero {
+            padding: 8rem 2rem 4rem;
+            background: var(--gray);
+        }
+        
+        .projects-filters {
+            padding: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--black);
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+        
+        .projects-archive {
+            padding: 4rem 0;
+        }
+        
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-archive-item {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">ARCH67</a>
+            <div class="nav-menu">
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="studio.html" class="nav-link">Studio</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="projects-hero">
+        <div class="container">
+            <h1>Projects</h1>
+            <p>Exploring the boundaries of architectural innovation across commercial, residential, and cultural domains.</p>
+        </div>
+    </section>
+
+    <section class="projects-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="cultural">Cultural</button>
+                <button class="filter-btn" data-filter="mixed-use">Mixed-Use</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-archive">
+        <div class="container">
+            <div class="archive-grid">
+                <a href="#" class="project-archive-item" data-category="commercial">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marina Financial Center">
+                    </div>
+                    <h3>Marina Financial Center</h3>
+                    <div class="project-meta">
+                        <span>Commercial</span>
+                        <span>2024</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="project-archive-item" data-category="residential">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Al Noor Residences">
+                    </div>
+                    <h3>Al Noor Residences</h3>
+                    <div class="project-meta">
+                        <span>Residential</span>
+                        <span>2024</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="project-archive-item" data-category="cultural">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desert Arts Pavilion">
+                    </div>
+                    <h3>Desert Arts Pavilion</h3>
+                    <div class="project-meta">
+                        <span>Cultural</span>
+                        <span>2023</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="project-archive-item" data-category="mixed-use">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="The Oasis Quarter">
+                    </div>
+                    <h3>The Oasis Quarter</h3>
+                    <div class="project-meta">
+                        <span>Mixed-Use</span>
+                        <span>2023</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="project-archive-item" data-category="commercial">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Bay Tower">
+                    </div>
+                    <h3>Business Bay Tower</h3>
+                    <div class="project-meta">
+                        <span>Commercial</span>
+                        <span>2023</span>
+                    </div>
+                </a>
+                
+                <a href="#" class="project-archive-item" data-category="residential">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Palm Jumeirah Villas">
+                    </div>
+                    <h3>Palm Jumeirah Villas</h3>
+                    <div class="project-meta">
+                        <span>Residential</span>
+                        <span>2022</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">ARCH67</div>
+                    <p>Architecture & Integrated Design Practice</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Studio</h4>
+                        <a href="studio.html">About</a>
+                        <a href="studio.html#approach">Approach</a>
+                        <a href="studio.html#people">People</a>
+                        <a href="studio.html#careers">Careers</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="news.html">News</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Arch67. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Projects filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectItems = document.querySelectorAll('.project-archive-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    projectItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
