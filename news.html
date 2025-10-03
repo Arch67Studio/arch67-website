@@ -3,31 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio | ARCH67</title>
+    <title>News • ARCH67</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="content-wrapper">
-        <!-- Same header as other pages -->
-        <header class="header">...</header>
-        
-        <!-- Same mobile menu -->
-        <div class="mobile-menu">...</div>
-        
-        <!-- Same search overlay -->
-        <div class="search-overlay">...</div>
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <a href="index.html" class="logo">ARCH67</a>
+                
+                <nav class="nav-primary">
+                    <a href="projects.html">Projects</a>
+                    <a href="studio.html">Studio</a>
+                    <a href="news.html" class="active">News</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+
+                <nav class="nav-secondary">
+                    <a href="#" id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Mobile Menu & Search -->
+        <div class="mobile-menu" id="mobile-menu">...</div>
+        <div class="search-overlay" id="search-overlay">...</div>
 
         <main class="main-content">
-            <section class="projects-hero">
+            <section class="projects-hero" style="margin-top: 80px; padding: var(--spacing-xxl) 0;">
                 <div class="container">
-                    <h1 class="hero-title">Studio</h1>
-                    <p class="hero-subtitle">Coming Soon</p>
+                    <h1 class="hero-title">News</h1>
+                    <p class="hero-subtitle">Latest updates, awards, and insights from our studio.</p>
                 </div>
             </section>
         </main>
 
-        <!-- Same footer -->
+        <!-- Footer -->
         <footer class="footer">...</footer>
     </div>
 
