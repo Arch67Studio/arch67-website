@@ -1,2 +1,19 @@
 # _config.yml
+title: "Arch67 Architecture"
+description: "Architectural Excellence Through Innovative Design"
+baseurl: ""
+url: "https://yourusername.github.io"
 permalink: pretty
+
+# Enable Jekyll processing for HTML files
+include:
+  - *.html
+  - *.js
+  - *.css
+
+# Exclude node_modules and other unnecessary files
+exclude:
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
