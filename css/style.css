@@ -613,3 +613,43 @@ body {
         display: flex;
     }
 }
+/* Enhanced Header Styles */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+/* Smooth transitions */
+.mobile-menu, .search-overlay {
+    transition: opacity 0.3s ease;
+}
+
+/* Back button adjustment for mobile */
+@media (max-width: 768px) {
+    .back-button {
+        top: 1.5rem;
+        left: 1.5rem;
+        padding: 0.8rem;
+    }
+    
+    .mobile-nav a {
+        font-size: 1.3rem;
+        padding: 0.5rem 0;
+    }
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-primary {
+        gap: 2rem;
+    }
+    
+    .nav-primary a {
+        font-size: 0.8rem;
+    }
+}
