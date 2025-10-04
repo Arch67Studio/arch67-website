@@ -75,8 +75,17 @@ const projects = [
             "Capacity": "50000 visitors"
         },
         images: [
-            "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            "assets/images/projects/Mexico Pavilion/M-1.jpg",
+            "assets/images/projects/Mexico Pavilion/M-2.jpg",
+            "assets/images/projects/Mexico Pavilion/M-3.jpg",
+            "assets/images/projects/Mexico Pavilion/M-4.jpg",
+            "assets/images/projects/Mexico Pavilion/M-5.jpg",
+            "assets/images/projects/Mexico Pavilion/M-6.jpg",
+            "assets/images/projects/Mexico Pavilion/M-7.jpg",
+            "assets/images/projects/Mexico Pavilion/M-8.jpg",
+            "assets/images/projects/Mexico Pavilion/M-9.jpg",
+            "assets/images/projects/Mexico Pavilion/M-10.jpg"
+         
         ]
     },
     {
