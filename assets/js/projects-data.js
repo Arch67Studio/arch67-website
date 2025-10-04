@@ -62,17 +62,17 @@ const projects = [
     },
     {
         id: 4,
-        title: "The Art Pavilion",
-        location: "London, UK",
+        title: "Expo2020 - Mexico Pavilion",
+        location: "Expo2020 - Dubai, UAE",
         type: "cultural",
         featured: false,
         description: "A contemporary art pavilion in London's cultural district, designed as a flexible space for exhibitions and performances. The building features movable walls and adaptable lighting systems to accommodate various art forms.",
         details: {
-            "Client": "London Arts Council",
+            "Client": "Mexico Government",
             "Area": "8,500 sqm",
             "Year": "2022",
             "Status": "Completed",
-            "Capacity": "500 visitors"
+            "Capacity": "50000 visitors"
         },
         images: [
             "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
