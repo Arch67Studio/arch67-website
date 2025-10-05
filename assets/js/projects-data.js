@@ -25,7 +25,7 @@ const projects = [
         title: "Expo2020 - Mexico Pavilion",
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
-        featured: false,
+        featured: true,
         description: "A contemporary Exhibit pavilion in Expo2020 cultural district, designed as a flexible space for exhibitions and Office. Design, co-ordination and Execution of Exhibition, Oﬃce space for Republic of Mexico in Rented Pavilion, Expo 2020. Project Value – 7.8 Million AED.",
         details: {
             "Client": "Mexico Government",
@@ -51,7 +51,7 @@ const projects = [
         title: "Neom Sports Village - Beach Games 2024",
         location: "Neom, KSA",
         type: "Events",
-        featured: true,
+        featured: false,
         description: "Design, co-ordination and Execution of Neom Sports Village in Gayal, Neom, Saudi Arabia. Project Value – 10 Million AED.",
         details: {
             "Client": "Neom Sports Authority",
@@ -94,7 +94,7 @@ const projects = [
         title: "Gucci - Pop Up Store ",
         location: "Dubai Mall, UAE",
         type: "Retail",
-        featured: false,
+        featured: true,
         description: "Coming Soon.",
         details: {
             "Client": "Gucci",
