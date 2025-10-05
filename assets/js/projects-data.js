@@ -2,11 +2,11 @@
 const projects = [
     {
         id: 1,
-        title: "ICD Brookfield Place",
-        location: "Dubai, UAE",
-        type: "commercial",
+        title: "Expo2020 - Chile Pavilion",
+        location: "Expo2020 - Dubai, UAE",
+        type: "cultural",
         featured: true,
-        description: "A landmark commercial tower in the heart of Dubai's financial district, featuring innovative sustainable design and state-of-the-art amenities. The building incorporates advanced energy-efficient systems and offers panoramic views of the city skyline.",
+        description: "A contemporary Exhibit pavilion in Expo2020 cultural district, designed as a flexible space for exhibitions and Office. Design, co-ordination and Execution of Exhibition, Oﬃce space for Republic of Chile in Rented Pavilion, Expo 2020. Project Value – 7.8 Million AED.",
         details: {
             "Client": "ICD & Brookfield Properties",
             "Area": "85,000 sqm",
