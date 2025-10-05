@@ -832,6 +832,6 @@ footer {
 }
 
 .detail-item:last-child span:not(.detail-label) {
-    text-align: left;
+    text-align: right;
     line-height: 1.6;
 }
