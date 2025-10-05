@@ -8,11 +8,12 @@ const projects = [
         featured: true,
         description: "The Chile Pavilion at Expo 2020 Dubai showcased the country’s creativity, culture, and innovation. Inspired by Chile’s Antarctic landscapes, the pavilion combined an exhibition space with offices for the Chilean delegation. Visitors explored interactive displays about Chile’s natural beauty, sustainability, food, renewable energy, and technology. The design featured warm Chilean wood, copper finishes, and artistic installations made from recycled materials. A striking entrance with large wooden penguins welcomed guests and set the tone for an engaging cultural experience. Inside, digital screens and immersive displays brought Chile’s stories to life. The space was also designed to host meetings, events, and official gatherings. With a total value of AED 7.8 million, the project reflected careful design, coordination, and execution to represent Chile proudly on the world stage at Expo 2020.",
         details: {
-            "Client": "ICD & Brookfield Properties",
-            "Area": "85,000 sqm",
-            "Year": "2022",
+            "Client": "Republic of Chile – Ministry of Foreign Affairs",
+            "Area": "1,200 sqm",
+            "Year": "2021",
             "Status": "Completed",
-            "Awards": "International Architecture Award 2023"
+            "Capacity": "180 pax ",
+            "Awards": "Expo 2020 Sustainability Recognition (Participant Pavilion)"
         },
         images: [
             "assets/images/projects/Chile Pavilion/C-1.jpg",
@@ -26,13 +27,14 @@ const projects = [
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
         featured: true,
-        description: "A contemporary Exhibit pavilion in Expo2020 cultural district, designed as a flexible space for exhibitions and Office. Design, co-ordination and Execution of Exhibition, Oﬃce space for Republic of Mexico in Rented Pavilion, Expo 2020. Project Value – 7.8 Million AED.",
+        description: "The Mexico Pavilion at Expo 2020 Dubai, themed “Tejiendo Vidas” (Weaving Lives), celebrated the country’s vibrant culture, biodiversity, and craftsmanship. Located in the Mobility District, the pavilion featured a stunning hand-woven façade created by over 200 female artisans from Etzatlán, Jalisco, using thousands of raffia palm pieces in rich, colorful patterns. Inside, visitors were immersed in multimedia exhibits that highlighted Mexico’s heritage, from ancient civilizations and natural beauty to art, gastronomy, and innovation. The space also hosted cultural performances, business meetings, and tourism showcases, offering a platform for exchange and collaboration. Designed to blend creativity with sustainability, the pavilion stood as a symbol of unity, diversity, and the spirit of Mexican craftsmanship brought to life on a global stage.",
         details: {
-            "Client": "Mexico Government",
-            "Area": "8,500 sqm",
-            "Year": "2022",
+            "Client": "Government of Mexico - Ministry of Foreign Affairs",
+            "Area": "900 sqm",
+            "Year": "2021",
             "Status": "Completed",
-            "Capacity": "50000 visitors"
+            "Capacity": "220 pax ",
+            "Awards": "Gold award from Bureau International des Expositions for Exhibition Design in the Mobility District"
         },
         images: [
             "assets/images/projects/Mexico Pavilion/M-1.jpg",
@@ -52,13 +54,13 @@ const projects = [
         location: "Neom, KSA",
         type: "Events",
         featured: false,
-        description: "Design, co-ordination and Execution of Neom Sports Village in Gayal, Neom, Saudi Arabia. Project Value – 10 Million AED.",
+        description: "The Gayal Beach Hub for NEOM Beach Games 2024 was designed as the central venue for beach sports, including triathlon, 3×3 basketball, beach soccer, and open water swimming. Set along NEOM’s pristine coastline, the hub blended competition arenas with fan zones, hospitality areas, and athlete facilities. The architecture emphasized modular, eco-friendly structures that harmonized with the natural landscape while providing high functionality for both participants and spectators. Interactive zones, shaded seating, and media areas ensured an engaging experience for all visitors. With a focus on sustainability, the venue showcased innovative materials and layouts that could be adapted for future sporting and cultural events. The design created a memorable and immersive beach sports environment, highlighting NEOM’s vision for world-class, environmentally conscious events. Project Value – 10 Million AED.",
         details: {
-            "Client": "Neom Sports Authority",
-            "Area": "65,000 sqm",
+            "Client": "NEOM Sport Authority",
+            "Area": "Multiple venues including Beach Hub at Gayal Beach & Mountain Village at Bajdah",
             "Year": "2024",
             "Status": "Completed",
-            "Units": "350 Luxury Accomodations"
+            "Capacity": "1,000 participants (athletes, coaches & officials)"
         },
         images: [
             "assets/images/projects/NSV-2024/N-1.jpg",
