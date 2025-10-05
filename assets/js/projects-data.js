@@ -94,18 +94,17 @@ const projects = [
         location: "Dubai Mall, UAE",
         type: "Retail",
         featured: false,
-        description: "Twin residential towers in Manhattan featuring innovative vertical gardens and sustainable design principles. Each apartment includes private outdoor space with integrated planting systems.",
+        description: "TBC.",
         details: {
-            "Client": "Manhattan Living",
+            "Client": "Gucci",
             "Area": "95,000 sqm",
-            "Year": "2023",
-            "Status": "Under Construction",
-            "Completion": "2024"
+            "Year": "2022",
+            "Status": "Completed",
+            "Completion": "2022"
         },
         images: [
-            "assets/images/projects/Mexico Pavilion/M-8.jpg",
-            "assets/images/projects/Mexico Pavilion/M-9.jpg",
-            "assets/images/projects/Mexico Pavilion/M-10.jpg"
+            "assets/images/projects/Gucci/G-1.jpg",
+            "assets/images/projects/Gucci/G-2.jpg"
         ]
     },
     {
