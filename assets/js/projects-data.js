@@ -21,7 +21,7 @@ const projects = [
         ]
     },
     {
-        id: 4,
+        id: 2,
         title: "Expo2020 - Mexico Pavilion",
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
