@@ -87,16 +87,7 @@ const projects = [
             "Capacity": "80000 visitors"
         },
         images: [
-            "assets/images/projects/Mexico Pavilion/M-1.jpg",
-            "assets/images/projects/Mexico Pavilion/M-2.jpg",
-            "assets/images/projects/Mexico Pavilion/M-3.jpg",
-            "assets/images/projects/Mexico Pavilion/M-4.jpg",
-            "assets/images/projects/Mexico Pavilion/M-5.jpg",
-            "assets/images/projects/Mexico Pavilion/M-6.jpg",
-            "assets/images/projects/Mexico Pavilion/M-7.jpg",
-            "assets/images/projects/Mexico Pavilion/M-8.jpg",
-            "assets/images/projects/Mexico Pavilion/M-9.jpg",
-            "assets/images/projects/Mexico Pavilion/M-10.jpg"
+            "assets/images/projects/Shindagha Museum/S-1.jpeg"
         ]
     },
     {
@@ -105,7 +96,7 @@ const projects = [
         location: "Dubai Mall, UAE",
         type: "Retail",
         featured: false,
-        description: "TBC.",
+        description: "Coming Soon.",
         details: {
             "Client": "Gucci",
             "Area": "95,000 sqm",
@@ -120,22 +111,21 @@ const projects = [
     },
     {
         id: 6,
-        title: "Innovation Campus",
-        location: "Berlin, Germany",
-        type: "commercial",
+        title: "Hermes Kiosk",
+        location: "Beirut, Lebanon",
+        type: "Retail",
         featured: false,
-        description: "A technology campus designed to foster collaboration and innovation. The campus includes research facilities, collaborative workspaces, and recreational areas in a park-like setting.",
+        description: "Coming Soon.",
         details: {
-            "Client": "Berlin Tech Hub",
-            "Area": "150,000 sqm",
+            "Client": "Hermes",
+            "Area": "15 sqm",
             "Year": "2021",
             "Status": "Completed",
             "Sustainability": "Net Zero Energy"
         },
         images: [
-            "assets/images/projects/Mexico Pavilion/M-8.jpg",
-            "assets/images/projects/Mexico Pavilion/M-9.jpg",
-            "assets/images/projects/Mexico Pavilion/M-10.jpg"
+            "assets/images/projects/Hermes/H-1.jpg",
+            "assets/images/projects/Hermes/H-2.jpg"
         ]
     }
 ];
