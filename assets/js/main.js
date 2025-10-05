@@ -258,3 +258,35 @@ window.addEventListener('load', function() {
         loadAllNews();
     }
 });
+// Force refresh projects data
+function refreshProjectsData() {
+    console.log('🔄 Refreshing projects data...');
+    
+    // Clear module cache (if applicable)
+    delete require.cache[require.resolve('./projects-data.js')];
+    
+    // Reload the projects data
+    const script = document.querySelector('script[src*="projects-data.js"]');
+    if (script) {
+        const newScript = document.createElement('script');
+        newScript.src = script.src + '?refresh=' + new Date().getTime();
+        document.head.appendChild(newScript);
+        
+        // Reload the page content after a short delay
+        setTimeout(() => {
+            if (typeof loadFeaturedProjects === 'function') {
+                loadFeaturedProjects();
+            }
+            if (typeof loadAllProjects === 'function') {
+                loadAllProjects();
+            }
+            if (typeof loadLatestNews === 'function') {
+                loadLatestNews();
+            }
+            console.log('✅ Projects data refreshed!');
+        }, 100);
+    }
+}
+
+// Auto-refresh every 30 seconds (optional)
+// setInterval(refreshProjectsData, 30000);
