@@ -379,3 +379,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setupHeaderForPage();
     // ... your existing code
 });
+if (detailsList) {
+    detailsList.innerHTML = Object.entries(project.details).map(([key, value]) => `
+        <div class="detail-item ${['Area', 'Capacity', 'Awards'].includes(key) ? 'full-width' : ''}">
+            <span class="detail-label">${key}:</span>
+            <span>${value}</span>
+        </div>
+    `).join('');
+}
