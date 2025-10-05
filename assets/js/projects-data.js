@@ -90,9 +90,9 @@ const projects = [
     },
     {
         id: 5,
-        title: "Sky Garden Towers",
-        location: "New York, USA",
-        type: "residential",
+        title: "Gucci - Pop Up Store ",
+        location: "Dubai Mall, UAE",
+        type: "Retail",
         featured: false,
         description: "Twin residential towers in Manhattan featuring innovative vertical gardens and sustainable design principles. Each apartment includes private outdoor space with integrated planting systems.",
         details: {
