@@ -21,20 +21,27 @@ const projects = [
         ]
     },
     {
-        id: 2,
-        title: "Marina Financial Center",
-        location: "Singapore",
-        type: "commercial",
-        featured: true,
-        description: "An iconic financial center located in Singapore's Marina Bay district, designed to create a harmonious balance between corporate functionality and public accessibility. The building features a unique double-skin facade for optimal energy performance.",
+        id: 4,
+        title: "Expo2020 - Mexico Pavilion",
+        location: "Expo2020 - Dubai, UAE",
+        type: "cultural",
+        featured: false,
+        description: "A contemporary Exhibit pavilion in Expo2020 cultural district, designed as a flexible space for exhibitions and Office. Design, co-ordination and Execution of Exhibition, Oﬃce space for Republic of Mexico in Rented Pavilion, Expo 2020. Project Value – 7.8 Million AED.",
         details: {
-            "Client": "Marina Bay Development",
-            "Area": "120,000 sqm",
-            "Year": "2021",
+            "Client": "Mexico Government",
+            "Area": "8,500 sqm",
+            "Year": "2022",
             "Status": "Completed",
-            "Sustainability": "LEED Platinum Certified"
+            "Capacity": "50000 visitors"
         },
         images: [
+            "assets/images/projects/Mexico Pavilion/M-1.jpg",
+            "assets/images/projects/Mexico Pavilion/M-2.jpg",
+            "assets/images/projects/Mexico Pavilion/M-3.jpg",
+            "assets/images/projects/Mexico Pavilion/M-4.jpg",
+            "assets/images/projects/Mexico Pavilion/M-5.jpg",
+            "assets/images/projects/Mexico Pavilion/M-6.jpg",
+            "assets/images/projects/Mexico Pavilion/M-7.jpg",
             "assets/images/projects/Mexico Pavilion/M-8.jpg",
             "assets/images/projects/Mexico Pavilion/M-9.jpg",
             "assets/images/projects/Mexico Pavilion/M-10.jpg"
@@ -42,21 +49,21 @@ const projects = [
     },
     {
         id: 3,
-        title: "Noor Residences",
-        location: "Doha, Qatar",
-        type: "residential",
+        title: "Neom Sports Village - Beach Games 2024",
+        location: "Neom, KSA",
+        type: "Events",
         featured: true,
-        description: "Luxury residential towers that redefine urban living in Doha. The design incorporates traditional Qatari architectural elements with contemporary aesthetics, creating private oases in the sky with breathtaking views of the Arabian Gulf.",
+        description: "Design, co-ordination and Execution of Neom Sports Village in Gayal, Neom, Saudi Arabia. Project Value – 10 Million AED.",
         details: {
-            "Client": "Qatar Development Authority",
+            "Client": "Neom Sports Authority",
             "Area": "65,000 sqm",
-            "Year": "2023",
+            "Year": "2024",
             "Status": "Completed",
-            "Units": "150 Luxury Apartments"
+            "Units": "350 Luxury Accomodations"
         },
         images: [
-            "assets/images/projects/Mexico Pavilion/M-8.jpg",
-            "assets/images/projects/Mexico Pavilion/M-9.jpg",
+            "assets/images/projects/Mexico Pavilion/M-1.jpg",
+            "assets/images/projects/Mexico Pavilion/M-2.jpg",
             "assets/images/projects/Mexico Pavilion/M-10.jpg"
         ]
     },
@@ -85,7 +92,6 @@ const projects = [
             "assets/images/projects/Mexico Pavilion/M-8.jpg",
             "assets/images/projects/Mexico Pavilion/M-9.jpg",
             "assets/images/projects/Mexico Pavilion/M-10.jpg"
-         
         ]
     },
     {
