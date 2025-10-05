@@ -15,9 +15,9 @@ const projects = [
             "Awards": "International Architecture Award 2023"
         },
         images: [
-            "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80"
+            "assets/images/projects/Mexico Pavilion/M-8.jpg",
+            "assets/images/projects/Mexico Pavilion/M-9.jpg",
+            "assets/images/projects/Mexico Pavilion/M-10.jpg"
         ]
     },
     {
@@ -35,9 +35,9 @@ const projects = [
             "Sustainability": "LEED Platinum Certified"
         },
         images: [
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+            "assets/images/projects/Mexico Pavilion/M-8.jpg",
+            "assets/images/projects/Mexico Pavilion/M-9.jpg",
+            "assets/images/projects/Mexico Pavilion/M-10.jpg"
         ]
     },
     {
@@ -55,9 +55,9 @@ const projects = [
             "Units": "150 Luxury Apartments"
         },
         images: [
-            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-            "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+            "assets/images/projects/Mexico Pavilion/M-8.jpg",
+            "assets/images/projects/Mexico Pavilion/M-9.jpg",
+            "assets/images/projects/Mexico Pavilion/M-10.jpg"
         ]
     },
     {
@@ -103,8 +103,9 @@ const projects = [
             "Completion": "2024"
         },
         images: [
-            "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80",
-            "https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            "assets/images/projects/Mexico Pavilion/M-8.jpg",
+            "assets/images/projects/Mexico Pavilion/M-9.jpg",
+            "assets/images/projects/Mexico Pavilion/M-10.jpg"
         ]
     },
     {
@@ -122,8 +123,9 @@ const projects = [
             "Sustainability": "Net Zero Energy"
         },
         images: [
-            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-            "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+            "assets/images/projects/Mexico Pavilion/M-8.jpg",
+            "assets/images/projects/Mexico Pavilion/M-9.jpg",
+            "assets/images/projects/Mexico Pavilion/M-10.jpg"
         ]
     }
 ];
