@@ -835,3 +835,31 @@ footer {
     text-align: right;
     line-height: 1.6;
 }
+/* Area specific styling */
+.detail-item:last-child {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.detail-item:last-child .detail-label {
+    margin-bottom: 10px;
+}
+
+.detail-item:last-child span:not(.detail-label) {
+    text-align: right;
+    line-height: 1.6;
+}
+/* Capacity specific styling */
+.detail-item:last-child {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.detail-item:last-child .detail-label {
+    margin-bottom: 10px;
+}
+
+.detail-item:last-child span:not(.detail-label) {
+    text-align: right;
+    line-height: 1.6;
+}
