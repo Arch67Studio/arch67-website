@@ -15,9 +15,9 @@ const projects = [
             "Awards": "International Architecture Award 2023"
         },
         images: [
-            "assets/images/projects/Mexico Pavilion/M-8.jpg",
-            "assets/images/projects/Mexico Pavilion/M-9.jpg",
-            "assets/images/projects/Mexico Pavilion/M-10.jpg"
+            "assets/images/projects/Chile Pavilion/C-1.jpg",
+            "assets/images/projects/Chile Pavilion/C-2.jpg",
+            "assets/images/projects/Chile Pavilion/C-3.jpg"
         ]
     },
     {
@@ -62,24 +62,29 @@ const projects = [
             "Units": "350 Luxury Accomodations"
         },
         images: [
-            "assets/images/projects/Mexico Pavilion/M-1.jpg",
-            "assets/images/projects/Mexico Pavilion/M-2.jpg",
-            "assets/images/projects/Mexico Pavilion/M-10.jpg"
+            "assets/images/projects/NSV-2024/N-1.jpg",
+            "assets/images/projects/NSV-2024/N-2.jpg",
+            "assets/images/projects/NSV-2024/N-3.jpg",
+            "assets/images/projects/NSV-2024/N-4.jpg",
+            "assets/images/projects/NSV-2024/N-5.jpg",
+            "assets/images/projects/NSV-2024/N-6.jpg",
+            "assets/images/projects/NSV-2024/N-7.jpg",
+            "assets/images/projects/NSV-2024/N-8.jpg"
         ]
     },
     {
         id: 4,
-        title: "Expo2020 - Mexico Pavilion",
-        location: "Expo2020 - Dubai, UAE",
+        title: "Shindagha Museum",
+        location: "Dubai, UAE",
         type: "cultural",
         featured: false,
-        description: "A contemporary Exhibit pavilion in Expo2020 cultural district, designed as a flexible space for exhibitions and Office. Design, co-ordination and Execution of Exhibition, Oﬃce space for Republic of Mexico in Rented Pavilion, Expo 2020. Project Value – 7.8 Million AED.",
+        description: "A contemporary Museum in cultural district, designed as a flexible space for exhibitions.",
         details: {
-            "Client": "Mexico Government",
+            "Client": "Dubai Government",
             "Area": "8,500 sqm",
-            "Year": "2022",
+            "Year": "2018",
             "Status": "Completed",
-            "Capacity": "50000 visitors"
+            "Capacity": "80000 visitors"
         },
         images: [
             "assets/images/projects/Mexico Pavilion/M-1.jpg",
