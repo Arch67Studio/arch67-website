@@ -361,3 +361,21 @@ class ProjectDataManager {
 
 // Initialize the manager
 const projectDataManager = new ProjectDataManager();
+
+// Auto-detect if page has dark background and adjust header
+function setupHeaderForPage() {
+    const header = document.querySelector('header');
+    const heroSection = document.querySelector('.hero');
+    const pageHeader = document.querySelector('.page-header');
+    
+    // If page has hero section with dark background or dark page header
+    if (heroSection || (pageHeader && window.getComputedStyle(pageHeader).backgroundColor === 'rgb(17, 17, 17)')) {
+        header.classList.add('transparent-header');
+    }
+}
+
+// Call this function in your DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    setupHeaderForPage();
+    // ... your existing code
+});
