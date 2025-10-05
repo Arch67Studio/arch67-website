@@ -821,17 +821,17 @@ footer {
         justify-content: flex-start;
     }
 }
-/* For Area, Capacity, and Awards */
-.detail-item .detail-label[data-label="Area"],
-.detail-item .detail-label[data-label="Capacity"], 
-.detail-item .detail-label[data-label="Awards"] {
+/* For Area, Capacity, Awards */
+.detail-item.full-width {
     align-items: flex-start;
     flex-direction: column;
 }
 
-.detail-item .detail-label[data-label="Area"] span:not(.detail-label),
-.detail-item .detail-label[data-label="Capacity"] span:not(.detail-label),
-.detail-item .detail-label[data-label="Awards"] span:not(.detail-label) {
-    text-align: right;
+.detail-item.full-width .detail-label {
+    margin-bottom: 10px;
+}
+
+.detail-item.full-width span:not(.detail-label) {
+    text-align: left;
     line-height: 1.6;
 }
