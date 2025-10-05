@@ -821,17 +821,22 @@ footer {
         justify-content: flex-start;
     }
 }
-/* For Area, Capacity, Awards */
+/* For Area, Capacity, Awards - FIXED */
 .detail-item.full-width {
-    align-items: flex-start;
     flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
 }
 
 .detail-item.full-width .detail-label {
-    margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: 600;
 }
 
-.detail-item.full-width span:not(.detail-label) {
+.detail-item.full-width .detail-label + span {
+    width: 100%;
     text-align: right;
     line-height: 1.6;
 }
