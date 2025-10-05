@@ -282,35 +282,82 @@ window.addEventListener('load', function() {
         loadAllNews();
     }
 });
-// Force refresh projects data
-function refreshProjectsData() {
-    console.log('🔄 Refreshing projects data...');
+// Smart cache management
+class ProjectDataManager {
+    constructor() {
+        this.lastUpdate = null;
+        this.init();
+    }
     
-    // Clear module cache (if applicable)
-    delete require.cache[require.resolve('./projects-data.js')];
+    init() {
+        this.checkForUpdates();
+        // Check for updates every 60 seconds
+        setInterval(() => this.checkForUpdates(), 60000);
+    }
     
-    // Reload the projects data
-    const script = document.querySelector('script[src*="projects-data.js"]');
-    if (script) {
-        const newScript = document.createElement('script');
-        newScript.src = script.src + '?refresh=' + new Date().getTime();
-        document.head.appendChild(newScript);
+    async checkForUpdates() {
+        try {
+            const response = await fetch(`assets/js/projects-data.js?t=${new Date().getTime()}`);
+            const text = await response.text();
+            const currentHash = this.hashCode(text);
+            
+            if (!this.lastUpdate) {
+                this.lastUpdate = currentHash;
+                return;
+            }
+            
+            if (this.lastUpdate !== currentHash) {
+                console.log('🔄 Projects data changed, refreshing...');
+                this.lastUpdate = currentHash;
+                this.reloadData();
+            }
+        } catch (error) {
+            console.log('⚠️ Could not check for updates:', error);
+        }
+    }
+    
+    hashCode(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32-bit integer
+        }
+        return hash;
+    }
+    
+    reloadData() {
+        // Remove old script
+        const oldScript = document.querySelector('script[src*="projects-data.js"]');
+        if (oldScript) {
+            oldScript.remove();
+        }
         
-        // Reload the page content after a short delay
-        setTimeout(() => {
-            if (typeof loadFeaturedProjects === 'function') {
-                loadFeaturedProjects();
-            }
-            if (typeof loadAllProjects === 'function') {
-                loadAllProjects();
-            }
-            if (typeof loadLatestNews === 'function') {
-                loadLatestNews();
-            }
-            console.log('✅ Projects data refreshed!');
-        }, 100);
+        // Load new script
+        const newScript = document.createElement('script');
+        newScript.src = `assets/js/projects-data.js?updated=${new Date().getTime()}`;
+        newScript.onload = () => {
+            console.log('✅ New projects data loaded!');
+            this.refreshPageContent();
+        };
+        document.head.appendChild(newScript);
+    }
+    
+    refreshPageContent() {
+        // Re-initialize page content based on current page
+        const path = window.location.pathname;
+        
+        if (path.includes('index.html') || path === '/') {
+            if (typeof loadFeaturedProjects === 'function') loadFeaturedProjects();
+            if (typeof loadLatestNews === 'function') loadLatestNews();
+        } else if (path.includes('projects.html')) {
+            if (typeof loadAllProjects === 'function') loadAllProjects();
+            if (typeof initProjectFilter === 'function') initProjectFilter();
+        } else if (path.includes('news.html')) {
+            if (typeof loadAllNews === 'function') loadAllNews();
+        }
     }
 }
 
-// Auto-refresh every 30 seconds (optional)
-// setInterval(refreshProjectsData, 30000);
+// Initialize the manager
+const projectDataManager = new ProjectDataManager();
