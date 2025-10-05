@@ -821,3 +821,17 @@ footer {
         justify-content: flex-start;
     }
 }
+/* Awards specific styling */
+.detail-item:last-child {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.detail-item:last-child .detail-label {
+    margin-bottom: 10px;
+}
+
+.detail-item:last-child span:not(.detail-label) {
+    text-align: left;
+    line-height: 1.6;
+}
