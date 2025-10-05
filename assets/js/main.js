@@ -1,3 +1,27 @@
+// Add this at the TOP of main.js
+(function() {
+    'use strict';
+    
+    // Auto-version script tags to prevent caching
+    function autoVersionScripts() {
+        const scripts = document.querySelectorAll('script[src*="projects-data.js"], script[src*="main.js"]');
+        const version = new Date().getTime(); // Use timestamp as version
+        
+        scripts.forEach(script => {
+            const src = script.getAttribute('src');
+            if (src && !src.includes('?')) {
+                script.setAttribute('src', src + '?v=' + version);
+            }
+        });
+    }
+    
+    // Run on page load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', autoVersionScripts);
+    } else {
+        autoVersionScripts();
+    }
+})();
 // Main JavaScript functionality
 
 // Header scroll effect
