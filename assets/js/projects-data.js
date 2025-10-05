@@ -1,9 +1,3 @@
-console.log("🚨 projects-data.js IS LOADING - " + new Date().toLocaleTimeString());
-console.log("Projects array exists:", typeof projects !== 'undefined');
-if (typeof projects !== 'undefined') {
-    console.log("Number of projects:", projects.length);
-    console.log("First project title:", projects[0]?.title);
-}
 // Projects data
 const projects = [
     {
