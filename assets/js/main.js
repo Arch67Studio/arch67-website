@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 if (detailsList) {
     detailsList.innerHTML = Object.entries(project.details).map(([key, value]) => `
-        <div class="detail-item ${['Area', 'Capacity', 'Awards'].includes(key) ? 'full-width' : ''}">
+        <div class="detail-item ${['Area', 'Capacity', 'Awards', 'Client'].includes(key) ? 'full-width' : ''}">
             <span class="detail-label">${key}:</span>
             <span>${value}</span>
         </div>
