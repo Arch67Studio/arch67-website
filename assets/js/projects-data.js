@@ -6,7 +6,7 @@ const projects = [
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
         featured: true,
-        description: "A contemporary Exhibit pavilion in Expo2020 cultural district, designed as a flexible space for exhibitions and Office. Design, co-ordination and Execution of Exhibition, Oﬃce space for Republic of Chile in Rented Pavilion, Expo 2020. Project Value – 7.8 Million AED.",
+        description: "The Chile Pavilion at Expo 2020 Dubai showcased the country’s creativity, culture, and innovation. Inspired by Chile’s Antarctic landscapes, the pavilion combined an exhibition space with offices for the Chilean delegation. Visitors explored interactive displays about Chile’s natural beauty, sustainability, food, renewable energy, and technology. The design featured warm Chilean wood, copper finishes, and artistic installations made from recycled materials. A striking entrance with large wooden penguins welcomed guests and set the tone for an engaging cultural experience. Inside, digital screens and immersive displays brought Chile’s stories to life. The space was also designed to host meetings, events, and official gatherings. With a total value of AED 7.8 million, the project reflected careful design, coordination, and execution to represent Chile proudly on the world stage at Expo 2020.",
         details: {
             "Client": "ICD & Brookfield Properties",
             "Area": "85,000 sqm",
