@@ -43,8 +43,7 @@ const projects = [
             "assets/images/projects/Mexico Pavilion/M-6.jpg",
             "assets/images/projects/Mexico Pavilion/M-7.jpg",
             "assets/images/projects/Mexico Pavilion/M-8.jpg",
-            "assets/images/projects/Mexico Pavilion/M-9.jpg",
-            "assets/images/projects/Mexico Pavilion/M-10.jpg"
+            "assets/images/projects/Mexico Pavilion/M-9.jpg"
         ]
     },
     {
