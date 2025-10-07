@@ -511,14 +511,113 @@ header.transparent-header.scrolled .mobile-menu-btn {
     padding: 20px 0 40px;
 }
 
+/* Project Detail Hero Image Fix */
 .project-hero {
     margin-bottom: 60px;
+    position: relative;
+    width: 100%;
+    height: 600px; /* Fixed height */
+    overflow: hidden;
 }
 
-.project-hero img {
+.project-hero-image {
     width: 100%;
-    height: 600px;
-    object-fit: cover;
+    height: 100%;
+    position: relative;
+}
+
+.project-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures image covers the container */
+    object-position: center; /* Focus on center */
+    display: block;
+}
+
+/* Blurred side overlays for portrait images */
+.project-hero-image::before,
+.project-hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100px; /* Width of blurred edges */
+    z-index: 2;
+    pointer-events: none;
+}
+
+.project-hero-image::before {
+    left: 0;
+    background: linear-gradient(to right, 
+        rgba(0,0,0,0.7) 0%, 
+        transparent 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+}
+
+.project-hero-image::after {
+    right: 0;
+    background: linear-gradient(to left, 
+        rgba(0,0,0,0.7) 0%, 
+        transparent 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
+}
+
+/* Alternative: Gradient overlays (better browser support) */
+/* Use this if backdrop-filter doesn't work well */
+/*
+.project-hero-image::before {
+    left: 0;
+    background: linear-gradient(to right, 
+        rgba(0,0,0,0.8) 0%, 
+        rgba(0,0,0,0.4) 50%,
+        transparent 100%);
+}
+
+.project-hero-image::after {
+    right: 0;
+    background: linear-gradient(to left, 
+        rgba(0,0,0,0.8) 0%, 
+        rgba(0,0,0,0.4) 50%,
+        transparent 100%);
+}
+*/
+
+.project-hero-content {
+    margin-top: 30px;
+    position: relative;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .project-hero {
+        height: 400px; /* Smaller height on mobile */
+    }
+    
+    .project-hero-image::before,
+    .project-hero-image::after {
+        width: 50px; /* Thinner blurred edges on mobile */
+    }
+    
+    .project-hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .project-hero-content .location {
+        font-size: 16px;
+    }
+}
+
+.project-hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.project-hero-content .location {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
 }
 
 .project-hero-content {
@@ -554,11 +653,24 @@ header.transparent-header.scrolled .mobile-menu-btn {
     gap: 15px;
 }
 
-.detail-item {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
+/* For Area, Capacity, Awards - FIXED */
+.detail-item.full-width {
+    flex-direction: column;
+    align-items: flex-start;
     border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.detail-item.full-width .detail-label {
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.detail-item.full-width .detail-label + span {
+    width: 100%;
+    text-align: right;
+    line-height: 1.6;
 }
 
 .detail-label {
@@ -847,23 +959,4 @@ footer {
     .filter-buttons {
         justify-content: flex-start;
     }
-}
-/* For Area, Capacity, Awards - FIXED */
-.detail-item.full-width {
-    flex-direction: column;
-    align-items: flex-start;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-}
-
-.detail-item.full-width .detail-label {
-    width: 100%;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.detail-item.full-width .detail-label + span {
-    width: 100%;
-    text-align: right;
-    line-height: 1.6;
 }
