@@ -88,7 +88,15 @@ const projects = [
             "Capacity": "80000 visitors"
         },
         images: [
-            "assets/images/projects/Shindagha Museum/S-1.jpeg"
+            "assets/images/projects/Shindagha Museum/S-1.jpeg",
+            "assets/images/projects/Shindagha Museum/S-2.jpeg",
+            "assets/images/projects/Shindagha Museum/S-3.jpeg",
+            "assets/images/projects/Shindagha Museum/S-4.jpeg",
+            "assets/images/projects/Shindagha Museum/S-5.jpeg",
+            "assets/images/projects/Shindagha Museum/S-6.jpeg",
+            "assets/images/projects/Shindagha Museum/S-7.jpeg",
+            "assets/images/projects/Shindagha Museum/S-8.jpeg",
+            "assets/images/projects/Shindagha Museum/S-9.jpeg"
         ]
     },
     {
@@ -127,6 +135,51 @@ const projects = [
         images: [
             "assets/images/projects/Hermes/H-1.jpg",
             "assets/images/projects/Hermes/H-2.jpg"
+        ]
+    },
+    {
+        id: 7,
+        title: "Thameen London",
+        location: "KSA",
+        type: "Retail",
+        featured: true,
+        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
+        details: {
+            "Client": "Thameen",
+            "Area": "15 sqm",
+            "Year": "2022",
+            "Status": "Completed",
+        },
+        images: [
+            "assets/images/projects/Thameen/T-1.jpg",
+            "assets/images/projects/Thameen/T-2.jpg",
+            "assets/images/projects/Thameen/T-3.jpg",
+            "assets/images/projects/Thameen/T-4.jpg",
+            "assets/images/projects/Thameen/T-5.jpg"
+        ]
+    },
+    {
+        id: 8,
+        title: "3D Renderings",
+        type: "Others",
+        featured: false,
+        description: "3D Rendering for Different Clients using 3Ds Max/ Vray and Sketchup/ Vray/ Lumion/ Enscape.",
+        details: {
+            "Client": "Multiple",
+            "Area": "n/a",
+            "Year": "n/a",
+        },
+        images: [
+            "assets/images/projects/3D Renderings/R-1.jpg",
+            "assets/images/projects/3D Renderings/R-2.jpg",
+            "assets/images/projects/3D Renderings/R-3.jpg",
+            "assets/images/projects/3D Renderings/R-4.jpg",
+            "assets/images/projects/3D Renderings/R-5.jpg",
+            "assets/images/projects/3D Renderings/R-6.jpg",
+            "assets/images/projects/3D Renderings/R-7.jpg",
+            "assets/images/projects/3D Renderings/R-8.jpg",
+            "assets/images/projects/3D Renderings/R-9.jpg",
+            "assets/images/projects/3D Renderings/R-10.jpg"
         ]
     }
 ];
