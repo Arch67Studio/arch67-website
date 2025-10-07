@@ -135,15 +135,18 @@ function loadProjectDetail(projectId) {
     if (!project) return;
 
     const projectHero = document.getElementById('project-hero');
+    const descriptionText = document.getElementById('project-description-text');
+    const detailsList = document.getElementById('project-details-list');
+    const projectGallery = document.getElementById('project-gallery');
+
+    if (projectHero) {
         projectHero.innerHTML = `
-            <div class="project-hero-image">
-                <img src="${project.image}" alt="${project.title}">
-            </div>
+            <img src="${project.images[0]}" alt="${project.title}">
             <div class="project-hero-content">
                 <h1>${project.title}</h1>
                 <p class="location">${project.location}</p>
-                <p>${project.subtitle}</p>
-            </div>
+                <p>${project.type.charAt(0).toUpperCase() + project.type.slice(1)} Project</p>
+            </div>
         `;
     }
 
