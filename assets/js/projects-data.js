@@ -158,6 +158,69 @@ const projects = [
             "assets/images/projects/Thameen/T-5.jpg"
         ]
     },
+     {
+        id: 8,
+        title: "Thameen London",
+        location: "KSA",
+        type: "Retail",
+        featured: false,
+        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
+        details: {
+            "Client": "Thameen",
+            "Area": "15 sqm",
+            "Year": "2022",
+            "Status": "Completed",
+        },
+        images: [
+            "assets/images/projects/Thameen/T-1.jpg",
+            "assets/images/projects/Thameen/T-2.jpg",
+            "assets/images/projects/Thameen/T-3.jpg",
+            "assets/images/projects/Thameen/T-4.jpg",
+            "assets/images/projects/Thameen/T-5.jpg"
+        ]
+    },
+     {
+        id: 7,
+        title: "Thameen London",
+        location: "KSA",
+        type: "Retail",
+        featured: true,
+        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
+        details: {
+            "Client": "Thameen",
+            "Area": "15 sqm",
+            "Year": "2022",
+            "Status": "Completed",
+        },
+        images: [
+            "assets/images/projects/Thameen/T-1.jpg",
+            "assets/images/projects/Thameen/T-2.jpg",
+            "assets/images/projects/Thameen/T-3.jpg",
+            "assets/images/projects/Thameen/T-4.jpg",
+            "assets/images/projects/Thameen/T-5.jpg"
+        ]
+    },
+     {
+        id: 7,
+        title: "Thameen London",
+        location: "KSA",
+        type: "Retail",
+        featured: true,
+        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
+        details: {
+            "Client": "Thameen",
+            "Area": "15 sqm",
+            "Year": "2022",
+            "Status": "Completed",
+        },
+        images: [
+            "assets/images/projects/Thameen/T-1.jpg",
+            "assets/images/projects/Thameen/T-2.jpg",
+            "assets/images/projects/Thameen/T-3.jpg",
+            "assets/images/projects/Thameen/T-4.jpg",
+            "assets/images/projects/Thameen/T-5.jpg"
+        ]
+    },
     {
         id: 8,
         title: "3D Renderings",
