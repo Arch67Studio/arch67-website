@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Details</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">ASAD<span>N</span></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="studio.html">Academic Works</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1></h1>
+            <p></p>
+        </div>
+    </section>
+
+    <!-- Project Detail -->
+    <section class="project-detail">
+    <div class="container">
+
+        <div class="slider" id="slider">
+
+            <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+
+            <div class="slider-track" id="slider-track"></div>
+
+            <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+
+            <!-- Caption -->
+            <div class="caption" id="caption"></div>
+
+        </div>
+
+        <div class="project-navigation">
+            <a href="projects.html" class="btn btn-outline">Back to Projects</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Fullscreen Modal -->
+<div class="fullscreen" id="fullscreen">
+    <span class="close" onclick="closeFullscreen()">&times;</span>
+    <img id="fullscreen-img">
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">ASAD<span>N</span></div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/arch67lab?igsh=MXQ3YWNvd3RwdDUyZg%3D%3D&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Asad N. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script>
+// Auto-version scripts
+document.write('<script src="assets/js/projects-data.js?t=' + new Date().getTime() + '"><\/script>');
+document.write('<script src="assets/js/main.js?t=' + new Date().getTime() + '"><\/script>');
+</script>
+</body>
+</html>
