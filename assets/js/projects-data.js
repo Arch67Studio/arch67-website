@@ -123,7 +123,7 @@ const projects = [
         title: "Hermes Kiosk",
         location: "Beirut, Lebanon",
         type: "Retail",
-        featured: false,
+        featured: true,
         description: "Coming Soon.",
         details: {
             "Client": "Hermes",
@@ -184,7 +184,7 @@ const projects = [
         title: "Thameen London",
         location: "KSA",
         type: "Retail",
-        featured: true,
+        featured: false,
         description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
         details: {
             "Client": "Thameen",
@@ -205,7 +205,7 @@ const projects = [
         title: "Thameen London",
         location: "KSA",
         type: "Retail",
-        featured: true,
+        featured: false,
         description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
         details: {
             "Client": "Thameen",
@@ -244,57 +244,5 @@ const projects = [
             "assets/images/projects/3D Renderings/R-9.jpg",
             "assets/images/projects/3D Renderings/R-10.jpg"
         ]
-    }
-];
-
-// News data
-const news = [
-    {
-        id: 1,
-        title: "Arch67 Wins International Architecture Award",
-        date: "June 15, 2023",
-        excerpt: "Our ICD Brookfield Place project has been recognized with the prestigious International Architecture Award for excellence in commercial design.",
-        image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80",
-        featured: true
-    },
-    {
-        id: 2,
-        title: "New Sustainable Design Initiative",
-        date: "May 28, 2023",
-        excerpt: "We're proud to announce our commitment to carbon-neutral design across all projects by 2025 as part of our sustainability initiative.",
-        image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        featured: true
-    },
-    {
-        id: 3,
-        title: "Arch67 Exhibition Opens in London",
-        date: "April 12, 2023",
-        excerpt: "Our retrospective exhibition showcasing 15 years of architectural innovation opens at the Design Museum London next month.",
-        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
-        featured: true
-    },
-    {
-        id: 4,
-        title: "Noor Residences Receives Design Excellence Award",
-        date: "March 22, 2023",
-        excerpt: "Our residential project in Doha has been honored with the Middle East Design Excellence Award for innovative residential architecture.",
-        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
-        featured: false
-    },
-    {
-        id: 5,
-        title: "Arch67 Expands to Asian Market",
-        date: "February 15, 2023",
-        excerpt: "We're excited to announce the opening of our new studio in Singapore to better serve our growing client base in Asia.",
-        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-        featured: false
-    },
-    {
-        id: 6,
-        title: "Sustainable Materials Research Partnership",
-        date: "January 8, 2023",
-        excerpt: "We've partnered with leading universities to research and develop new sustainable building materials for future projects.",
-        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-        featured: false
     }
 ];
