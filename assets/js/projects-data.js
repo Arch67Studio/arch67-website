@@ -5,7 +5,7 @@ const projects = [
         title: "Jetex Vvip Lounge - Red Sea Airport, KSA",
         location: "Umluj, KSA",
         type: "commercial",
-        featured: true,
+        featured: false,
         description: "Jetex VVIP Lounge at Red Sea Airport (KSA) is an 1,200 sq.m premium facility featuring reception, VIP lounge, gaming area, and dedicated arrival and departure bays. Designed and coordinated in collaboration with Jetex, Red Sea Global, and DAA International, the project delivers a seamless, high-end private aviation experience within the Jetex VVIP terminal, completed between October 2025 and April 2026.",
         details: {
             "Client": "Jetex",
@@ -23,7 +23,7 @@ const projects = [
         title: "Rubaiyat",
         location: "Kingdom Tower, Riyadh, KSA",
         type: "Retail",
-        featured: true,
+        featured: false,
         description: "Rubaiyat Fashion Store, Riyadh Tower, KSA, completed September 2025, is an 800 sq.m luxury retail space for a leading fashion brand in Saudi Arabia. The project covered full design and coordination from concept to execution, featuring an exclusive storefront and refined interior finishes that reflect the brand’s premium identity.",
         details: {
             "Client": "Rubaiyat Fashion",
@@ -46,7 +46,7 @@ const projects = [
         title: "Philip Morris International",
         location: "Jeddah, KSA",
         type: "Commercial",
-        featured: true,
+        featured: false,
         description: "Philip Morris International Office, Jeddah, KSA, completed May 2025, is a 1,400 sq.m corporate workspace delivered in just 38 days. The project features a dynamic and modern office environment designed to encourage collaboration, enhance employee well-being, and support sustainability. It includes full design and detailing for a cutting-edge fit-out executed in partnership with Knight Frank MENA for a global client.",
         details: {
             "Client": "Philip Morris International",
@@ -69,7 +69,7 @@ const projects = [
         title: "Layali Diriyah",
         location: "Riyadh, KSA",
         type: "Event",
-        featured: true,
+        featured: false,
         description: "Layali Diriyah, Riyadh, KSA, completed February 2025, is an 8,500 sq.m design-and-build event venue delivered in 45 days. The project reimagines a contemporary event destination while respecting the rich heritage of its historic setting. Careful planning and execution ensured the preservation of existing palm trees, which were seamlessly integrated as a defining feature of the landscape design, creating a unique blend of culture, nature, and modern hospitality.",
         details: {
             "Client": "Diriyah",
@@ -89,7 +89,7 @@ const projects = [
         title: "Neom Beach Games Village",
         location: "Neom, Gayal, KSA",
         type: "Event",
-        featured: true,
+        featured: false,
         description: "Neom Beach Games Village, NEOM, KSA, completed October 2024, is a large-scale 390,000 sq.m master-planned development comprising three distinct zones with approximately 350 accommodations for VIPs, athletes, and workforce. The project includes 16 new buildings featuring Neom operations offices, recreational centers, a 1,000 sq.m central kitchen, restaurant, staff dining, housekeeping facilities, and a welcome center. Delivered in under four months under PMC AECOM, the development supported the successful execution of the Neom Beach Games with efficient, high-quality temporary infrastructure.",
         details: {
             "Client": "Neom",
@@ -114,7 +114,7 @@ const projects = [
         title: "Zayed National Museum - SZLT",
         location: "Abu Dhabi, UAE",
         type: "Cultural",
-        featured: true,
+        featured: false,
         description: "Zayed National Museum, Saadiyat Island, Abu Dhabi, UAE, completed April 2024 (galleries package), is a landmark cultural institution designed by Foster + Partners in collaboration with WSP, with client oversight from the Department of Culture and Tourism – Abu Dhabi. The project includes the Sheikh Zayed Life & Times Gallery and the Landscape and Life Gallery, forming part of a wider narrative showcasing the history, heritage, and cultural evolution of the UAE. Our scope covered design coordination and delivery support for both galleries, working closely with the lead design architects Foster + Partners, PMC Hill International, and main contractors Six Construct and Trojan Contracting. The work ensured seamless integration of architectural intent, exhibition requirements, and technical execution within this nationally significant museum at the heart of the Saadiyat Cultural District.",
         details: {
             "Client": "Abudhabi Cultural Department",
@@ -134,7 +134,7 @@ const projects = [
         title: "Thameen London",
         location: "KSA",
         type: "Retail",
-        featured: true,
+        featured: false,
         description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
         details: {
             "Client": "Thameen",
@@ -155,7 +155,7 @@ const projects = [
         title: "Hermes Kiosk",
         location: "Beirut, Lebanon",
         type: "Retail",
-        featured: true,
+        featured: false,
         description: "Coming Soon.",
         details: {
             "Client": "Hermes",
@@ -174,7 +174,7 @@ const projects = [
         title: "Gucci - Pop Up Store ",
         location: "Dubai Mall, UAE",
         type: "Retail",
-        featured: true,
+        featured: false,
         description: "Coming Soon.",
         details: {
             "Client": "Gucci",
@@ -241,7 +241,7 @@ const projects = [
         title: "Shindagha Museum",
         location: "Dubai, UAE",
         type: "cultural",
-        featured: false,
+        featured: true,
         description: "A contemporary Museum in cultural district, designed as a flexible space for exhibitions.",
         details: {
             "Client": "Dubai Government",
