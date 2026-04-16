@@ -403,3 +403,78 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
+const track = document.querySelector('.carousel-track');
+const slides = document.querySelectorAll('.slide');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+const dotsContainer = document.querySelector('.carousel-dots');
+
+let index = 0;
+let auto;
+
+// Create dots
+slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+
+    dot.addEventListener('click', () => {
+        index = i;
+        update();
+    });
+
+    dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll('.carousel-dots span');
+
+// Update function
+function update() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+}
+
+// Next
+nextBtn.onclick = () => {
+    index = (index + 1) % slides.length;
+    update();
+};
+
+// Prev
+prevBtn.onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    update();
+};
+
+// Auto play
+function startAuto() {
+    auto = setInterval(() => {
+        index = (index + 1) % slides.length;
+        update();
+    }, 4000);
+}
+
+function stopAuto() {
+    clearInterval(auto);
+}
+
+startAuto();
+
+// Pause on hover
+document.querySelector('.carousel').addEventListener('mouseenter', stopAuto);
+document.querySelector('.carousel').addEventListener('mouseleave', startAuto);
+
+// Swipe support
+let startX = 0;
+
+track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+});
+
+track.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) nextBtn.click();
+    if (endX - startX > 50) prevBtn.click();
+});
