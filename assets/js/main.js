@@ -206,30 +206,122 @@ function loadLatestNews() {
     `).join('');
 }
 
-// Load all news on news page
-function loadAllNews() {
-    const allNewsContainer = document.getElementById('all-news');
-    if (!allNewsContainer) return;
-    
-    if (news.length === 0) {
-        allNewsContainer.innerHTML = '<p>No news available at the moment.</p>';
-        return;
+const slides = [
+    {
+        src: "assets/images/project1-1.jpg",
+        caption: "Exterior View"
+    },
+    {
+        src: "assets/images/project1-2.jpg",
+        caption: "Interior Space"
+    },
+    {
+        src: "assets/images/project1-3.jpg",
+        caption: "Detail Design"
     }
-    
-    allNewsContainer.innerHTML = news.map(item => `
-        <div class="news-card">
-            <div class="news-image">
-                <img src="${item.image}" alt="${item.title}">
-            </div>
-            <div class="news-content">
-                <div class="news-date">${item.date}</div>
-                <h3>${item.title}</h3>
-                <p>${item.excerpt}</p>
-                <a href="#" class="btn btn-outline">Read More</a>
-            </div>
-        </div>
-    `).join('');
+];
+
+const track = document.getElementById("slider-track");
+const caption = document.getElementById("caption");
+
+let currentIndex = 1;
+let autoPlayInterval;
+
+// Clone for infinite loop
+function setupSlider() {
+    const firstClone = createImage(slides[0]);
+    const lastClone = createImage(slides[slides.length - 1]);
+
+    track.appendChild(lastClone);
+
+    slides.forEach(slide => {
+        track.appendChild(createImage(slide));
+    });
+
+    track.appendChild(firstClone);
+
+    updateSlider();
 }
+
+function createImage(slide) {
+    const img = document.createElement("img");
+    img.src = slide.src;
+    img.onclick = () => openFullscreen(slide.src);
+    return img;
+}
+
+function updateSlider(animate = true) {
+    track.style.transition = animate ? "transform 0.5s ease" : "none";
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    const realIndex = (currentIndex - 1 + slides.length) % slides.length;
+    caption.innerText = slides[realIndex].caption;
+}
+
+function nextSlide() {
+    currentIndex++;
+    updateSlider();
+}
+
+function prevSlide() {
+    currentIndex--;
+    updateSlider();
+}
+
+// Infinite loop fix
+track.addEventListener("transitionend", () => {
+    if (currentIndex === 0) {
+        currentIndex = slides.length;
+        updateSlider(false);
+    }
+    if (currentIndex === slides.length + 1) {
+        currentIndex = 1;
+        updateSlider(false);
+    }
+});
+
+// Auto play
+function startAutoPlay() {
+    autoPlayInterval = setInterval(nextSlide, 4000);
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
+
+// Swipe support
+let startX = 0;
+
+track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+    stopAutoPlay();
+});
+
+track.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) nextSlide();
+    if (endX - startX > 50) prevSlide();
+
+    startAutoPlay();
+});
+
+// Fullscreen
+function openFullscreen(src) {
+    const fs = document.getElementById("fullscreen");
+    const img = document.getElementById("fullscreen-img");
+
+    img.src = src;
+    fs.style.display = "flex";
+}
+
+function closeFullscreen() {
+    document.getElementById("fullscreen").style.display = "none";
+}
+
+// Init
+setupSlider();
+startAutoPlay();
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
