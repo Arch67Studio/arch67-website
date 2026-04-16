@@ -991,8 +991,8 @@ footer {
 /* ===== Image (KEY FIX) ===== */
 .slide img {
     width: 100%;
-    aspect-ratio: 16 / 9;          /* keeps it uniform */
-    object-fit: cover;             /* clean cropping */
+    height: auto;
+    object-fit: contain;
     display: block;
 }
 
