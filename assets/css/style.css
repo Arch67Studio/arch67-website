@@ -962,30 +962,35 @@ footer {
 }
 
 /* ===== Carousel ===== */
+/* ===== Carousel Wrapper (adds side spacing) ===== */
 .carousel {
     position: relative;
-    width: 100%;
+    max-width: 1200px;   /* controls overall size */
+    margin: 40px auto;   /* center + space from sides */
+    padding: 0 20px;     /* inner side spacing */
     overflow: hidden;
 }
 
+/* ===== Track ===== */
 .carousel-track {
     display: flex;
     transition: transform 0.6s ease;
-    width: 100%;
 }
 
+/* ===== Slide ===== */
 .slide {
     min-width: 100%;
-    height: 80vh;
 }
 
+/* ===== Image controls (key change) ===== */
 .slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;        /* 👈 removes forced 80vh */
+    display: block;
+    object-fit: contain; /* or cover if you prefer cropping */
 }
 
-/* Buttons MUST be above everything */
+/* ===== Buttons ===== */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -1001,4 +1006,3 @@ footer {
 
 .prev { left: 10px; }
 .next { right: 10px; }
-
