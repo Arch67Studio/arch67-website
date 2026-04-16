@@ -15,9 +15,7 @@ const projects = [
             "Capacity": "150 pax ",
         },
         images: [
-            "assets/images/projects/Chile Pavilion/C-1.jpg",
-            "assets/images/projects/Chile Pavilion/C-2.jpg",
-            "assets/images/projects/Chile Pavilion/C-3.jpg"
+            ""
         ]
     },
     {
@@ -58,9 +56,12 @@ const projects = [
             "Capacity": "180 pax ",
         },
         images: [
-            "assets/images/projects/Chile Pavilion/C-1.jpg",
-            "assets/images/projects/Chile Pavilion/C-2.jpg",
-            "assets/images/projects/Chile Pavilion/C-3.jpg"
+            "assets/images/projects/pm/1.jpg",
+            "assets/images/projects/pm/2.jpg",
+            "assets/images/projects/pm/3.jpg",
+            "assets/images/projects/pm/4.jpg",
+            "assets/images/projects/pm/5.jpg",
+            "assets/images/projects/pm/6.jpg"
         ]
     },
     {
