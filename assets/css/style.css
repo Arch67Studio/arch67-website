@@ -972,8 +972,9 @@ footer {
 
 /* ===== Carousel viewport ===== */
 .carousel {
+    position: relative;
     overflow: hidden;
-    border-radius: 16px;            /* modern rounded look */
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
@@ -981,18 +982,19 @@ footer {
 .carousel-track {
     display: flex;
     transition: transform 0.4s ease;
+    align-items: stretch;   /* ❌ remove centering issue */
 }
 
 /* ===== Slide ===== */
 .slide {
     min-width: 100%;
+    display: flex;          /* ensures proper sizing */
 }
 
-/* ===== Image (KEY FIX) ===== */
+/* ===== Image (NO CROPPING) ===== */
 .slide img {
     width: 100%;
     height: auto;
-    object-fit: contain;
     display: block;
 }
 
