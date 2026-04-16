@@ -35,9 +35,12 @@ const projects = [
             "Capacity": "120 pax ",
         },
         images: [
-            "assets/images/projects/Chile Pavilion/C-1.jpg",
-            "assets/images/projects/Chile Pavilion/C-2.jpg",
-            "assets/images/projects/Chile Pavilion/C-3.jpg"
+            "assets/images/projects/rubaiyat/1.jpeg",
+            "assets/images/projects/rubaiyat/2.jpeg",
+            "assets/images/projects/rubaiyat/3.jpeg",
+            "assets/images/projects/rubaiyat/4.jpeg",
+            "assets/images/projects/rubaiyat/5.jpeg",
+            "aassets/images/projects/rubaiyat/6.jpeg"
         ]
     },
     {
