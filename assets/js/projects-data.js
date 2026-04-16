@@ -6,10 +6,10 @@ const projects = [
         location: "Umluj, KSA",
         type: "commercial",
         featured: true,
-        description: "Jetex VVIP Lounge at Red Sea Airport (KSA) is an 1,500 sq.m premium facility featuring reception, VIP lounge, gaming area, and dedicated arrival and departure bays. Designed and coordinated in collaboration with Jetex, Red Sea Global, and DAA International, the project delivers a seamless, high-end private aviation experience within the Jetex VVIP terminal, completed between October 2025 and April 2026.",
+        description: "Jetex VVIP Lounge at Red Sea Airport (KSA) is an 1,200 sq.m premium facility featuring reception, VIP lounge, gaming area, and dedicated arrival and departure bays. Designed and coordinated in collaboration with Jetex, Red Sea Global, and DAA International, the project delivers a seamless, high-end private aviation experience within the Jetex VVIP terminal, completed between October 2025 and April 2026.",
         details: {
             "Client": "Jetex",
-            "Area": "1,500 sqm",
+            "Area": "1,200 sqm",
             "Year": "2026",
             "Status": "Completed",
             "Capacity": "150 pax ",
@@ -22,8 +22,8 @@ const projects = [
     },
     {
         id: 2,
-        title: "Rubaiyat, Kingdom Tower, KSA",
-        location: "Riyadh, KSA",
+        title: "Rubaiyat",
+        location: "Kingdom Tower, Riyadh, KSA",
         type: "Retail",
         featured: true,
         description: "Rubaiyat Fashion Store, Riyadh Tower, KSA, completed September 2025, is an 800 sq.m luxury retail space for a leading fashion brand in Saudi Arabia. The project covered full design and coordination from concept to execution, featuring an exclusive storefront and refined interior finishes that reflect the brand’s premium identity.",
@@ -41,7 +41,151 @@ const projects = [
         ]
     },
     {
-        id: 1,
+        id: 3,
+        title: "Philip Morris International",
+        location: "Jeddah, KSA",
+        type: "Commercial",
+        featured: true,
+        description: "Philip Morris International Office, Jeddah, KSA, completed May 2025, is a 1,400 sq.m corporate workspace delivered in just 38 days. The project features a dynamic and modern office environment designed to encourage collaboration, enhance employee well-being, and support sustainability. It includes full design and detailing for a cutting-edge fit-out executed in partnership with Knight Frank MENA for a global client.",
+        details: {
+            "Client": "Philip Morris International",
+            "Area": "1,400 sqm",
+            "Year": "2025",
+            "Status": "Completed",
+            "Capacity": "180 pax ",
+        },
+        images: [
+            "assets/images/projects/Chile Pavilion/C-1.jpg",
+            "assets/images/projects/Chile Pavilion/C-2.jpg",
+            "assets/images/projects/Chile Pavilion/C-3.jpg"
+        ]
+    },
+    {
+        id: 4,
+        title: "Layali Diriyah",
+        location: "Riyadh, KSA",
+        type: "Event",
+        featured: true,
+        description: "Layali Diriyah, Riyadh, KSA, completed February 2025, is an 8,500 sq.m design-and-build event venue delivered in 45 days. The project reimagines a contemporary event destination while respecting the rich heritage of its historic setting. Careful planning and execution ensured the preservation of existing palm trees, which were seamlessly integrated as a defining feature of the landscape design, creating a unique blend of culture, nature, and modern hospitality.",
+        details: {
+            "Client": "Diriyah",
+            "Area": "8,500 sqm",
+            "Year": "2025",
+            "Status": "Completed",
+            "Capacity": "1500 pax ",
+        },
+        images: [
+            "assets/images/projects/Chile Pavilion/C-1.jpg",
+            "assets/images/projects/Chile Pavilion/C-2.jpg",
+            "assets/images/projects/Chile Pavilion/C-3.jpg"
+        ]
+    },
+    {
+        id: 5,
+        title: "Neom Beach Games Village",
+        location: "Neom, Gayal, KSA",
+        type: "Event",
+        featured: true,
+        description: "Neom Beach Games Village, NEOM, KSA, completed October 2024, is a large-scale 390,000 sq.m master-planned development comprising three distinct zones with approximately 350 accommodations for VIPs, athletes, and workforce. The project includes 16 new buildings featuring Neom operations offices, recreational centers, a 1,000 sq.m central kitchen, restaurant, staff dining, housekeeping facilities, and a welcome center. Delivered in under four months under PMC AECOM, the development supported the successful execution of the Neom Beach Games with efficient, high-quality temporary infrastructure.",
+        details: {
+            "Client": "Neom",
+            "Area": "390,000 sqm",
+            "Year": "2024",
+            "Status": "Completed",
+            "Capacity": "1500 pax ",
+        },
+        images: [
+            "assets/images/projects/NSV-2024/N-1.jpg",
+            "assets/images/projects/NSV-2024/N-2.jpg",
+            "assets/images/projects/NSV-2024/N-3.jpg",
+            "assets/images/projects/NSV-2024/N-4.jpg",
+            "assets/images/projects/NSV-2024/N-5.jpg",
+            "assets/images/projects/NSV-2024/N-6.jpg",
+            "assets/images/projects/NSV-2024/N-7.jpg",
+            "assets/images/projects/NSV-2024/N-8.jpg"
+        ]
+    },
+    {
+        id: 6,
+        title: "Zayed National Museum - SZLT",
+        location: "Abu Dhabi, UAE",
+        type: "Cultural",
+        featured: true,
+        description: "Zayed National Museum, Saadiyat Island, Abu Dhabi, UAE, completed April 2024 (galleries package), is a landmark cultural institution designed by Foster + Partners in collaboration with WSP, with client oversight from the Department of Culture and Tourism – Abu Dhabi. The project includes the Sheikh Zayed Life & Times Gallery and the Landscape and Life Gallery, forming part of a wider narrative showcasing the history, heritage, and cultural evolution of the UAE. Our scope covered design coordination and delivery support for both galleries, working closely with the lead design architects Foster + Partners, PMC Hill International, and main contractors Six Construct and Trojan Contracting. The work ensured seamless integration of architectural intent, exhibition requirements, and technical execution within this nationally significant museum at the heart of the Saadiyat Cultural District.",
+        details: {
+            "Client": "Abudhabi Cultural Department",
+            "Area": "4,000 sqm",
+            "Year": "2025",
+            "Status": "Completed",
+            "Capacity": "1000 pax ",
+        },
+        images: [
+            "assets/images/projects/Chile Pavilion/C-1.jpg",
+            "assets/images/projects/Chile Pavilion/C-2.jpg",
+            "assets/images/projects/Chile Pavilion/C-3.jpg"
+        ]
+    },
+    {
+        id: 7,
+        title: "Thameen London",
+        location: "KSA",
+        type: "Retail",
+        featured: true,
+        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
+        details: {
+            "Client": "Thameen",
+            "Area": "15 sqm",
+            "Year": "2022",
+            "Status": "Completed",
+        },
+        images: [
+            "assets/images/projects/Thameen/T-1.jpg",
+            "assets/images/projects/Thameen/T-2.jpg",
+            "assets/images/projects/Thameen/T-3.jpg",
+            "assets/images/projects/Thameen/T-4.jpg",
+            "assets/images/projects/Thameen/T-5.jpg"
+        ]
+    },
+    {
+        id: 8,
+        title: "Hermes Kiosk",
+        location: "Beirut, Lebanon",
+        type: "Retail",
+        featured: true,
+        description: "Coming Soon.",
+        details: {
+            "Client": "Hermes",
+            "Area": "15 sqm",
+            "Year": "2021",
+            "Status": "Completed",
+            "Sustainability": "Net Zero Energy"
+        },
+        images: [
+            "assets/images/projects/Hermes/H-1.jpg",
+            "assets/images/projects/Hermes/H-2.jpg"
+        ]
+    },
+    {
+        id: 9,
+        title: "Gucci - Pop Up Store ",
+        location: "Dubai Mall, UAE",
+        type: "Retail",
+        featured: true,
+        description: "Coming Soon.",
+        details: {
+            "Client": "Gucci",
+            "Area": "95,000 sqm",
+            "Year": "2022",
+            "Status": "Completed",
+            "Completion": "2022"
+        },
+        images: [
+            "assets/images/projects/Gucci/G-1.jpg",
+            "assets/images/projects/Gucci/G-2.jpg"
+        ]
+    },
+    {
+        id: 10,
         title: "Expo2020 - Chile Pavilion",
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
@@ -62,7 +206,7 @@ const projects = [
         ]
     },
     {
-        id: 2,
+        id: 11,
         title: "Expo2020 - Mexico Pavilion",
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
@@ -89,32 +233,7 @@ const projects = [
         ]
     },
     {
-        id: 3,
-        title: "Neom Sports Village - Beach Games 2024",
-        location: "Neom, KSA",
-        type: "Events",
-        featured: false,
-        description: "The Gayal Beach Hub for NEOM Beach Games 2024 was designed as the central venue for beach sports, including triathlon, 3×3 basketball, beach soccer, and open water swimming. Set along NEOM’s pristine coastline, the hub blended competition arenas with fan zones, hospitality areas, and athlete facilities. The architecture emphasized modular, eco-friendly structures that harmonized with the natural landscape while providing high functionality for both participants and spectators. Interactive zones, shaded seating, and media areas ensured an engaging experience for all visitors. With a focus on sustainability, the venue showcased innovative materials and layouts that could be adapted for future sporting and cultural events. The design created a memorable and immersive beach sports environment, highlighting NEOM’s vision for world-class, environmentally conscious events. Project Value – 10 Million AED.",
-        details: {
-            "Client": "NEOM Sport Authority",
-            "Area": "Multiple venues including Beach Hub at Gayal Beach & Mountain Village at Bajdah",
-            "Year": "2024",
-            "Status": "Completed",
-            "Capacity": "1,000 participants (athletes, coaches & officials)"
-        },
-        images: [
-            "assets/images/projects/NSV-2024/N-1.jpg",
-            "assets/images/projects/NSV-2024/N-2.jpg",
-            "assets/images/projects/NSV-2024/N-3.jpg",
-            "assets/images/projects/NSV-2024/N-4.jpg",
-            "assets/images/projects/NSV-2024/N-5.jpg",
-            "assets/images/projects/NSV-2024/N-6.jpg",
-            "assets/images/projects/NSV-2024/N-7.jpg",
-            "assets/images/projects/NSV-2024/N-8.jpg"
-        ]
-    },
-    {
-        id: 4,
+        id: 12,
         title: "Shindagha Museum",
         location: "Dubai, UAE",
         type: "cultural",
@@ -140,7 +259,7 @@ const projects = [
         ]
     },
     {
-        id: 5,
+        id: 13,
         title: "Gucci - Pop Up Store ",
         location: "Dubai Mall, UAE",
         type: "Retail",
@@ -158,111 +277,8 @@ const projects = [
             "assets/images/projects/Gucci/G-2.jpg"
         ]
     },
-    {
-        id: 6,
-        title: "Hermes Kiosk",
-        location: "Beirut, Lebanon",
-        type: "Retail",
-        featured: true,
-        description: "Coming Soon.",
-        details: {
-            "Client": "Hermes",
-            "Area": "15 sqm",
-            "Year": "2021",
-            "Status": "Completed",
-            "Sustainability": "Net Zero Energy"
-        },
-        images: [
-            "assets/images/projects/Hermes/H-1.jpg",
-            "assets/images/projects/Hermes/H-2.jpg"
-        ]
-    },
-    {
-        id: 7,
-        title: "Thameen London",
-        location: "KSA",
-        type: "Retail",
-        featured: true,
-        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
-        details: {
-            "Client": "Thameen",
-            "Area": "15 sqm",
-            "Year": "2022",
-            "Status": "Completed",
-        },
-        images: [
-            "assets/images/projects/Thameen/T-1.jpg",
-            "assets/images/projects/Thameen/T-2.jpg",
-            "assets/images/projects/Thameen/T-3.jpg",
-            "assets/images/projects/Thameen/T-4.jpg",
-            "assets/images/projects/Thameen/T-5.jpg"
-        ]
-    },
-     {
-        id: 8,
-        title: "Thameen London",
-        location: "KSA",
-        type: "Retail",
-        featured: false,
-        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
-        details: {
-            "Client": "Thameen",
-            "Area": "15 sqm",
-            "Year": "2022",
-            "Status": "Completed",
-        },
-        images: [
-            "assets/images/projects/Thameen/T-1.jpg",
-            "assets/images/projects/Thameen/T-2.jpg",
-            "assets/images/projects/Thameen/T-3.jpg",
-            "assets/images/projects/Thameen/T-4.jpg",
-            "assets/images/projects/Thameen/T-5.jpg"
-        ]
-    },
-     {
-        id: 7,
-        title: "Thameen London",
-        location: "KSA",
-        type: "Retail",
-        featured: false,
-        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
-        details: {
-            "Client": "Thameen",
-            "Area": "15 sqm",
-            "Year": "2022",
-            "Status": "Completed",
-        },
-        images: [
-            "assets/images/projects/Thameen/T-1.jpg",
-            "assets/images/projects/Thameen/T-2.jpg",
-            "assets/images/projects/Thameen/T-3.jpg",
-            "assets/images/projects/Thameen/T-4.jpg",
-            "assets/images/projects/Thameen/T-5.jpg"
-        ]
-    },
-     {
-        id: 7,
-        title: "Thameen London",
-        location: "KSA",
-        type: "Retail",
-        featured: false,
-        description: "Thameen London is a pinnacle of British luxury perfumery, dedicated to the pursuit of olfactory excellence. Our name, 'Thameen,' meaning 'precious' in Arabic, reflects our core philosophy: to seek out and capture the world's most rare and precious ingredients, transforming them into extraordinary fragrances for the discerning individual.",
-        details: {
-            "Client": "Thameen",
-            "Area": "15 sqm",
-            "Year": "2022",
-            "Status": "Completed",
-        },
-        images: [
-            "assets/images/projects/Thameen/T-1.jpg",
-            "assets/images/projects/Thameen/T-2.jpg",
-            "assets/images/projects/Thameen/T-3.jpg",
-            "assets/images/projects/Thameen/T-4.jpg",
-            "assets/images/projects/Thameen/T-5.jpg"
-        ]
-    },
-    {
-        id: 8,
+        {
+        id:14,
         title: "3D Renderings",
         type: "Others",
         featured: false,
