@@ -964,7 +964,7 @@ footer {
 /* ===== Carousel ===== */
 /* ===== Page spacing wrapper ===== */
 .carousel-wrapper {
-    max-width: 2100px;
+    max-width: 95%;
     margin: 60px auto;
     padding: 0 20px;
     position: relative;
