@@ -962,46 +962,59 @@ footer {
 }
 
 /* ===== Carousel ===== */
-/* ===== Page wrapper ===== */
+/* ===== Page spacing wrapper ===== */
 .carousel-wrapper {
     max-width: 1100px;
     margin: 60px auto;
-    padding: 0 16px;
+    padding: 0 20px;
+    position: relative;
 }
 
-/* ===== Main carousel box ===== */
+/* ===== Carousel viewport ===== */
 .carousel {
-    overflow: hidden;              /* 🔥 stops image flooding */
-    border-radius: 16px;
-    border: 2px solid #ddd;        /* ✔ now border WILL show */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-    position: relative;
+    overflow: hidden;
+    border-radius: 16px;            /* modern rounded look */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 /* ===== Track ===== */
 .carousel-track {
     display: flex;
-    width: 100%;
-    touch-action: pan-x;           /* ✔ allows swipe on mobile */
     transition: transform 0.6s ease;
 }
 
 /* ===== Slide ===== */
 .slide {
     min-width: 100%;
-    flex-shrink: 0;
 }
 
-/* ===== Image ===== */
+/* ===== Image (KEY FIX) ===== */
 .slide img {
     width: 100%;
-    height: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    aspect-ratio: 16 / 9;          /* keeps it uniform */
+    object-fit: cover;             /* clean cropping */
     display: block;
 }
 
-/* ===== IMPORTANT: prevent page horizontal scroll ===== */
-body {
-    overflow-x: hidden;
+/* ===== Buttons ===== */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
 }
+
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.75);
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
