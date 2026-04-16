@@ -962,13 +962,19 @@ footer {
 }
 
 /* ===== Carousel ===== */
-/* ===== Carousel Wrapper (adds side spacing) ===== */
-.carousel {
+/* ===== Page spacing wrapper ===== */
+.carousel-wrapper {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
     position: relative;
-    max-width: 1200px;   /* controls overall size */
-    margin: 40px auto;   /* center + space from sides */
-    padding: 0 20px;     /* inner side spacing */
+}
+
+/* ===== Carousel viewport ===== */
+.carousel {
     overflow: hidden;
+    border-radius: 16px;            /* modern rounded look */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 /* ===== Track ===== */
@@ -982,12 +988,12 @@ footer {
     min-width: 100%;
 }
 
-/* ===== Image controls (key change) ===== */
+/* ===== Image (KEY FIX) ===== */
 .slide img {
     width: 100%;
-    height: auto;        /* 👈 removes forced 80vh */
+    aspect-ratio: 16 / 9;          /* keeps it uniform */
+    object-fit: cover;             /* clean cropping */
     display: block;
-    object-fit: contain; /* or cover if you prefer cropping */
 }
 
 /* ===== Buttons ===== */
@@ -995,14 +1001,20 @@ footer {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 9999;
-    background: rgba(0,0,0,0.4);
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
     color: white;
     border: none;
-    font-size: 30px;
-    padding: 10px 15px;
+    font-size: 28px;
+    padding: 10px 14px;
     cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.carousel-btn:hover {
+    background: rgba(0,0,0,0.75);
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
