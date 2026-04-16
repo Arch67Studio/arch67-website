@@ -264,21 +264,16 @@ const projects = [
     },
     {
         id: 13,
-        title: "Gucci - Pop Up Store ",
-        location: "Dubai Mall, UAE",
-        type: "Retail",
-        featured: true,
-        description: "Coming Soon.",
+        title: "Drawing Refrences",
+        location: "",
+        type: "",
+        featured: false,
+        description: "",
         details: {
-            "Client": "Gucci",
-            "Area": "95,000 sqm",
-            "Year": "2022",
-            "Status": "Completed",
-            "Completion": "2022"
         },
         images: [
-            "assets/images/projects/Gucci/G-1.jpg",
-            "assets/images/projects/Gucci/G-2.jpg"
+            "assets/images/projects/Gucci/G1.jpg",
+            "assets/images/projects/GucciG-2.jpg"
         ]
     },
         {
