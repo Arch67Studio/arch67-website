@@ -964,31 +964,41 @@ footer {
 /* ===== Carousel ===== */
 .carousel {
     position: relative;
+    width: 100%;
     overflow: hidden;
 }
 
 .carousel-track {
     display: flex;
     transition: transform 0.6s ease;
+    width: 100%;
 }
 
 .slide {
     min-width: 100%;
+    height: 80vh;
 }
 
 .slide img {
     width: 100%;
-    height: 90vh;
+    height: 100%;
     object-fit: cover;
 }
 
+/* Buttons MUST be above everything */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 999;
+    z-index: 9999;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 15px;
     cursor: pointer;
 }
 
 .prev { left: 10px; }
 .next { right: 10px; }
+
