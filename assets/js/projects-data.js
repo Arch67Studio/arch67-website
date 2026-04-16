@@ -2,6 +2,46 @@
 const projects = [
     {
         id: 1,
+        title: "Jetex Vvip Lounge - Red Sea Airport, KSA",
+        location: "Umluj, KSA",
+        type: "commercial",
+        featured: true,
+        description: "Jetex VVIP Lounge at Red Sea Airport (KSA) is an 1,500 sq.m premium facility featuring reception, VIP lounge, gaming area, and dedicated arrival and departure bays. Designed and coordinated in collaboration with Jetex, Red Sea Global, and DAA International, the project delivers a seamless, high-end private aviation experience within the Jetex VVIP terminal, completed between October 2025 and April 2026.",
+        details: {
+            "Client": "Jetex",
+            "Area": "1,500 sqm",
+            "Year": "2026",
+            "Status": "Completed",
+            "Capacity": "150 pax ",
+        },
+        images: [
+            "assets/images/projects/Chile Pavilion/C-1.jpg",
+            "assets/images/projects/Chile Pavilion/C-2.jpg",
+            "assets/images/projects/Chile Pavilion/C-3.jpg"
+        ]
+    },
+    {
+        id: 2,
+        title: "Rubaiyat, Kingdom Tower, KSA",
+        location: "Riyadh, KSA",
+        type: "Retail",
+        featured: true,
+        description: "Rubaiyat Fashion Store, Riyadh Tower, KSA, completed September 2025, is an 800 sq.m luxury retail space for a leading fashion brand in Saudi Arabia. The project covered full design and coordination from concept to execution, featuring an exclusive storefront and refined interior finishes that reflect the brand’s premium identity.",
+        details: {
+            "Client": "Rubaiyat Fashion",
+            "Area": "800 sqm",
+            "Year": "2025",
+            "Status": "Completed",
+            "Capacity": "120 pax ",
+        },
+        images: [
+            "assets/images/projects/Chile Pavilion/C-1.jpg",
+            "assets/images/projects/Chile Pavilion/C-2.jpg",
+            "assets/images/projects/Chile Pavilion/C-3.jpg"
+        ]
+    },
+    {
+        id: 1,
         title: "Expo2020 - Chile Pavilion",
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
