@@ -389,3 +389,17 @@ if (detailsList) {
         </div>
     `).join('');
 }
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+document.querySelectorAll('img').forEach(img => {
+    img.setAttribute('draggable', 'false');
+});
+document.addEventListener('keydown', function(e) {
+    if (
+        e.ctrlKey && (e.key === 's' || e.key === 'u') || // Save / View source
+        e.key === 'F12' // Dev tools
+    ) {
+        e.preventDefault();
+    }
+});
