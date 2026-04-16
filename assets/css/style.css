@@ -1019,3 +1019,7 @@ footer {
         height: 220px;
     }
 }
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
