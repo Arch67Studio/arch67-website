@@ -40,7 +40,7 @@ const projects = [
             "assets/images/projects/rubaiyat/3.jpeg",
             "assets/images/projects/rubaiyat/4.jpeg",
             "assets/images/projects/rubaiyat/5.jpeg",
-            "aassets/images/projects/rubaiyat/6.jpeg"
+            "assets/images/projects/rubaiyat/6.jpeg"
         ]
     },
     {
