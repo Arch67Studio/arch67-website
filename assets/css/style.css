@@ -971,6 +971,9 @@ footer {
   position: relative;
   width: 100%;
   overflow: hidden;
+
+  display: flex;
+  align-items: center; /* 🔥 ensures vertical centering context */
 }
 
 /* TRACK = scrolling container */
@@ -981,7 +984,9 @@ footer {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 
-  padding: 40px 60px; /* space for arrows */
+  padding: 40px 0; /* remove side padding causing misalignment */
+
+  width: 100%;
 
   /* hide scrollbar */
   scrollbar-width: none;
