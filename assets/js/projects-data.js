@@ -233,8 +233,12 @@ const projects = [
         ],
         "technicalImages": [
             "assets/images/projects/Mexico Pavilion/technical/M-10.jpeg",
-            "https://picsum.photos/id/104/1200/800",
-            "https://picsum.photos/id/106/1200/800"
+            "assets/images/projects/Mexico Pavilion/technical/M-11.jpeg",
+            "assets/images/projects/Mexico Pavilion/technical/M-12.jpeg",
+            "assets/images/projects/Mexico Pavilion/technical/M-13.jpeg",
+            "assets/images/projects/Mexico Pavilion/technical/M-14.jpeg",
+            "assets/images/projects/Mexico Pavilion/technical/M-15.jpeg",
+            "assets/images/projects/Mexico Pavilion/technical/M-16.jpeg"
         ]
     },
     {
