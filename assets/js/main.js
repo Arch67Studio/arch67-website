@@ -1,26 +1,3 @@
-// Auto-version script tags to prevent caching
-(function() {
-    'use strict';
-    
-    function autoVersionScripts() {
-        const scripts = document.querySelectorAll('script[src*="projects-data.js"], script[src*="main.js"]');
-        const version = new Date().getTime();
-        
-        scripts.forEach(script => {
-            const src = script.getAttribute('src');
-            if (src && !src.includes('?')) {
-                script.setAttribute('src', src + '?v=' + version);
-            }
-        });
-    }
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', autoVersionScripts);
-    } else {
-        autoVersionScripts();
-    }
-})();
-
 // Header scroll effect
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
@@ -48,45 +25,28 @@ navLinks.forEach(link => {
     });
 });
 
-// Load featured projects on homepage
-function loadFeaturedProjects() {
-    const featuredProjectsContainer = document.getElementById('featured-projects');
-    if (!featuredProjectsContainer) return;
-
-    const featuredProjects = projects.filter(project => project.featured);
-    
-    featuredProjectsContainer.innerHTML = featuredProjects.map(project => `
-        <div class="project-card">
-            <img src="${project.images[0]}" alt="${project.title}">
-            <div class="project-info">
-                <h3>${project.title}</h3>
-                <p>${project.type.charAt(0).toUpperCase() + project.type.slice(1)} | ${project.location}</p>
-            </div>
-        </div>
-    `).join('');
-
-    const projectCards = featuredProjectsContainer.querySelectorAll('.project-card');
-    projectCards.forEach((card, index) => {
-        card.addEventListener('click', function() {
-            window.location.href = `project-detail.html?id=${featuredProjects[index].id}`;
-        });
-    });
-}
-
 // Load all projects on projects page
 function loadAllProjects() {
     const allProjectsContainer = document.getElementById('all-projects');
     if (!allProjectsContainer) return;
     
-    allProjectsContainer.innerHTML = projects.map(project => `
-        <div class="project-card" data-type="${project.type}">
-            <img src="${project.images[0]}" alt="${project.title}">
-            <div class="project-info">
-                <h3>${project.title}</h3>
-                <p>${project.type.charAt(0).toUpperCase() + project.type.slice(1)} | ${project.location}</p>
+    if (projects.length === 0) {
+        allProjectsContainer.innerHTML = '<p>No projects available.</p>';
+        return;
+    }
+    
+    allProjectsContainer.innerHTML = projects.map(project => {
+        const firstImage = project.images && project.images[0] ? project.images[0] : 'https://via.placeholder.com/400x300?text=No+Image';
+        return `
+            <div class="project-card" data-type="${project.type}">
+                <img src="${firstImage}" alt="${project.title}">
+                <div class="project-info">
+                    <h3>${project.title}</h3>
+                    <p>${project.type ? project.type.charAt(0).toUpperCase() + project.type.slice(1) : 'Project'} | ${project.location || 'Various Locations'}</p>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 
     const projectCards = allProjectsContainer.querySelectorAll('.project-card');
     projectCards.forEach((card, index) => {
@@ -122,10 +82,10 @@ function initProjectFilter() {
 // Load project detail
 function loadProjectDetail(projectId) {
     const project = projects.find(p => p.id == projectId);
-    if (!project) return;
-
-    // Set global current project for carousel
-    window.currentProject = project;
+    if (!project) {
+        console.error('Project not found:', projectId);
+        return;
+    }
 
     const projectHero = document.getElementById('project-hero');
     const descriptionText = document.getElementById('project-description-text');
@@ -133,37 +93,41 @@ function loadProjectDetail(projectId) {
     const projectGallery = document.getElementById('project-gallery');
 
     if (projectHero) {
-        const heroImage = project.images[0] && project.images[0] !== "" ? project.images[0] : "assets/images/placeholder.jpg";
+        const heroImage = project.images && project.images[0] ? project.images[0] : 'https://via.placeholder.com/1200x600?text=No+Image';
         projectHero.innerHTML = `
             <div class="project-hero-image">
                 <img src="${heroImage}" alt="${project.title}">
             </div>
             <div class="project-hero-content">
                 <h1>${project.title}</h1>
-                <p class="location">${project.location}</p>
-                <p>${project.type.charAt(0).toUpperCase() + project.type.slice(1)} Project</p>
+                <p class="location">${project.location || 'Location TBA'}</p>
+                <p>${project.type ? project.type.charAt(0).toUpperCase() + project.type.slice(1) : 'Project'}</p>
             </div>
         `;
     }
 
     if (descriptionText) {
-        descriptionText.textContent = project.description;
+        descriptionText.textContent = project.description || 'No description available.';
     }
 
-    if (detailsList) {
-        detailsList.innerHTML = Object.entries(project.details).map(([key, value]) => {
-            const fullWidthKeys = ['Area', 'Capacity', 'Awards', 'Client'];
-            const isFullWidth = fullWidthKeys.includes(key);
-            return `
-                <div class="detail-item ${isFullWidth ? 'full-width' : ''}">
-                    <span class="detail-label">${key}:</span>
-                    <span>${value}</span>
-                </div>
-            `;
-        }).join('');
+    if (detailsList && project.details) {
+        if (Object.keys(project.details).length > 0) {
+            detailsList.innerHTML = Object.entries(project.details).map(([key, value]) => {
+                const fullWidthKeys = ['Area', 'Capacity', 'Awards', 'Client'];
+                const isFullWidth = fullWidthKeys.includes(key);
+                return `
+                    <div class="detail-item ${isFullWidth ? 'full-width' : ''}">
+                        <span class="detail-label">${key}:</span>
+                        <span>${value}</span>
+                    </div>
+                `;
+            }).join('');
+        } else {
+            detailsList.innerHTML = '<p>No additional details available.</p>';
+        }
     }
 
-    if (projectGallery) {
+    if (projectGallery && project.images) {
         const galleryImages = project.images.slice(1).filter(img => img && img !== "");
         if (galleryImages.length > 0) {
             projectGallery.innerHTML = galleryImages.map(image => `
@@ -178,96 +142,51 @@ function loadProjectDetail(projectId) {
 
     document.title = `${project.title} | Asad Nadkar`;
     
-    // Initialize technical carousel after project loads
-    setTimeout(initTechnicalCarousel, 100);
+    // Initialize technical carousel
+    initTechnicalCarousel(project);
 }
 
-// Technical Work Carousel - Only shows if current project has technicalImages
-function initTechnicalCarousel() {
+// Technical Work Carousel
+function initTechnicalCarousel(project) {
     const carouselSection = document.getElementById('technicalCarouselSection');
     const track = document.getElementById('technicalCarouselTrack');
     const prevBtn = document.getElementById('technicalPrevBtn');
     const nextBtn = document.getElementById('technicalNextBtn');
     const dotsContainer = document.getElementById('technicalCarouselDots');
     
-    console.log('Initializing Technical Carousel...');
+    if (!carouselSection || !track) return;
     
-    if (!carouselSection || !track) {
-        console.log('Carousel elements not found');
-        return;
-    }
-    
-    let currentProject = window.currentProject;
-    
-    if (!currentProject) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const projectId = urlParams.get('id');
-        if (projectId && typeof projects !== 'undefined') {
-            currentProject = projects.find(p => p.id == projectId);
-            window.currentProject = currentProject;
-        }
-    }
-    
-    console.log('Current project:', currentProject ? currentProject.title : 'Not found');
-    console.log('Technical images:', currentProject ? currentProject.technicalImages : 'No technicalImages property');
-    
-    const hasTechnicalImages = currentProject && 
-                              currentProject.technicalImages && 
-                              Array.isArray(currentProject.technicalImages) && 
-                              currentProject.technicalImages.length > 0;
+    const hasTechnicalImages = project && project.technicalImages && project.technicalImages.length > 0;
     
     if (!hasTechnicalImages) {
-        console.log('No technical images found, hiding carousel');
         carouselSection.style.display = 'none';
         return;
     }
     
-    console.log('Found technical images:', currentProject.technicalImages.length);
     carouselSection.style.display = 'block';
     
-    const technicalImages = currentProject.technicalImages;
+    const technicalImages = project.technicalImages;
     let currentIndex = 0;
     let autoPlayInterval = null;
     
-    // Clear any existing content
+    // Clear and build carousel
     track.innerHTML = '';
     dotsContainer.innerHTML = '';
     
-    // Build slides
     technicalImages.forEach((imgSrc, index) => {
-        console.log(`Loading image ${index + 1}: ${imgSrc}`);
-        
-        // Create slide
         const slide = document.createElement('div');
         slide.className = 'fp-carousel-slide';
-        
-        // Create image
         const img = document.createElement('img');
         img.src = imgSrc;
         img.alt = `Technical Work ${index + 1}`;
         img.style.width = '100%';
         img.style.display = 'block';
-        
-        // Handle image loading errors
-        img.onload = function() {
-            console.log(`Successfully loaded: ${imgSrc}`);
-            this.style.display = 'block';
-        };
-        
         img.onerror = function() {
-            console.error(`Failed to load image: ${imgSrc}`);
-            this.style.display = 'none';
-            // Show a placeholder text
-            const errorDiv = document.createElement('div');
-            errorDiv.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#999; text-align:center;';
-            errorDiv.innerHTML = `<i class="fas fa-image" style="font-size:48px; margin-bottom:10px; display:block;"></i>Image not found<br><small>${imgSrc.split('/').pop()}</small>`;
-            slide.appendChild(errorDiv);
+            this.src = 'https://via.placeholder.com/1200x800?text=Image+Not+Found';
         };
-        
         slide.appendChild(img);
         track.appendChild(slide);
         
-        // Create dot
         const dot = document.createElement('div');
         dot.className = 'fp-carousel-dot';
         if (index === 0) dot.classList.add('active');
@@ -275,14 +194,8 @@ function initTechnicalCarousel() {
         dotsContainer.appendChild(dot);
     });
     
-    // Set track to flex and proper width
-    track.style.display = 'flex';
-    track.style.width = '100%';
-    
     function updateCarousel() {
-        const slideWidth = 100;
-        track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
-        
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
         const dots = dotsContainer.querySelectorAll('.fp-carousel-dot');
         dots.forEach((dot, index) => {
             if (index === currentIndex) {
@@ -294,38 +207,24 @@ function initTechnicalCarousel() {
     }
     
     function goToSlide(index) {
-        if (index < 0) index = 0;
-        if (index >= technicalImages.length) index = technicalImages.length - 1;
         currentIndex = index;
         updateCarousel();
     }
     
     function nextSlide() {
-        if (currentIndex < technicalImages.length - 1) {
-            currentIndex++;
-            updateCarousel();
-        } else if (technicalImages.length > 1) {
-            currentIndex = 0;
-            updateCarousel();
-        }
+        currentIndex = (currentIndex + 1) % technicalImages.length;
+        updateCarousel();
     }
     
     function prevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        } else if (technicalImages.length > 1) {
-            currentIndex = technicalImages.length - 1;
-            updateCarousel();
-        }
+        currentIndex = (currentIndex - 1 + technicalImages.length) % technicalImages.length;
+        updateCarousel();
     }
     
     function startAutoPlay() {
         if (technicalImages.length <= 1) return;
         if (autoPlayInterval) clearInterval(autoPlayInterval);
-        autoPlayInterval = setInterval(() => {
-            nextSlide();
-        }, 5000);
+        autoPlayInterval = setInterval(nextSlide, 5000);
     }
     
     function stopAutoPlay() {
@@ -347,42 +246,42 @@ function initTechnicalCarousel() {
         newNextBtn.addEventListener('click', nextSlide);
     }
     
-    // Update button references
-    const finalPrevBtn = document.getElementById('technicalPrevBtn');
-    const finalNextBtn = document.getElementById('technicalNextBtn');
-    
-    if (finalPrevBtn) finalPrevBtn.addEventListener('click', prevSlide);
-    if (finalNextBtn) finalNextBtn.addEventListener('click', nextSlide);
-    
-    // Hide/show navigation based on image count
     if (technicalImages.length <= 1) {
-        if (finalPrevBtn) finalPrevBtn.style.display = 'none';
-        if (finalNextBtn) finalNextBtn.style.display = 'none';
+        if (newPrevBtn) newPrevBtn.style.display = 'none';
+        if (newNextBtn) newNextBtn.style.display = 'none';
         if (dotsContainer) dotsContainer.style.display = 'none';
-    } else {
-        if (finalPrevBtn) finalPrevBtn.style.display = 'flex';
-        if (finalNextBtn) finalNextBtn.style.display = 'flex';
-        if (dotsContainer) dotsContainer.style.display = 'flex';
     }
     
-    // Add CSS to ensure slides are visible
+    // Add carousel styles
     const style = document.createElement('style');
     style.textContent = `
+        .fp-carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
         .fp-carousel-slide {
             flex: 0 0 100%;
-            position: relative;
-            min-height: 300px;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .fp-carousel-track {
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
         }
         .fp-carousel-container {
             overflow: hidden;
+        }
+        .fp-carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .fp-carousel-dot.active {
+            background: #333;
+            width: 24px;
+            border-radius: 4px;
+        }
+        .fp-carousel-dots {
+            text-align: center;
+            margin-top: 20px;
         }
     `;
     document.head.appendChild(style);
@@ -395,71 +294,21 @@ function initTechnicalCarousel() {
         carousel.addEventListener('mouseleave', startAutoPlay);
         startAutoPlay();
     }
-    
-    console.log('Carousel initialized successfully');
 }
 
-// Load news functions
-function loadLatestNews() {
-    const latestNewsContainer = document.getElementById('latest-news');
-    if (!latestNewsContainer) return;
-    latestNewsContainer.innerHTML = '<p>No news available at the moment.</p>';
-}
-
-function loadAllNews() {
-    const allNewsContainer = document.getElementById('all-news');
-    if (!allNewsContainer) return;
-    allNewsContainer.innerHTML = '<p>No news available at the moment.</p>';
-}
-
-function setupHeaderForPage() {
-    const header = document.querySelector('header');
-    const heroSection = document.querySelector('.hero');
-    const pageHeader = document.querySelector('.page-header');
-    
-    if (heroSection || (pageHeader && window.getComputedStyle(pageHeader).backgroundColor === 'rgb(17, 17, 17)')) {
-        header.classList.add('transparent-header');
-    }
-}
-
-// Initialize everything when DOM is loaded
+// Initialize based on page
 document.addEventListener('DOMContentLoaded', function() {
-    setupHeaderForPage();
-    
     const path = window.location.pathname;
     const page = path.split('/').pop();
     
-    switch(page) {
-        case 'index.html':
-        case '':
-            loadFeaturedProjects();
-            loadLatestNews();
-            break;
-        case 'projects.html':
-            loadAllProjects();
-            initProjectFilter();
-            break;
-        case 'project-detail.html':
-            const urlParams = new URLSearchParams(window.location.search);
-            const projectId = urlParams.get('id');
-            if (projectId) {
-                loadProjectDetail(projectId);
-            }
-            break;
-        case 'news.html':
-            loadAllNews();
-            break;
-    }
-});
-
-window.addEventListener('load', function() {
-    const latestNewsContainer = document.getElementById('latest-news');
-    if (latestNewsContainer && latestNewsContainer.children.length === 0) {
-        loadLatestNews();
-    }
-    
-    const allNewsContainer = document.getElementById('all-news');
-    if (allNewsContainer && allNewsContainer.children.length === 0) {
-        loadAllNews();
+    if (page === 'projects.html' || page === '') {
+        loadAllProjects();
+        initProjectFilter();
+    } else if (page === 'project-detail.html') {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+        if (projectId) {
+            loadProjectDetail(parseInt(projectId));
+        }
     }
 });
