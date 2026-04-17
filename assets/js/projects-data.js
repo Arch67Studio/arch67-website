@@ -148,9 +148,10 @@ const projects = [
             "Capacity": "1000 pax"
         },
         images: [
-            "assets/images/projects/Chile Pavilion/C-1.jpg",
-            "assets/images/projects/Chile Pavilion/C-2.jpg",
-            "assets/images/projects/Chile Pavilion/C-3.jpg"
+            "assets/images/projects/szlt/1.jpg",
+            "assets/images/projects/szlt/2.jpg",
+            "assets/images/projects/szlt/3.jpg",
+            "assets/images/projects/szlt/4.jpg"
         ]
     },
     {
