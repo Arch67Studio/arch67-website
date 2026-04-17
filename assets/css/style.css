@@ -961,6 +961,7 @@ footer {
     }
 }
 /* Foster + Partners Style Carousel */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -971,22 +972,17 @@ footer {
   position: relative;
   width: 100%;
   overflow: hidden;
-
-  display: flex;
-  align-items: center; /* 🔥 ensures vertical centering context */
 }
 
-/* TRACK = scrolling container */
+/* TRACK */
 .track {
   display: flex;
-  gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 
-  padding: 40px 0; /* remove side padding causing misalignment */
-
-  width: 100%;
+  /* remove gaps that cause double-slide visibility */
+  gap: 0;
 
   /* hide scrollbar */
   scrollbar-width: none;
@@ -995,25 +991,21 @@ footer {
   display: none;
 }
 
-/* EACH IMAGE = SLIDE */
+/* SLIDES */
 .track img {
-  flex: 0 0 75%;          /* 🔥 key: fixed slide width */
-  height: 70vh;           /* 🔥 consistent height like Foster */
-  object-fit: cover;      /* crop nicely */
-
-  border-radius: 6px;
+  flex: 0 0 100%;       /* 🔥 FULL WIDTH = ONE SLIDE ONLY */
+  width: 100%;
+  height: 70vh;         /* or your fixed height */
+  object-fit: cover;
 
   scroll-snap-align: center;
-
-  /* prevent weird shrinking/overlap */
-  min-width: 75%;
 }
 
-/* arrows */
+/* ARROWS */
 .nav {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); /* 🔥 true vertical centering */
+  transform: translateY(-50%);
   z-index: 10;
 
   background: rgba(0,0,0,0.6);
@@ -1021,11 +1013,7 @@ footer {
   border: none;
   padding: 14px;
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.prev { left: 20px; }
-.next { right: 20px; }
+.prev { left: 15px; }
+.next { right: 15px; }
