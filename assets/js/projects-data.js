@@ -75,6 +75,17 @@ const projects = [
             "assets/images/projects/pm/4.jpg",
             "assets/images/projects/pm/5.jpg",
             "assets/images/projects/pm/6.jpg"
+        ],
+        "technicalImages": [
+            "assets/images/projects/pm/technical/1.jpeg",
+            "assets/images/projects/pm/technical/2.jpeg",
+            "assets/images/projects/pm/technical/3.jpeg",
+            "assets/images/projects/pm/technical/4.jpeg",
+            "assets/images/projects/pm/technical/5.jpeg",
+            "assets/images/projects/pm/technical/6.jpeg",
+            "assets/images/projects/pm/technical/7.jpeg",
+            "assets/images/projects/pm/technical/8.jpeg",
+            "assets/images/projects/pm/technical/9.jpeg"
         ]
     },
     {
