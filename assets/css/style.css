@@ -962,39 +962,37 @@ footer {
 }
 
 /* Foster + Partners Exact Carousel Style */
+
+/* Foster + Partners Exact Carousel Style */
 .fp-carousel {
     position: relative;
-    width: 90%;
+    width: 90% !important;
     max-width: 1400px;
-    margin: 60px auto;
-    padding: 0;
+    margin: 60px auto !important;
+    padding: 0 !important;
 }
+
 /* Add spacing between carousels */
-.fp-carousel + .fp-carousel {
-    margin-top: 80px;
+.fp-carousel-wrapper {
+    margin-bottom: 80px;
 }
 
-/* Or if you have headings between carousels */
-.carousel-heading + .fp-carousel {
-    margin-top: 0;
-}
-
+/* Container */
 .fp-carousel-container {
     position: relative;
     width: 100%;
     overflow: hidden;
+    background: transparent;
 }
 
+/* Track */
 .fp-carousel-track {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: grab;
+    width: 100%;
 }
 
-.fp-carousel-track:active {
-    cursor: grabbing;
-}
-
+/* Slides */
 .fp-carousel-slide {
     flex: 0 0 100%;
     position: relative;
@@ -1006,37 +1004,44 @@ footer {
     display: block;
 }
 
-/* Navigation Arrows - Only arrows, no button background */
+/* Navigation Arrows - Only arrows, no background */
 .fp-carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 40px;
+    background: transparent !important;
+    border: none !important;
+    font-size: 48px !important;
     font-weight: 300;
-    color: #333;
+    color: #333 !important;
     cursor: pointer;
     padding: 20px 10px;
     z-index: 10;
-    transition: opacity 0.3s ease;
     opacity: 0.6;
-    font-family: serif;
+    transition: opacity 0.3s ease;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .fp-carousel-btn:hover {
     opacity: 1;
+    background: transparent !important;
+    transform: translateY(-50%) scale(1.1);
 }
 
 .fp-prev {
-    left: -20px;
+    left: -30px !important;
+    right: auto !important;
 }
 
 .fp-next {
-    right: -20px;
+    right: -30px !important;
+    left: auto !important;
 }
 
-/* Dots Navigation - Minimal like Foster */
+/* Dots Navigation */
 .fp-carousel-dots {
     text-align: center;
     margin-top: 30px;
@@ -1054,6 +1059,7 @@ footer {
     transition: all 0.3s ease;
     border: none;
     padding: 0;
+    display: inline-block;
 }
 
 .fp-carousel-dot.active {
@@ -1066,11 +1072,12 @@ footer {
     background: #999;
 }
 
-/* Headings - Bold with proper spacing */
+/* Headings */
 .carousel-heading {
+    width: 90% !important;
     max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 60px;
+    margin: 0 auto !important;
+    padding: 0 !important;
 }
 
 .carousel-heading h3 {
@@ -1078,64 +1085,78 @@ footer {
     font-weight: 700;
     letter-spacing: -0.02em;
     color: #1a1a1a;
-    margin: 0 0 20px 0;
+    margin: 0 0 25px 0 !important;
     padding: 0;
-    text-transform: uppercase;
 }
 
-/* Responsive Design */
+/* Spacing between sections */
+.carousel-heading:not(:first-child) {
+    margin-top: 80px !important;
+}
+
+/* Responsive */
 @media (max-width: 1200px) {
     .fp-carousel {
-        padding: 0 40px;
-        margin: 60px auto;
+        width: 85% !important;
     }
     
     .carousel-heading {
-        padding: 0 40px;
+        width: 85% !important;
     }
     
-    .carousel-heading h3 {
-        font-size: 1.8rem;
+    .fp-carousel-btn {
+        font-size: 40px !important;
+    }
+    
+    .fp-prev {
+        left: -25px !important;
+    }
+    
+    .fp-next {
+        right: -25px !important;
     }
 }
 
 @media (max-width: 768px) {
     .fp-carousel {
-        padding: 0 20px;
-        margin: 40px auto;
+        width: 90% !important;
+        margin: 40px auto !important;
     }
     
     .carousel-heading {
-        padding: 0 20px;
+        width: 90% !important;
     }
     
     .carousel-heading h3 {
         font-size: 1.5rem;
-        margin: 0 0 15px 0;
+        margin: 0 0 20px 0 !important;
     }
     
     .fp-carousel-btn {
-        font-size: 30px;
-        padding: 15px 5px;
+        font-size: 35px !important;
     }
     
     .fp-prev {
-        left: -5px;
+        left: -15px !important;
     }
     
     .fp-next {
-        right: -5px;
+        right: -15px !important;
+    }
+    
+    .carousel-heading:not(:first-child) {
+        margin-top: 50px !important;
     }
 }
 
 @media (max-width: 480px) {
     .fp-carousel {
-        padding: 0 15px;
-        margin: 30px auto;
+        width: 95% !important;
+        margin: 30px auto !important;
     }
     
     .carousel-heading {
-        padding: 0 15px;
+        width: 95% !important;
     }
     
     .carousel-heading h3 {
@@ -1143,6 +1164,14 @@ footer {
     }
     
     .fp-carousel-btn {
-        font-size: 24px;
+        font-size: 28px !important;
+    }
+    
+    .fp-prev {
+        left: -10px !important;
+    }
+    
+    .fp-next {
+        right: -10px !important;
     }
 }
