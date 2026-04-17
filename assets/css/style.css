@@ -960,13 +960,12 @@ footer {
         justify-content: flex-start;
     }
 }
-/* Foster + Partners Style Carousel */
 
 /* Foster + Partners Exact Carousel Style */
 .fp-carousel {
     position: relative;
-    width: 100%;
-    max-width: 1400px;
+    width: 90%;
+    max-width: 1200px;
     margin: 80px auto;
     padding: 0 60px;
 }
