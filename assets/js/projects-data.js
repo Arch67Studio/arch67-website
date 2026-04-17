@@ -141,7 +141,7 @@ const projects = [
         location: "Abu Dhabi, UAE",
         type: "Cultural",
         featured: false,
-        description: "Zayed National Museum, Saadiyat Island, Abu Dhabi, UAE, completed April 2024, is a landmark cultural institution designed by Foster + Partners.",
+        description: "Contributed to the development of the Shaikh Zayed Life & Times Gallery and the Landscape and Life Gallery at the Zayed National Museum. The role focused on design coordination and integration, ensuring that all elements aligned with the overarching vision of the project. Worked in close collaboration with the client, Department of Culture and Tourism – Abu Dhabi, alongside lead design architects Foster + Partners (with WSP), project management consultants Hill International, and main contractors Six Construct and Trojan Contracting. The project involved coordinating multidisciplinary inputs, resolving design interfaces, and supporting the delivery of immersive, narrative-driven exhibition spaces that reflect the legacy, environment, and cultural history of the UAE.",
         details: {
             "Client": "Abu Dhabi Cultural Department",
             "Area": "4,000 sqm",
