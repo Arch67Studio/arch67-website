@@ -190,7 +190,12 @@ function initTechnicalCarousel() {
     const nextBtn = document.getElementById('technicalNextBtn');
     const dotsContainer = document.getElementById('technicalCarouselDots');
     
-    if (!carouselSection || !track) return;
+    console.log('Initializing Technical Carousel...');
+    
+    if (!carouselSection || !track) {
+        console.log('Carousel elements not found');
+        return;
+    }
     
     let currentProject = window.currentProject;
     
@@ -203,62 +208,81 @@ function initTechnicalCarousel() {
         }
     }
     
+    console.log('Current project:', currentProject ? currentProject.title : 'Not found');
+    console.log('Technical images:', currentProject ? currentProject.technicalImages : 'No technicalImages property');
+    
     const hasTechnicalImages = currentProject && 
                               currentProject.technicalImages && 
                               Array.isArray(currentProject.technicalImages) && 
                               currentProject.technicalImages.length > 0;
     
     if (!hasTechnicalImages) {
+        console.log('No technical images found, hiding carousel');
         carouselSection.style.display = 'none';
         return;
     }
     
+    console.log('Found technical images:', currentProject.technicalImages.length);
     carouselSection.style.display = 'block';
     
     const technicalImages = currentProject.technicalImages;
     let currentIndex = 0;
-    let slideWidth = 100;
     let autoPlayInterval = null;
     
-    function buildCarousel() {
-        track.innerHTML = '';
-        dotsContainer.innerHTML = '';
+    // Clear any existing content
+    track.innerHTML = '';
+    dotsContainer.innerHTML = '';
+    
+    // Build slides
+    technicalImages.forEach((imgSrc, index) => {
+        console.log(`Loading image ${index + 1}: ${imgSrc}`);
         
-        technicalImages.forEach((imgSrc, index) => {
-            const slide = document.createElement('div');
-            slide.className = 'fp-carousel-slide';
-            const img = document.createElement('img');
-            img.src = imgSrc;
-            img.alt = `Technical Work ${index + 1}`;
-            img.onerror = function() {
-                console.warn(`Failed to load technical image: ${imgSrc}`);
-                this.style.display = 'none';
-            };
-            slide.appendChild(img);
-            track.appendChild(slide);
-            
-            const dot = document.createElement('div');
-            dot.className = 'fp-carousel-dot';
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(index));
-            dotsContainer.appendChild(dot);
-        });
+        // Create slide
+        const slide = document.createElement('div');
+        slide.className = 'fp-carousel-slide';
         
-        updateCarousel();
+        // Create image
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = `Technical Work ${index + 1}`;
+        img.style.width = '100%';
+        img.style.display = 'block';
         
-        if (technicalImages.length <= 1) {
-            if (prevBtn) prevBtn.style.display = 'none';
-            if (nextBtn) nextBtn.style.display = 'none';
-            if (dotsContainer) dotsContainer.style.display = 'none';
-        } else {
-            if (prevBtn) prevBtn.style.display = 'flex';
-            if (nextBtn) nextBtn.style.display = 'flex';
-            if (dotsContainer) dotsContainer.style.display = 'flex';
-        }
-    }
+        // Handle image loading errors
+        img.onload = function() {
+            console.log(`Successfully loaded: ${imgSrc}`);
+            this.style.display = 'block';
+        };
+        
+        img.onerror = function() {
+            console.error(`Failed to load image: ${imgSrc}`);
+            this.style.display = 'none';
+            // Show a placeholder text
+            const errorDiv = document.createElement('div');
+            errorDiv.style.cssText = 'position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#999; text-align:center;';
+            errorDiv.innerHTML = `<i class="fas fa-image" style="font-size:48px; margin-bottom:10px; display:block;"></i>Image not found<br><small>${imgSrc.split('/').pop()}</small>`;
+            slide.appendChild(errorDiv);
+        };
+        
+        slide.appendChild(img);
+        track.appendChild(slide);
+        
+        // Create dot
+        const dot = document.createElement('div');
+        dot.className = 'fp-carousel-dot';
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    // Set track to flex and proper width
+    track.style.display = 'flex';
+    track.style.width = '100%';
     
     function updateCarousel() {
+        const slideWidth = 100;
         track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        
         const dots = dotsContainer.querySelectorAll('.fp-carousel-dot');
         dots.forEach((dot, index) => {
             if (index === currentIndex) {
@@ -311,10 +335,59 @@ function initTechnicalCarousel() {
         }
     }
     
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    // Remove old event listeners and add new ones
+    const newPrevBtn = prevBtn.cloneNode(true);
+    const newNextBtn = nextBtn.cloneNode(true);
+    if (prevBtn.parentNode) {
+        prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+        newPrevBtn.addEventListener('click', prevSlide);
+    }
+    if (nextBtn.parentNode) {
+        nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+        newNextBtn.addEventListener('click', nextSlide);
+    }
     
-    buildCarousel();
+    // Update button references
+    const finalPrevBtn = document.getElementById('technicalPrevBtn');
+    const finalNextBtn = document.getElementById('technicalNextBtn');
+    
+    if (finalPrevBtn) finalPrevBtn.addEventListener('click', prevSlide);
+    if (finalNextBtn) finalNextBtn.addEventListener('click', nextSlide);
+    
+    // Hide/show navigation based on image count
+    if (technicalImages.length <= 1) {
+        if (finalPrevBtn) finalPrevBtn.style.display = 'none';
+        if (finalNextBtn) finalNextBtn.style.display = 'none';
+        if (dotsContainer) dotsContainer.style.display = 'none';
+    } else {
+        if (finalPrevBtn) finalPrevBtn.style.display = 'flex';
+        if (finalNextBtn) finalNextBtn.style.display = 'flex';
+        if (dotsContainer) dotsContainer.style.display = 'flex';
+    }
+    
+    // Add CSS to ensure slides are visible
+    const style = document.createElement('style');
+    style.textContent = `
+        .fp-carousel-slide {
+            flex: 0 0 100%;
+            position: relative;
+            min-height: 300px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fp-carousel-track {
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+        .fp-carousel-container {
+            overflow: hidden;
+        }
+    `;
+    document.head.appendChild(style);
+    
+    updateCarousel();
     
     const carousel = document.querySelector('.fp-carousel');
     if (carousel && technicalImages.length > 1) {
@@ -322,6 +395,8 @@ function initTechnicalCarousel() {
         carousel.addEventListener('mouseleave', startAutoPlay);
         startAutoPlay();
     }
+    
+    console.log('Carousel initialized successfully');
 }
 
 // Load news functions
