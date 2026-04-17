@@ -1013,15 +1013,19 @@ footer {
 .nav {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  z-index: 5;
+  transform: translateY(-50%); /* 🔥 true vertical centering */
+  z-index: 10;
 
   background: rgba(0,0,0,0.6);
   color: #fff;
   border: none;
   padding: 14px;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 20px; }
+.next { right: 20px; }
