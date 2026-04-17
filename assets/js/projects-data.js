@@ -37,6 +37,21 @@ const projects = [
             "assets/images/projects/rubaiyat/4.jpeg",
             "assets/images/projects/rubaiyat/5.jpeg",
             "assets/images/projects/rubaiyat/6.jpeg"
+        ],
+        "technicalImages": [
+            "assets/images/projects/rubaiyat/technical/1.jpeg",
+            "assets/images/projects/rubaiyat/technical/2.jpeg",
+            "assets/images/projects/rubaiyat/technical/3.jpeg",
+            "assets/images/projects/rubaiyat/technical/4.jpeg",
+            "assets/images/projects/rubaiyat/technical/5.jpeg",
+            "assets/images/projects/rubaiyat/technical/6.jpeg",
+            "assets/images/projects/rubaiyat/technical/7.jpeg",
+            "assets/images/projects/rubaiyat/technical/8.jpeg",
+            "assets/images/projects/rubaiyat/technical/9.jpeg",
+            "assets/images/projects/rubaiyat/technical/10.jpeg",
+            "assets/images/projects/rubaiyat/technical/11.jpeg",
+            "assets/images/projects/rubaiyat/technical/12.jpeg",
+            "assets/images/projects/rubaiyat/technical/13.jpeg"
         ]
     },
     {
