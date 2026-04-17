@@ -55,6 +55,7 @@ function loadAllProjects() {
         });
     });
 }
+
 // Load featured projects on homepage
 function loadFeaturedProjects() {
     const featuredContainer = document.getElementById('featured-projects');
@@ -90,6 +91,7 @@ function loadFeaturedProjects() {
         });
     });
 }
+
 // Initialize project filter
 function initProjectFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -335,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const path = window.location.pathname;
     const page = path.split('/').pop();
     
-    if (page === 'projects.html' || page === '') {
+    if (page === 'projects.html') {
         loadAllProjects();
         initProjectFilter();
     } else if (page === 'project-detail.html') {
@@ -344,5 +346,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (projectId) {
             loadProjectDetail(parseInt(projectId));
         }
+    } else if (page === '' || page === 'index.html') {
+        // Load featured projects on homepage
+        loadFeaturedProjects();
     }
 });
