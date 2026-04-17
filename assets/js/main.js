@@ -352,67 +352,88 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 // ============================================
-// ADVANCED SECURITY LAYERS FOR main.js
+// WORKING SECURITY CODE (Without breaking features)
 // ============================================
 
-// 1. DETECT DEV TOOLS AND DEBUGGERS
-(function detectDevTools() {
-    const before = new Date().getTime();
-    debugger;
-    const after = new Date().getTime();
-    if (after - before > 100) {
-        document.body.innerHTML = '<h1>Access Denied: Developer Tools Detected</h1>';
-        window.location.href = 'about:blank';
-    }
-    
-    // Check for dev tools via element inspection
-    setInterval(() => {
-        const before = new Date().getTime();
-        debugger;
-        const after = new Date().getTime();
-        if (after - before > 100) {
-            document.body.innerHTML = '<h1>Security Violation Detected</h1>';
-        }
-    }, 2000);
-    
-    // Detect console opening via window size
-    let element = new Image();
-    Object.defineProperty(element, 'id', {
-        get: function() {
-            document.body.innerHTML = '<h1>Debugging Detected - Access Blocked</h1>';
-            window.location.href = 'about:blank';
-        }
-    });
-    console.log('%c', element);
-})();
+// 1. PREVENT CONTEXT MENU (Right Click)
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+});
 
-// 2. PREVENT SOURCE CODE VIEWING
-// Disable keyboard shortcuts
-document.addEventListener('keydown', function(e) {
-    const blockedKeys = ['F12', 'F11', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10'];
-    const blockedCombos = [
-        {ctrl: true, key: 'u'},      // View source
-        {ctrl: true, key: 's'},      // Save page
-        {ctrl: true, key: 'p'},      // Print
-        {ctrl: true, shift: true, key: 'i'},  // Dev tools
-        {ctrl: true, shift: true, key: 'j'},  // Console
-        {ctrl: true, shift: true, key: 'c'},  // Inspect
-        {ctrl: true, key: 'r'},      // Reload
-        {ctrl: true, shift: true, key: 'r'},  // Hard reload
-        {ctrl: true, key: 'h'},      // History
-        {ctrl: true, key: 'e'},      // Search
-        {metaKey: true, key: 's'},   // Mac save
-        {metaKey: true, key: 'u'}     // Mac source
-    ];
-    
-    // Block function keys
-    if (blockedKeys.includes(e.key)) {
+// 2. PREVENT DRAGGING IMAGES
+document.addEventListener('dragstart', function(e) {
+    if (e.target.tagName === 'IMG' || e.target.closest('img')) {
         e.preventDefault();
         return false;
     }
+});
+
+// 3. PREVENT TEXT SELECTION (Optional - remove if you want users to copy text)
+document.addEventListener('selectstart', function(e) {
+    // Only prevent on images, allow text selection
+    if (e.target.tagName === 'IMG' || e.target.closest('img')) {
+        e.preventDefault();
+    }
+});
+
+// 4. IMAGE PROTECTION - Add watermark or overlay
+function protectImages() {
+    document.querySelectorAll('img').forEach(img => {
+        // Disable right click on images specifically
+        img.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Optional: Add a semi-transparent overlay
+        if (img.parentElement && !img.parentElement.classList.contains('image-protected')) {
+            const wrapper = document.createElement('div');
+            wrapper.style.position = 'relative';
+            wrapper.style.display = 'inline-block';
+            wrapper.classList.add('image-protected');
+            
+            img.parentNode.insertBefore(wrapper, img);
+            wrapper.appendChild(img);
+            
+            // Add subtle watermark text (optional)
+            const watermark = document.createElement('div');
+            watermark.textContent = '© Asad Nadkar';
+            watermark.style.position = 'absolute';
+            watermark.style.bottom = '10px';
+            watermark.style.right = '10px';
+            watermark.style.color = 'rgba(255,255,255,0.5)';
+            watermark.style.fontSize = '12px';
+            watermark.style.pointerEvents = 'none';
+            watermark.style.zIndex = '11';
+            wrapper.appendChild(watermark);
+        }
+    });
+}
+
+// Apply image protection after page loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', protectImages);
+} else {
+    protectImages();
+}
+
+// 5. HIDE .html EXTENSION (Doesn't break anything)
+if (window.location.pathname.endsWith('.html')) {
+    const newUrl = window.location.pathname.slice(0, -5) + window.location.search + window.location.hash;
+    window.history.replaceState({}, document.title, newUrl);
+}
+
+// 6. BASIC KEYBOARD SHORTCUT PROTECTION (Only essential)
+document.addEventListener('keydown', function(e) {
+    // Only block critical shortcuts
+    const criticalCombos = [
+        {ctrl: true, shift: true, key: 'i'},  // Dev tools
+        {ctrl: true, shift: true, key: 'j'},  // Console
+        {ctrl: true, key: 'u'}                 // View source
+    ];
     
-    // Block combo keys
-    for (let combo of blockedCombos) {
+    for (let combo of criticalCombos) {
         const ctrlMatch = !combo.ctrl || (combo.ctrl && (e.ctrlKey || e.metaKey));
         const shiftMatch = !combo.shift || (combo.shift && e.shiftKey);
         const keyMatch = e.key.toLowerCase() === combo.key.toLowerCase();
@@ -422,185 +443,25 @@ document.addEventListener('keydown', function(e) {
             return false;
         }
     }
-});
-
-// 3. DETECT AND BLOCK PROXY/VPN (basic)
-(async function detectProxy() {
-    try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        
-        // Check for common VPN/Proxy IP ranges (simplified)
-        const suspiciousIPs = ['192.168.', '10.', '172.'];
-        if (suspiciousIPs.some(ip => data.ip.startsWith(ip))) {
-            console.warn('VPN/Proxy detected');
-        }
-    } catch(e) {
-        console.log('Security check failed');
-    }
-})();
-
-// 4. PREVENT CONTEXT MENU, DRAG, AND SELECTION
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    return false;
-});
-
-document.addEventListener('dragstart', function(e) {
-    if (e.target.tagName === 'IMG' || e.target.closest('img')) {
+    
+    // Block F12 separately
+    if (e.key === 'F12') {
         e.preventDefault();
         return false;
     }
 });
 
-document.addEventListener('selectstart', function(e) {
-    e.preventDefault();
-    return false;
-});
-
-// 5. DISABLE COPY/PASTE/CUT ON SENSITIVE ELEMENTS
-document.addEventListener('copy', function(e) {
-    if (window.getSelection().toString().length > 0) {
-        e.preventDefault();
-        e.clipboardData.setData('text/plain', 'Copying disabled on this site');
-        alert('Copying is disabled');
-        return false;
-    }
-});
-
-document.addEventListener('cut', function(e) {
-    e.preventDefault();
-    return false;
-});
-
-document.addEventListener('paste', function(e) {
-    // Block pasting into sensitive areas
-    if (e.target.closest('.no-paste')) {
-        e.preventDefault();
-        return false;
-    }
-});
-
-// 6. IMAGE PROTECTION WITH OVERLAYS
-function protectImages() {
-    document.querySelectorAll('img').forEach(img => {
-        // Add transparent overlay
-        const wrapper = document.createElement('div');
-        wrapper.style.position = 'relative';
-        wrapper.style.display = 'inline-block';
-        
-        // Create overlay
-        const overlay = document.createElement('div');
-        overlay.style.position = 'absolute';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.backgroundColor = 'transparent';
-        overlay.style.zIndex = '10';
-        overlay.style.cursor = 'default';
-        
-        img.parentNode.insertBefore(wrapper, img);
-        wrapper.appendChild(img);
-        wrapper.appendChild(overlay);
-        
-        // Disable right click on image
-        img.addEventListener('contextmenu', e => e.preventDefault());
-        
-        // Convert to canvas (optional - prevents direct save)
-        // Uncomment below to convert images to canvas (breaks right-click save)
-        /*
-        const canvas = document.createElement('canvas');
-        canvas.width = img.width;
-        canvas.height = img.height;
-        canvas.getContext('2d').drawImage(img, 0, 0);
-        img.replaceWith(canvas);
-        */
-    });
-}
-
-// Apply image protection when DOM loads
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', protectImages);
-} else {
-    protectImages();
-}
-
-// 7. URL HIDING (HTML extension removal)
-if (window.location.pathname.endsWith('.html')) {
-    const newUrl = window.location.pathname.slice(0, -5) + window.location.search + window.location.hash;
-    window.history.replaceState({}, document.title, newUrl);
-}
-
-// 8. DETECT AND BLOCK AUTOMATED SCRAPING TOOLS
-(function antiScraping() {
-    // Detect headless browsers
-    const isHeadless = !navigator.webdriver === false || 
-                      !navigator.languages || 
-                      /HeadlessChrome/.test(navigator.userAgent);
-    
-    if (isHeadless) {
-        document.body.innerHTML = '<h1>Access Denied: Automated access detected</h1>';
-        throw new Error('Headless browser detected');
-    }
-    
-    // Check for Selenium/PhantomJS
-    if (window._phantom || window.callPhantom || window.phantom) {
-        window.location.href = 'about:blank';
-    }
-    
-    // Monitor for rapid interactions (bots)
-    let clickCount = 0;
-    let clickTimer = null;
-    document.addEventListener('click', () => {
-        clickCount++;
-        if (!clickTimer) {
-            clickTimer = setTimeout(() => {
-                if (clickCount > 20) { // 20 clicks in 5 seconds = suspicious
-                    alert('Suspicious activity detected');
-                }
-                clickCount = 0;
-                clickTimer = null;
-            }, 5000);
-        }
-    });
-})();
-
-// 9. OBFUSCATE SENSITIVE VARIABLES
-// Store sensitive data in closure
-const secureStorage = (function() {
-    const secrets = new WeakMap();
-    return {
-        set: (key, value) => secrets.set(key, value),
-        get: (key) => secrets.get(key)
-    };
-})();
-
-// 10. PREVENT IFRAME EMBEDDING (clickjacking protection)
+// 7. PREVENT IFRAME EMBEDDING
 if (window.self !== window.top) {
     window.top.location = window.self.location;
 }
 
-// 11. SECURE COOKIES AND STORAGE
-document.cookie.split(';').forEach(cookie => {
-    document.cookie = cookie.replace(/^ +/, '')
-        .replace(/=.*/, `=; expires=${new Date(0).toUTCString()}; path=/; secure; samesite=strict`);
-});
-
-// 12. CONSOLE CLEARING AND MONITORING
-setInterval(() => {
-    console.clear();
-}, 1000);
-
-// Override console methods (optional - extreme)
-if (window.location.hostname !== 'localhost') {
-    console.log = console.warn = console.error = console.debug = function() {};
-}
-
-// 13. DETECT TAMPERING WITH YOUR CODE
-let originalFetch = window.fetch;
-window.fetch = function() {
-    console.warn('Fetch attempted');
-    return originalFetch.apply(this, arguments);
-};
+// ============================================
+// IMPORTANT: REMOVED PROBLEMATIC CODE
+// ============================================
+// - REMOVED: console.clear() interval (hides errors)
+// - REMOVED: console.log override (breaks debugging)
+// - REMOVED: aggressive dev tools detection (breaks functionality)
+// - REMOVED: fetch override (breaks image loading)
+// - REMOVED: cookie clearing (breaks sessions)
+// - REMOVED: VPN detection (unnecessary and slow)
