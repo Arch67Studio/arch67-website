@@ -962,32 +962,78 @@ footer {
 }
 
 /* ===== Carousel ===== */
+/* Portfolio Container - Adds right buffer */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Heading Styles with Proper Spacing */
+.heading {
+    margin: 3rem 0 1.5rem 0;
+    padding: 0;
+    position: relative;
+}
+
+.heading h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Optional: Add underline effect to headings */
+.heading h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #c9a96e;
+}
+
+/* First heading should have less top margin */
+.portfolio-container .heading:first-child {
+    margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .portfolio-container {
+        padding: 0 15px;
+    }
+    
+    .heading {
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .heading h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Carousel Wrapper adjustments for better alignment */
 .carousel-wrapper {
     position: relative;
-    margin: 2rem 0;
+    margin: 1.5rem 0 3rem 0;
 }
 
-.carousel {
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.slide {
-    flex: 0 0 100%;
-    min-width: 0;
-}
-
+/* Ensure images are responsive */
 .slide img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Carousel button styles - clean arrows only */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -1015,24 +1061,30 @@ footer {
     right: -30px;
 }
 
-/* Adjust for smaller screens */
+/* Mobile responsive buttons */
 @media (max-width: 768px) {
     .carousel-btn.prev {
         left: 5px;
-    }
-    
-    .carousel-btn.next {
-        right: 5px;
-    }
-    
-    .carousel-btn {
         background: rgba(255, 255, 255, 0.8);
-        font-size: 1.5rem;
         border-radius: 50%;
         width: 40px;
         height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+    
+    .carousel-btn.next {
+        right: 5px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
 }
