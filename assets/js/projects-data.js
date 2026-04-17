@@ -232,7 +232,7 @@ const projects = [
             "assets/images/projects/Mexico Pavilion/M-9.jpg"
         ],
         "technicalImages": [
-            "https://picsum.photos/id/1015/1200/800",
+            "assets/images/projects/Mexico Pavilion/technical/M-10.jpeg",
             "https://picsum.photos/id/104/1200/800",
             "https://picsum.photos/id/106/1200/800"
         ]
