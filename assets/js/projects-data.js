@@ -12,11 +12,9 @@ const projects = [
             "Area": "1,200 sqm",
             "Year": "2026",
             "Status": "Completed",
-            "Capacity": "150 pax ",
+            "Capacity": "150 pax",
         },
-        images: [
-            ""
-        ]
+        images: [""]
     },
     {
         id: 2,
@@ -24,13 +22,13 @@ const projects = [
         location: "Kingdom Tower, Riyadh, KSA",
         type: "Retail",
         featured: false,
-        description: "Rubaiyat Fashion Store, Riyadh Tower, KSA, completed September 2025, is an 800 sq.m luxury retail space for a leading fashion brand in Saudi Arabia. The project covered full design and coordination from concept to execution, featuring an exclusive storefront and refined interior finishes that reflect the brand’s premium identity.",
+        description: "Rubaiyat Fashion Store, Riyadh Tower, KSA, completed September 2025, is an 800 sq.m luxury retail space for a leading fashion brand in Saudi Arabia. The project covered full design and coordination from concept to execution, featuring an exclusive storefront and refined interior finishes that reflect the brand's premium identity.",
         details: {
             "Client": "Rubaiyat Fashion",
             "Area": "800 sqm",
             "Year": "2025",
             "Status": "Completed",
-            "Capacity": "120 pax ",
+            "Capacity": "120 pax",
         },
         images: [
             "assets/images/projects/rubaiyat/1.jpeg",
@@ -53,7 +51,7 @@ const projects = [
             "Area": "1,400 sqm",
             "Year": "2025",
             "Status": "Completed",
-            "Capacity": "180 pax ",
+            "Capacity": "180 pax",
         },
         images: [
             "assets/images/projects/pm/1.jpg",
@@ -76,7 +74,7 @@ const projects = [
             "Area": "8,500 sqm",
             "Year": "2025",
             "Status": "Completed",
-            "Capacity": "1500 pax ",
+            "Capacity": "1500 pax",
         },
         images: [
             "assets/images/projects/Chile Pavilion/C-1.jpg",
@@ -96,7 +94,7 @@ const projects = [
             "Area": "390,000 sqm",
             "Year": "2024",
             "Status": "Completed",
-            "Capacity": "1500 pax ",
+            "Capacity": "1500 pax",
         },
         images: [
             "assets/images/projects/NSV-2024/N-1.jpg",
@@ -121,7 +119,7 @@ const projects = [
             "Area": "4,000 sqm",
             "Year": "2025",
             "Status": "Completed",
-            "Capacity": "1000 pax ",
+            "Capacity": "1000 pax",
         },
         images: [
             "assets/images/projects/Chile Pavilion/C-1.jpg",
@@ -171,7 +169,7 @@ const projects = [
     },
     {
         id: 9,
-        title: "Gucci - Pop Up Store ",
+        title: "Gucci - Pop Up Store",
         location: "Dubai Mall, UAE",
         type: "Retail",
         featured: false,
@@ -194,13 +192,13 @@ const projects = [
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
         featured: true,
-        description: "The Chile Pavilion at Expo 2020 Dubai showcased the country’s creativity, culture, and innovation. Inspired by Chile’s Antarctic landscapes, the pavilion combined an exhibition space with offices for the Chilean delegation. Visitors explored interactive displays about Chile’s natural beauty, sustainability, food, renewable energy, and technology. The design featured warm Chilean wood, copper finishes, and artistic installations made from recycled materials. A striking entrance with large wooden penguins welcomed guests and set the tone for an engaging cultural experience. Inside, digital screens and immersive displays brought Chile’s stories to life. The space was also designed to host meetings, events, and official gatherings. With a total value of AED 7.8 million, the project reflected careful design, coordination, and execution to represent Chile proudly on the world stage at Expo 2020.",
+        description: "The Chile Pavilion at Expo 2020 Dubai showcased the country's creativity, culture, and innovation. Inspired by Chile's Antarctic landscapes, the pavilion combined an exhibition space with offices for the Chilean delegation. Visitors explored interactive displays about Chile's natural beauty, sustainability, food, renewable energy, and technology. The design featured warm Chilean wood, copper finishes, and artistic installations made from recycled materials. A striking entrance with large wooden penguins welcomed guests and set the tone for an engaging cultural experience. Inside, digital screens and immersive displays brought Chile's stories to life. The space was also designed to host meetings, events, and official gatherings. With a total value of AED 7.8 million, the project reflected careful design, coordination, and execution to represent Chile proudly on the world stage at Expo 2020.",
         details: {
             "Client": "Republic of Chile – Ministry of Foreign Affairs",
             "Area": "1,200 sqm",
             "Year": "2021",
             "Status": "Completed",
-            "Capacity": "180 pax ",
+            "Capacity": "180 pax",
             "Awards": "Expo 2020 Sustainability Recognition (Participant Pavilion)"
         },
         images: [
@@ -215,13 +213,13 @@ const projects = [
         location: "Expo2020 - Dubai, UAE",
         type: "cultural",
         featured: true,
-        description: "The Mexico Pavilion at Expo 2020 Dubai, themed “Tejiendo Vidas” (Weaving Lives), celebrated the country’s vibrant culture, biodiversity, and craftsmanship. Located in the Mobility District, the pavilion featured a stunning hand-woven façade created by over 200 female artisans from Etzatlán, Jalisco, using thousands of raffia palm pieces in rich, colorful patterns. Inside, visitors were immersed in multimedia exhibits that highlighted Mexico’s heritage, from ancient civilizations and natural beauty to art, gastronomy, and innovation. The space also hosted cultural performances, business meetings, and tourism showcases, offering a platform for exchange and collaboration. Designed to blend creativity with sustainability, the pavilion stood as a symbol of unity, diversity, and the spirit of Mexican craftsmanship brought to life on a global stage.",
+        description: "The Mexico Pavilion at Expo 2020 Dubai, themed 'Tejiendo Vidas' (Weaving Lives), celebrated the country's vibrant culture, biodiversity, and craftsmanship. Located in the Mobility District, the pavilion featured a stunning hand-woven façade created by over 200 female artisans from Etzatlán, Jalisco, using thousands of raffia palm pieces in rich, colorful patterns. Inside, visitors were immersed in multimedia exhibits that highlighted Mexico's heritage, from ancient civilizations and natural beauty to art, gastronomy, and innovation. The space also hosted cultural performances, business meetings, and tourism showcases, offering a platform for exchange and collaboration. Designed to blend creativity with sustainability, the pavilion stood as a symbol of unity, diversity, and the spirit of Mexican craftsmanship brought to life on a global stage.",
         details: {
             "Client": "Government of Mexico - Ministry of Foreign Affairs",
             "Area": "900 sqm",
             "Year": "2021",
             "Status": "Completed",
-            "Capacity": "220 pax ",
+            "Capacity": "220 pax",
             "Awards": "Gold award from Bureau International des Expositions for Exhibition Design in the Mobility District"
         },
         images: [
@@ -235,7 +233,6 @@ const projects = [
             "assets/images/projects/Mexico Pavilion/M-8.jpg",
             "assets/images/projects/Mexico Pavilion/M-9.jpg"
         ],
-          // This project HAS technical images - carousel WILL show
         technicalImages: [
             "assets/images/projects/Mexico Pavilion/M-10.jpg",
             "assets/images/projects/Mexico Pavilion/M-11.jpg",
@@ -274,20 +271,19 @@ const projects = [
     },
     {
         id: 13,
-        title: "Drawing Refrences",
+        title: "Drawing References",
         location: "",
         type: "",
         featured: false,
         description: "",
-        details: {
-        },
+        details: {},
         images: [
             "assets/images/projects/Gucci/G1.jpg",
             "assets/images/projects/GucciG-2.jpg"
         ]
     },
-        {
-        id:14,
+    {
+        id: 14,
         title: "3D Renderings",
         type: "Others",
         featured: false,
@@ -311,3 +307,6 @@ const projects = [
         ]
     }
 ];
+
+// News data (keep your existing news array if you have one)
+const news = [];
