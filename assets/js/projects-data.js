@@ -172,6 +172,12 @@ const projects = [
             "assets/images/projects/Thameen/T-3.jpg",
             "assets/images/projects/Thameen/T-4.jpg",
             "assets/images/projects/Thameen/T-5.jpg"
+        ],
+        "technicalImages": [
+            "assets/images/projects/Thameen/technical/1.jpg",
+            "assets/images/projects/Thameen/technical/2.jpg",
+            "assets/images/projects/Thameen/technical/3.jpg",
+            "assets/images/projects/Thameen/technical/4.jpg",
         ]
     },
     {
