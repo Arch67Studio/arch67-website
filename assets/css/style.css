@@ -960,27 +960,3 @@ footer {
         justify-content: flex-start;
     }
 }
-
-/* ===== Carousel ===== */
-/* Global reset to prevent horizontal scroll */
-* {
-    margin: 50px;
-    padding: 60px;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    overflow-x: hidden;
-    position: relative;
-}
-
-img, video, iframe {
-    max-width: 90%;
-    height: auto;
-}
-
-.container, .portfolio-container, .carousel-wrapper, .carousel {
-    max-width: 90%;
-    overflow-x: hidden;
-}
