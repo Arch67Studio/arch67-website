@@ -37,9 +37,7 @@
     <!-- Project Detail -->
     <section class="project-detail">
         <div class="container">
-            <div class="project-hero" id="project-hero">
-                <!-- Project hero content will be loaded from JavaScript -->
-            </div>
+            <div class="project-hero" id="project-hero"></div>
             
             <div class="project-info-grid">
                 <div class="project-description">
@@ -48,14 +46,25 @@
                 </div>
                 <div class="project-details">
                     <h3>Project Details</h3>
-                    <div class="details-list" id="project-details-list">
-                        <!-- Project details will be loaded from JavaScript -->
-                    </div>
+                    <div class="details-list" id="project-details-list"></div>
                 </div>
             </div>
 
-            <div class="project-gallery" id="project-gallery">
-                <!-- Project gallery will be loaded from JavaScript -->
+            <div class="project-gallery" id="project-gallery"></div>
+
+            <!-- Technical Work Carousel (Hidden by default, shown only if project has technical images) -->
+            <div class="technical-carousel-section" id="technicalCarouselSection" style="display: none;">
+                <div class="carousel-heading">
+                    <h3>Technical Work</h3>
+                </div>
+                <div class="fp-carousel">
+                    <div class="fp-carousel-container">
+                        <div class="fp-carousel-track" id="technicalCarouselTrack"></div>
+                    </div>
+                    <button class="fp-carousel-btn fp-prev" id="technicalPrevBtn">‹</button>
+                    <button class="fp-carousel-btn fp-next" id="technicalNextBtn">›</button>
+                    <div class="fp-carousel-dots" id="technicalCarouselDots"></div>
+                </div>
             </div>
 
             <div class="project-navigation">
@@ -63,22 +72,6 @@
             </div>
         </div>
     </section>
-    <!-- Technical Work Carousel (Hidden by default, shown only if project has technical images) -->
-<div class="technical-carousel-section" id="technicalCarouselSection" style="display: none;">
-    <div class="carousel-heading">
-        <h3>Technical Work</h3>
-    </div>
-    <div class="fp-carousel">
-        <div class="fp-carousel-container">
-            <div class="fp-carousel-track" id="technicalCarouselTrack">
-                <!-- Images will be loaded dynamically -->
-            </div>
-        </div>
-        <button class="fp-carousel-btn fp-prev" id="technicalPrevBtn">‹</button>
-        <button class="fp-carousel-btn fp-next" id="technicalNextBtn">›</button>
-        <div class="fp-carousel-dots" id="technicalCarouselDots"></div>
-    </div>
-</div>
 
     <!-- Footer -->
     <footer>
@@ -97,10 +90,10 @@
             </div>
         </div>
     </footer>
-<script>
-// Auto-version scripts
-document.write('<script src="assets/js/projects-data.js?t=' + new Date().getTime() + '"><\/script>');
-document.write('<script src="assets/js/main.js?t=' + new Date().getTime() + '"><\/script>');
-</script>
+    
+    <script>
+        document.write('<script src="assets/js/projects-data.js?t=' + new Date().getTime() + '"><\/script>');
+        document.write('<script src="assets/js/main.js?t=' + new Date().getTime() + '"><\/script>');
+    </script>
 </body>
 </html>
