@@ -234,7 +234,10 @@ const projects = [
             "assets/images/projects/Mexico Pavilion/M-7.jpg",
             "assets/images/projects/Mexico Pavilion/M-8.jpg",
             "assets/images/projects/Mexico Pavilion/M-9.jpg",
-            "assets/images/projects/Mexico Pavilion/M-10.jpg",
+            "assets/images/projects/Mexico Pavilion/M-10.jpg"
+        ],
+          // This project HAS technical images - carousel WILL show
+        technicalImages: [
             "assets/images/projects/Mexico Pavilion/M-11.jpg",
             "assets/images/projects/Mexico Pavilion/M-12.jpg",
             "assets/images/projects/Mexico Pavilion/M-13.jpg",
