@@ -55,7 +55,41 @@ function loadAllProjects() {
         });
     });
 }
-
+// Load featured projects on homepage
+function loadFeaturedProjects() {
+    const featuredContainer = document.getElementById('featured-projects');
+    if (!featuredContainer) return;
+    
+    // Filter projects where featured === true
+    const featuredProjects = projects.filter(project => project.featured === true);
+    
+    if (featuredProjects.length === 0) {
+        featuredContainer.innerHTML = '<p style="text-align:center; color:#666;">No featured projects available.</p>';
+        return;
+    }
+    
+    featuredContainer.innerHTML = featuredProjects.map(project => {
+        const firstImage = project.images && project.images[0] ? project.images[0] : 'https://via.placeholder.com/400x300?text=No+Image';
+        return `
+            <div class="project-card" data-type="${project.type}" data-id="${project.id}">
+                <img src="${firstImage}" alt="${project.title}">
+                <div class="project-info">
+                    <h3>${project.title}</h3>
+                    <p>${project.type ? project.type.charAt(0).toUpperCase() + project.type.slice(1) : 'Project'} | ${project.location || 'Various Locations'}</p>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    // Add click event to each featured project card
+    const projectCards = featuredContainer.querySelectorAll('.project-card');
+    projectCards.forEach((card) => {
+        card.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-id');
+            window.location.href = `project-detail.html?id=${projectId}`;
+        });
+    });
+}
 // Initialize project filter
 function initProjectFilter() {
     const filterButtons = document.querySelectorAll('.filter-btn');
