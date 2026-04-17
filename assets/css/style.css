@@ -969,47 +969,53 @@ footer {
 
 .carousel {
   position: relative;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
-  margin-bottom: 60px;
 }
 
+/* TRACK = scrolling container */
 .track {
   display: flex;
-  align-items: center;   /* keeps images vertically aligned */  
-  gap: 20px;
+  gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 20px;
 
+  padding: 40px 60px; /* space for arrows */
+
+  /* hide scrollbar */
   scrollbar-width: none;
 }
 .track::-webkit-scrollbar {
   display: none;
 }
 
+/* EACH IMAGE = SLIDE */
 .track img {
-  flex: 0 0 auto;          /* don’t force width */
-  width: auto;             /* keep natural width */
-  max-width: 80%;          /* still shows partial next image */
-  height: auto;            /* 🔥 key fix */
-  object-fit: contain;     /* no cropping */
-  border-radius: 8px;
+  flex: 0 0 75%;          /* 🔥 key: fixed slide width */
+  height: 70vh;           /* 🔥 consistent height like Foster */
+  object-fit: cover;      /* crop nicely */
+
+  border-radius: 6px;
+
   scroll-snap-align: center;
-}
+
+  /* prevent weird shrinking/overlap */
+  min-width: 75%;
 }
 
+/* arrows */
 .nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
+  z-index: 5;
+
+  background: rgba(0,0,0,0.6);
+  color: #fff;
   border: none;
-  padding: 12px;
+  padding: 14px;
   cursor: pointer;
-  z-index: 10;
 }
 
 .prev { left: 10px; }
