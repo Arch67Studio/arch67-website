@@ -237,7 +237,10 @@ const projects = [
             "assets/images/projects/Mexico Pavilion/M-10.jpg",
             "assets/images/projects/Mexico Pavilion/M-11.jpg",
             "assets/images/projects/Mexico Pavilion/M-12.jpg",
-            "assets/images/projects/Mexico Pavilion/M-13.jpg"
+            "assets/images/projects/Mexico Pavilion/M-13.jpg",
+            "assets/images/projects/Mexico Pavilion/M-14.jpg",
+            "assets/images/projects/Mexico Pavilion/M-15.jpg",
+            "assets/images/projects/Mexico Pavilion/M-16.jpg"
         ]
     },
     {
