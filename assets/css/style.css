@@ -962,61 +962,77 @@ footer {
 }
 
 /* ===== Carousel ===== */
-/* ===== Page spacing wrapper ===== */
 .carousel-wrapper {
-    max-width: 90%;
-    margin: 60px auto;
-    padding: 0 20px;
     position: relative;
+    margin: 2rem 0;
 }
 
-/* ===== Carousel viewport ===== */
 .carousel {
-    position: relative;
     overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: relative;
 }
 
-/* ===== Track ===== */
 .carousel-track {
     display: flex;
-    transition: transform 0.4s ease;
-    align-items: stretch;   /* ❌ remove centering issue */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* ===== Slide ===== */
 .slide {
-    min-width: 100%;
-    display: flex;          /* ensures proper sizing */
+    flex: 0 0 100%;
+    min-width: 0;
 }
 
-/* ===== Image (NO CROPPING) ===== */
 .slide img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* ===== Buttons ===== */
 .carousel-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
-    background: rgba(0,0,0,0.5);
-    color: white;
+    background: transparent;
+    color: #333;
     border: none;
-    font-size: 28px;
-    padding: 10px 14px;
+    font-size: 2rem;
     cursor: pointer;
-    border-radius: 8px;
-    transition: 0.2s;
+    z-index: 10;
+    padding: 0.5rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
 .carousel-btn:hover {
-    background: rgba(0,0,0,0.75);
+    opacity: 1;
 }
 
-.prev { left: 30px; }
-.next { right: 30px; }
+.carousel-btn.prev {
+    left: -30px;
+}
+
+.carousel-btn.next {
+    right: -30px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .carousel-btn.prev {
+        left: 5px;
+    }
+    
+    .carousel-btn.next {
+        right: 5px;
+    }
+    
+    .carousel-btn {
+        background: rgba(255, 255, 255, 0.8);
+        font-size: 1.5rem;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
