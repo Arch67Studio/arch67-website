@@ -196,6 +196,19 @@ const projects = [
         images: [
             "assets/images/projects/Hermes/H-1.jpg",
             "assets/images/projects/Hermes/H-2.jpg"
+        ],
+        "technicalImages": [
+            "assets/images/projects/Hermes/technical/1.jpg",
+            "assets/images/projects/Hermes/technical/2.jpg",
+            "assets/images/projects/Hermes/technical/3.jpg",
+            "assets/images/projects/Hermes/technical/4.jpg",
+            "assets/images/projects/Hermes/technical/5.jpg",
+            "assets/images/projects/Hermes/technical/6.jpg",
+            "assets/images/projects/Hermes/technical/7.jpg",
+            "assets/images/projects/Hermes/technical/8.jpg",
+            "assets/images/projects/Hermes/technical/9.jpg",
+            "assets/images/projects/Hermes/technical/10.jpg",
+            "assets/images/projects/Hermes/technical/11.jpg"
         ]
     },
     {
