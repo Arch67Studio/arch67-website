@@ -115,7 +115,7 @@ const projects = [
         title: "Neom Beach Games Village",
         location: "Neom, Gayal, KSA",
         type: "Event",
-        featured: false,
+        featured: true,
         description: "Neom Beach Games Village, NEOM, KSA, completed October 2024, is a large-scale 390,000 sq.m master-planned development.",
         details: {
             "Client": "Neom",
@@ -352,7 +352,7 @@ const projects = [
         title: "Shindagha Museum",
         location: "Dubai, UAE",
         type: "cultural",
-        featured: true,
+        featured: false,
         description: "A contemporary Museum in cultural district, designed as a flexible space for exhibitions.",
         details: {
             "Client": "Dubai Government",
