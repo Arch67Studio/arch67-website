@@ -231,8 +231,7 @@ const projects = [
             "assets/images/projects/Mexico Pavilion/M-8.jpg",
             "assets/images/projects/Mexico Pavilion/M-9.jpg"
         ],
-        // Technical images - Add your actual image paths here
-        technicalImages: [
+        "technicalImages": [
             "https://picsum.photos/id/1015/1200/800",
             "https://picsum.photos/id/104/1200/800",
             "https://picsum.photos/id/106/1200/800"
@@ -288,3 +287,6 @@ const projects = [
 
 // News data
 const news = [];
+
+// Log to confirm data loaded
+console.log('Projects data loaded successfully. Total projects:', projects.length);
