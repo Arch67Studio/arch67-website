@@ -389,3 +389,169 @@ if (!detailsList) {
         </div>
     `).join('');
 }
+// Technical Work Carousel - Only shows if current project has technicalImages
+function initTechnicalCarousel() {
+    const carouselSection = document.getElementById('technicalCarouselSection');
+    const track = document.getElementById('technicalCarouselTrack');
+    const prevBtn = document.getElementById('technicalPrevBtn');
+    const nextBtn = document.getElementById('technicalNextBtn');
+    const dotsContainer = document.getElementById('technicalCarouselDots');
+    
+    if (!carouselSection || !track) return;
+    
+    // Get the current project ID from URL or page context
+    let currentProject = null;
+    
+    // Method 1: If you have a global currentProject variable set by your existing code
+    if (typeof window.currentProject !== 'undefined' && window.currentProject) {
+        currentProject = window.currentProject;
+    }
+    // Method 2: Get from URL parameter (e.g., ?id=3)
+    else {
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+        if (projectId && typeof projects !== 'undefined') {
+            currentProject = projects.find(p => p.id == projectId);
+        }
+    }
+    
+    // Check if current project has technicalImages array with at least one image
+    const hasTechnicalImages = currentProject && 
+                              currentProject.technicalImages && 
+                              Array.isArray(currentProject.technicalImages) && 
+                              currentProject.technicalImages.length > 0;
+    
+    // If no technical images, hide the entire carousel section and exit
+    if (!hasTechnicalImages) {
+        carouselSection.style.display = 'none';
+        return;
+    }
+    
+    // Show the carousel section
+    carouselSection.style.display = 'block';
+    
+    const technicalImages = currentProject.technicalImages;
+    let currentIndex = 0;
+    let slideWidth = 100; // percentage
+    
+    // Build carousel slides
+    function buildCarousel() {
+        track.innerHTML = '';
+        dotsContainer.innerHTML = '';
+        
+        technicalImages.forEach((imgSrc, index) => {
+            // Create slide
+            const slide = document.createElement('div');
+            slide.className = 'fp-carousel-slide';
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `Technical Work ${index + 1}`;
+            // Handle image loading errors
+            img.onerror = function() {
+                console.warn(`Failed to load technical image: ${imgSrc}`);
+                this.style.display = 'none';
+            };
+            slide.appendChild(img);
+            track.appendChild(slide);
+            
+            // Create dot
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+        
+        updateCarousel();
+        
+        // Hide navigation buttons if only 1 image
+        if (technicalImages.length <= 1) {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (dotsContainer) dotsContainer.style.display = 'none';
+        } else {
+            if (prevBtn) prevBtn.style.display = 'flex';
+            if (nextBtn) nextBtn.style.display = 'flex';
+            if (dotsContainer) dotsContainer.style.display = 'flex';
+        }
+    }
+    
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        
+        // Update dots
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+    
+    function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= technicalImages.length) index = technicalImages.length - 1;
+        currentIndex = index;
+        updateCarousel();
+    }
+    
+    function nextSlide() {
+        if (currentIndex < technicalImages.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        } else if (technicalImages.length > 1) {
+            // Optional: loop back to first
+            currentIndex = 0;
+            updateCarousel();
+        }
+    }
+    
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        } else if (technicalImages.length > 1) {
+            // Optional: loop to last
+            currentIndex = technicalImages.length - 1;
+            updateCarousel();
+        }
+    }
+    
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    
+    // Build the carousel
+    buildCarousel();
+    
+    // Optional: Auto-play (only if more than 1 image)
+    let autoPlayInterval;
+    function startAutoPlay() {
+        if (technicalImages.length <= 1) return;
+        autoPlayInterval = setInterval(() => {
+            nextSlide();
+        }, 5000);
+    }
+    
+    function stopAutoPlay() {
+        if (autoPlayInterval) clearInterval(autoPlayInterval);
+    }
+    
+    // Start auto-play (uncomment if desired)
+    // startAutoPlay();
+    
+    // Pause auto-play on hover
+    const carousel = document.querySelector('.fp-carousel');
+    if (carousel && technicalImages.length > 1) {
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+    }
+}
+
+// Initialize carousel when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Small delay to ensure projects data is loaded
+    setTimeout(initTechnicalCarousel, 100);
+});
