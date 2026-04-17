@@ -14,7 +14,13 @@ const projects = [
             "Status": "Completed",
             "Capacity": "150 pax"
         },
-        images: ["assets/images/placeholder.jpg"]
+        images: [
+            "assets/images/projects/jetex/1.jpeg",
+            "assets/images/projects/jetex/2.jpeg",
+            "assets/images/projects/jetex/3.jpeg",
+            "assets/images/projects/jetex/4.jpeg",
+            "assets/images/projects/jetex/5.jpeg",
+            ]
     },
     {
         id: 2,
