@@ -965,9 +965,18 @@ footer {
 .fp-carousel {
     position: relative;
     width: 90%;
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 60px;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0;
+}
+/* Add spacing between carousels */
+.fp-carousel + .fp-carousel {
+    margin-top: 80px;
+}
+
+/* Or if you have headings between carousels */
+.carousel-heading + .fp-carousel {
+    margin-top: 0;
 }
 
 .fp-carousel-container {
