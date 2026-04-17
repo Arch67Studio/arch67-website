@@ -233,8 +233,8 @@ const projects = [
         ],
         // Technical images - Add your actual image paths here
         technicalImages: [
-            "https://picsum.photos/id/1015/1200/800",
-            "https://picsum.photos/id/104/1200/800",
+            "assets/images/projects/Mexico Pavilion/M-10.jpg",
+            "assets/images/projects/Mexico Pavilion/M-11.jpg",
             "https://picsum.photos/id/106/1200/800"
         ]
     },
