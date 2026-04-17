@@ -969,13 +969,14 @@ footer {
 
 .carousel {
   position: relative;
-  width: 100%;
+  width: 90%;
   overflow: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .track {
   display: flex;
+  align-items: center;   /* keeps images vertically aligned */  
   gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -989,11 +990,14 @@ footer {
 }
 
 .track img {
-  flex: 0 0 80%;
-  height: 400px;
-  object-fit: cover;
+  flex: 0 0 auto;          /* don’t force width */
+  width: auto;             /* keep natural width */
+  max-width: 80%;          /* still shows partial next image */
+  height: auto;            /* 🔥 key fix */
+  object-fit: contain;     /* no cropping */
   border-radius: 8px;
   scroll-snap-align: center;
+}
 }
 
 .nav {
