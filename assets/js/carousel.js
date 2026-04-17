@@ -43,13 +43,19 @@ function initCarousel(wrapper) {
         clearInterval(auto);
     }
 
-    nextBtn.addEventListener("click", () => {
+    // Remove any existing listeners to avoid duplicates
+    const newNextBtn = nextBtn.cloneNode(true);
+    const newPrevBtn = prevBtn.cloneNode(true);
+    nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+    prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+
+    newNextBtn.addEventListener("click", () => {
         index = (index + 1) % slides.length;
         updateCarousel();
         resetAutoPlay();
     });
 
-    prevBtn.addEventListener("click", () => {
+    newPrevBtn.addEventListener("click", () => {
         index = (index - 1 + slides.length) % slides.length;
         updateCarousel();
         resetAutoPlay();
