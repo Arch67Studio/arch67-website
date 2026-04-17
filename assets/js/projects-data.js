@@ -204,12 +204,6 @@ const projects = [
             "assets/images/projects/Chile Pavilion/C-2.jpg",
             "assets/images/projects/Chile Pavilion/C-3.jpg"
         ]
-        // Technical images - Add your actual image paths here
-        technicalImages: [
-            "assets/images/projects/Chile Pavilion/C-3.jpg",
-            "assets/images/projects/Mexico Pavilion/M-11.jpg",
-            "https://picsum.photos/id/106/1200/800"
-        ]
     },
     {
         id: 11,
@@ -239,13 +233,9 @@ const projects = [
         ],
         // Technical images - Add your actual image paths here
         technicalImages: [
-            "assets/images/projects/Mexico Pavilion/technical/M-10.jpeg",
-            "assets/images/projects/Mexico Pavilion/technical/M-11.jpeg",
-            "assets/images/projects/Mexico Pavilion/technical/M-12.jpeg",
-            "assets/images/projects/Mexico Pavilion/technical/M-13.jpeg",
-            "assets/images/projects/Mexico Pavilion/technical/M-14.jpeg",
-            "assets/images/projects/Mexico Pavilion/technical/M-15.jpeg",
-            "assets/images/projects/Mexico Pavilion/technical/M-16.jpeg"
+            "https://picsum.photos/id/1015/1200/800",
+            "https://picsum.photos/id/104/1200/800",
+            "https://picsum.photos/id/106/1200/800"
         ]
     },
     {
