@@ -106,6 +106,15 @@ const projects = [
             "assets/images/projects/NSV-2024/N-7.jpg",
             "assets/images/projects/NSV-2024/N-8.jpg"
         ]
+        technicalImages: [
+        "https://picsum.photos/id/1015/1200/800",  // Landscape
+        "https://picsum.photos/id/104/1200/800",   // Architecture
+        "https://picsum.photos/id/106/1200/800",   // Flower
+        "https://picsum.photos/id/20/1200/800",    // Coffee
+        "https://picsum.photos/id/42/1200/800",    // Piano
+        "https://picsum.photos/id/169/1200/800",   // Sun
+        "https://picsum.photos/id/96/1200/800"     // Mountain
+    ]
     },
     {
         id: 6,
@@ -147,6 +156,15 @@ const projects = [
             "assets/images/projects/Thameen/T-4.jpg",
             "assets/images/projects/Thameen/T-5.jpg"
         ]
+        technicalImages: [
+        "https://picsum.photos/id/1015/1200/800",  // Landscape
+        "https://picsum.photos/id/104/1200/800",   // Architecture
+        "https://picsum.photos/id/106/1200/800",   // Flower
+        "https://picsum.photos/id/20/1200/800",    // Coffee
+        "https://picsum.photos/id/42/1200/800",    // Piano
+        "https://picsum.photos/id/169/1200/800",   // Sun
+        "https://picsum.photos/id/96/1200/800"     // Mountain
+    ]
     },
     {
         id: 8,
